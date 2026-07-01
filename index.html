@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="lo">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sub 3:15 — Marathon Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Noto+Sans+Lao:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0C1524;         /* deep midnight */
+  --ink-2:#122036;
+  --surface:#16233B;
+  --surface-2:#1C2E4A;
+  --line:#26385A;
+  --text:#EAF0F7;
+  --muted:#8598B5;
+  --coral:#FF5A3C;       /* effort / goal */
+  --mint:#34E0A1;        /* done / aerobic */
+  --blue:#5B8DEF;        /* specific */
+  --amber:#FFB84D;       /* recovery */
+  --gold:#FFD65A;        /* race */
+  --shadow:0 10px 40px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(91,141,239,.10), transparent 60%),
+    radial-gradient(900px 500px at -10% 10%, rgba(255,90,60,.08), transparent 55%),
+    var(--ink);
+  color:var(--text);
+  font-family:"Noto Sans Lao","Inter",system-ui,sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.mono{font-family:"Space Mono",monospace}
+.disp{font-family:"Oswald",sans-serif;font-weight:600;letter-spacing:.5px}
+
+/* ---------- HERO ---------- */
+header{padding:56px 0 30px;position:relative;overflow:hidden}
+.eyebrow{
+  font-family:"Space Mono",monospace;font-size:12px;letter-spacing:3px;
+  text-transform:uppercase;color:var(--coral);margin-bottom:14px
+}
+.goal{
+  font-family:"Oswald",sans-serif;font-weight:700;
+  font-size:clamp(64px,14vw,150px);line-height:.86;letter-spacing:-1px;
+  text-transform:uppercase
+}
+.goal .col{color:var(--coral)}
+.goal-sub{font-family:"Oswald",sans-serif;font-weight:300;font-size:clamp(18px,3vw,26px);
+  color:var(--muted);letter-spacing:2px;margin-top:6px;text-transform:uppercase}
+
+.hero-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px
+}
+.stat{
+  background:linear-gradient(180deg,var(--surface),var(--ink-2));
+  border:1px solid var(--line);border-radius:14px;padding:18px 16px;position:relative;overflow:hidden
+}
+.stat .k{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:"Oswald",sans-serif;font-weight:600;font-size:38px;line-height:1.1;margin-top:6px}
+.stat .u{font-size:12px;color:var(--muted);font-family:"Space Mono",monospace}
+.stat.accent .v{color:var(--coral)}
+.stat.mint .v{color:var(--mint)}
+.stat::after{content:"";position:absolute;left:0;bottom:0;height:3px;width:100%;
+  background:linear-gradient(90deg,var(--coral),transparent)}
+.stat.mint::after{background:linear-gradient(90deg,var(--mint),transparent)}
+.stat.blue::after{background:linear-gradient(90deg,var(--blue),transparent)}
+.stat.gold::after{background:linear-gradient(90deg,var(--gold),transparent)}
+
+.proof{
+  margin-top:20px;padding:14px 18px;border-left:3px solid var(--mint);
+  background:rgba(52,224,161,.07);border-radius:0 12px 12px 0;font-size:14.5px;color:#CFE9DE
+}
+.proof b{color:var(--mint)}
+
+/* ---------- SECTION ---------- */
+section{padding:40px 0}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;flex-wrap:wrap}
+.sec-num{font-family:"Space Mono",monospace;color:var(--coral);font-size:13px;letter-spacing:2px}
+.sec-title{font-family:"Oswald",sans-serif;font-weight:600;font-size:clamp(24px,4vw,34px);
+  text-transform:uppercase;letter-spacing:.5px}
+.sec-desc{color:var(--muted);font-size:14px;margin-top:-14px;margin-bottom:22px;max-width:640px}
+
+/* ---------- THE LANE (signature) ---------- */
+.lane{
+  background:var(--ink-2);border:1px solid var(--line);border-radius:18px;
+  padding:26px 22px 20px;box-shadow:var(--shadow);overflow-x:auto
+}
+.lane-track{display:flex;gap:5px;min-width:760px}
+.lane-cell{
+  flex:1;min-width:30px;height:64px;border-radius:8px;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;transition:transform .15s ease, filter .15s ease;
+  border:1px solid rgba(255,255,255,.06)
+}
+.lane-cell:hover{transform:translateY(-4px);filter:brightness(1.15)}
+.lane-cell .wk{font-family:"Oswald",sans-serif;font-weight:600;font-size:14px;color:#0C1524}
+.lane-cell .wt{font-size:9px;font-family:"Space Mono",monospace;color:rgba(12,21,36,.7)}
+.lane-cell.here{outline:3px solid #fff;outline-offset:2px;z-index:3}
+.lane-cell.here::before{
+  content:"🏃 YOU";position:absolute;top:-25px;left:50%;transform:translateX(-50%);
+  font-family:"Space Mono",monospace;font-size:10px;color:#fff;white-space:nowrap;font-weight:700
+}
+.lane-cell.done{opacity:.55}
+.lane-cell.done::after{content:"✓";position:absolute;top:2px;right:5px;font-size:11px;color:#0C1524;font-weight:700}
+.ph-Recovery{background:var(--amber)}
+.ph-Specific{background:var(--blue)}
+.ph-Specific .wk,.ph-Specific .wt{color:#fff}
+.ph-Specific .wt{color:rgba(255,255,255,.75)}
+.ph-Peak{background:var(--coral)}
+.ph-Peak .wk,.ph-Peak .wt{color:#fff}
+.ph-Peak .wt{color:rgba(255,255,255,.8)}
+.ph-Taper{background:var(--mint)}
+.ph-RACE{background:var(--gold)}
+.lane-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;font-size:12px;font-family:"Space Mono",monospace}
+.lane-legend span{display:flex;align-items:center;gap:7px;color:var(--muted)}
+.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
+
+/* ---------- PACE ZONES ---------- */
+.zones{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+.zone{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;
+  position:relative
+}
+.zone .zt{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:1px;color:var(--muted);text-transform:uppercase}
+.zone .zn{font-family:"Oswald",sans-serif;font-weight:500;font-size:19px;margin:4px 0}
+.zone .zp{font-family:"Space Mono",monospace;font-size:26px;font-weight:700;color:var(--coral)}
+.zone .zd{font-size:12.5px;color:var(--muted);margin-top:8px;line-height:1.5}
+.zone .bar{height:4px;border-radius:4px;margin-top:12px}
+
+/* ---------- WEEK FILTER ---------- */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.filters button{
+  font-family:"Space Mono",monospace;font-size:12px;letter-spacing:1px;
+  background:var(--surface);color:var(--muted);border:1px solid var(--line);
+  padding:8px 15px;border-radius:20px;cursor:pointer;transition:.15s;text-transform:uppercase
+}
+.filters button:hover{color:var(--text);border-color:var(--muted)}
+.filters button.active{background:var(--coral);color:#fff;border-color:var(--coral)}
+
+/* ---------- WEEK CARDS ---------- */
+.weeks{display:flex;flex-direction:column;gap:12px}
+.week{
+  background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  transition:border-color .2s
+}
+.week.open{border-color:var(--coral)}
+.week-head{display:flex;align-items:center;gap:16px;padding:16px 20px;cursor:pointer;user-select:none}
+.wk-badge{font-family:"Oswald",sans-serif;font-weight:700;font-size:22px;min-width:52px}
+.wk-phase{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1.5px;
+  text-transform:uppercase;padding:4px 10px;border-radius:12px;font-weight:700}
+.pb-Recovery{background:rgba(255,184,77,.16);color:var(--amber)}
+.pb-Specific{background:rgba(91,141,239,.16);color:var(--blue)}
+.pb-Peak{background:rgba(255,90,60,.16);color:var(--coral)}
+.pb-Taper{background:rgba(52,224,161,.16);color:var(--mint)}
+.pb-RACE{background:rgba(255,214,90,.18);color:var(--gold)}
+.wk-date{font-family:"Space Mono",monospace;font-size:13px;color:var(--muted)}
+.wk-focus{flex:1;font-size:13.5px;color:var(--muted);text-align:right;min-width:0;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.wk-chevron{color:var(--muted);transition:transform .2s;font-size:14px}
+.week.open .wk-chevron{transform:rotate(90deg)}
+.wk-check{width:22px;height:22px;border-radius:6px;border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;transition:.15s}
+.wk-check:hover{border-color:var(--mint)}
+.wk-check.on{background:var(--mint);border-color:var(--mint)}
+.wk-check.on::after{content:"✓";color:#0C1524;font-weight:700;font-size:13px}
+
+.days{display:none;padding:4px 14px 18px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.week.open .days{display:grid}
+.day{background:var(--ink-2);border:1px solid var(--line);border-radius:10px;padding:13px 14px}
+.day .dn{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;
+  text-transform:uppercase;color:var(--coral);margin-bottom:6px}
+.day .dc{font-size:13px;color:#DCE6F3;white-space:pre-line;line-height:1.5}
+.day.long{border-color:rgba(52,224,161,.35)}
+.day.long .dn{color:var(--mint)}
+
+.race-note{padding:0 20px 18px;font-size:13px;color:var(--amber);display:none}
+.week.open .race-note{display:block}
+
+/* ---------- REHAB ---------- */
+.rehab{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.rcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px}
+.rcard h3{font-family:"Oswald",sans-serif;font-weight:500;font-size:18px;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px}
+.rex{padding:11px 0;border-bottom:1px solid var(--line)}
+.rex:last-child{border:none}
+.rex .rx-top{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
+.rex .rx-name{font-size:13.5px;font-weight:600}
+.rex .rx-sets{font-family:"Space Mono",monospace;font-size:12px;color:var(--mint);white-space:nowrap}
+.rex .rx-how{font-size:12px;color:var(--muted);margin-top:4px}
+.rstar{color:var(--gold)}
+
+/* ---------- CALLOUT ---------- */
+.callout{background:rgba(255,90,60,.08);border:1px solid rgba(255,90,60,.3);
+  border-radius:14px;padding:20px 22px;margin-top:24px}
+.callout .ct{font-family:"Oswald",sans-serif;font-weight:600;color:var(--coral);
+  text-transform:uppercase;letter-spacing:1px;font-size:15px;margin-bottom:8px}
+.callout ol{margin-left:18px;font-size:14px;color:#DCE6F3}
+.callout li{margin:5px 0}
+
+footer{padding:40px 0 60px;border-top:1px solid var(--line);margin-top:30px;
+  color:var(--muted);font-size:12.5px;text-align:center;font-family:"Space Mono",monospace}
+footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);margin-bottom:8px;letter-spacing:1px}
+
+@media(max-width:640px){
+  .hero-grid{grid-template-columns:repeat(2,1fr)}
+  .wk-focus{display:none}
+  .wk-date{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Bangsaen42 · 09 Nov 2026 · Modified Plan W17–W36</div>
+    <div class="goal">SUB <span class="col">3:15</span></div>
+    <div class="goal-sub">Marathon Target · Pace 4:37 / km</div>
+
+    <div class="hero-grid">
+      <div class="stat accent">
+        <div class="k">Countdown</div>
+        <div class="v" id="days">—</div>
+        <div class="u">days to race</div>
+      </div>
+      <div class="stat mint">
+        <div class="k">Half PR ⇒ predicts</div>
+        <div class="v">3:14</div>
+        <div class="u">from 1:33:16 half</div>
+      </div>
+      <div class="stat blue">
+        <div class="k">Current week</div>
+        <div class="v">W17</div>
+        <div class="u">of 20 · recovery</div>
+      </div>
+      <div class="stat gold">
+        <div class="k">Longest run</div>
+        <div class="v">34<span style="font-size:20px">km</span></div>
+        <div class="u">peak · week 25</div>
+      </div>
+    </div>
+
+    <div class="proof">
+      🔎 <b>ຄວາມໄວມີພຽງພໍແລ້ວ:</b> Half PR 1:33:16 (4:25/km) ໄວກວ່າ marathon pace ເປົ້າ 12 ວິ/km —
+      ຕົວທຳນາຍບອກ marathon ~<b>3:14:30</b>. ຈຸດທີ່ຕ້ອງໂຟກັດຄື <b>endurance ທີ່ MP</b> ແລະ <b>ຟື້ນຕົວຝາຕີນ 100%</b>.
+    </div>
+  </div>
+</header>
+
+<section id="lane">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">The Lane · 20-Week Track</h2></div>
+    <p class="sec-desc">ເລນຊ້ອມແຕ່ນີ້ຮອດມື້ແຂ່ງ — ແຕ່ລະຊ່ອງ = 1 ອາທິດ, ສີບອກ phase. ກົດຊ່ອງໃດກໍໄດ້ເພື່ອກະໂດດໄປເບິ່ງລາຍລະອຽດ.</p>
+    <div class="lane">
+      <div class="lane-track" id="laneTrack"></div>
+      <div class="lane-legend">
+        <span><i class="dot" style="background:var(--amber)"></i>Recovery</span>
+        <span><i class="dot" style="background:var(--blue)"></i>Specific</span>
+        <span><i class="dot" style="background:var(--coral)"></i>Peak</span>
+        <span><i class="dot" style="background:var(--mint)"></i>Taper</span>
+        <span><i class="dot" style="background:var(--gold)"></i>Race</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="zones">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title">Pace Zones</h2></div>
+    <div class="zones" id="zonesGrid"></div>
+  </div>
+</section>
+
+<section id="schedule">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Weekly Schedule</h2></div>
+    <p class="sec-desc">ກົດແຕ່ລະອາທິດເພື່ອເປີດເບິ່ງ 6 ມື້. ກົດ ☐ ເພື່ອໝາຍວ່າສຳເລັດ (ບັນທຶກໄວ້ໃນ browser ຂອງເຈົ້າ).</p>
+    <div class="filters" id="filters"></div>
+    <div class="weeks" id="weeks"></div>
+  </div>
+</section>
+
+<section id="rehab">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Rehab · Plantar Fascia</h2></div>
+    <p class="sec-desc">ໂຕນທ້າຍ W17–W19: ເຮັດທຸກວັນ. ກົດ: ເຈັບບໍ່ເກີນ 3/10 ຂະນະເຮັດ ແລະ ບໍ່ເຈັບເພີ່ມໃນເຊົ້າມື້ໜ້າ.</p>
+    <div class="rehab" id="rehabGrid"></div>
+    <div class="callout">
+      <div class="ct">3 ເງື່ອນໄຂ ສຳລັບ Sub 3:15</div>
+      <ol>
+        <li>ພື້ນຝາຕີນຫາຍ 100% ບໍ່ບາດເຈັບຄືນ (ຄວາມສ່ຽງໃຫຍ່ສຸດຕອນນີ້)</li>
+        <li>Long-run MP segments ໃນ Peak phase ເຮັດໄດ້ຄົບ (ພິສູດ endurance)</li>
+        <li>Race execution: ອອກໂຕບໍ່ໄວເກີນ 10km ທຳອິດ · Gel ທຸກ 35 ນາທີ</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fin">🏁 SEE YOU AT THE FINISH — SUB 3:15</div>
+    ຄຳແນະນຳທົ່ວໄປ ບໍ່ທົດແທນການວິນິດໄສຂອງແພດ · ຖ້າອາການບໍ່ດີຂຶ້ນໃນ 2–3 ອາທິດ ຄວນພົບນັກກາຍະພາບບຳບັດ/ໝໍ
+  </div>
+</footer>
+
+<script>
+const RACE = new Date("2026-11-09T05:00:00+07:00");
+const CURRENT_WEEK = 17;
+
+const zones = [
+  {t:"Interval",n:"Sub-Threshold",p:"4:00–4:10",d:"Cadence 176–182 · ກັບໃຊ້ເຕັມຄວາມໄວ ຫຼັງ W19 ຖ້າ pain-free",c:"var(--coral)"},
+  {t:"Tempo",n:"Threshold (TLA)",p:"4:18–4:25",d:"HR ~174–175 · W17–19 ໃຊ້ 4:40–4:50 ກ່ອນ",c:"var(--blue)"},
+  {t:"Marathon Pace",n:"MP · Goal",p:"4:35–4:37",d:"ເປົ້າສຸດທ້າຍ · W20–21 ໃຊ້ 4:40–4:45 ກ່ອນ",c:"var(--mint)"},
+  {t:"Long Run",n:"Endurance",p:"5:20–5:40",d:"Cadence 170–175 · W17–19 ໃຊ້ 5:30–6:10",c:"var(--gold)"},
+  {t:"Easy",n:"Recovery",p:"5:40–6:00",d:"Zone 1–2 · ຄຸຍໄດ້ສະບາຍ",c:"var(--amber)"},
+];
+
+// weeks: 17..36
+const D = "dd"; // placeholder
+const weeks = [
+ {w:17,ph:"Recovery",date:"29/06",focus:"Return-to-run · Easy ສັ້ນ + ຍືດ",days:[
+   ["Tue","REST ຫຼື jog 15–20min\nຖ້າເຈັບ: ພັກ + ປະຄົບເຢັນ"],["Wed","Easy 20–30min\nPace ບໍ່ສຳຄັນ ເນັ້ນບໍ່ເຈັບ"],
+   ["Thu","REST + Calf raises 2×15\nຍືດ plantar fascia + foam roll"],["Fri","Bodyweight ເບົາ\ncore + hip stability"],
+   ["Sat","Easy 20min ຖ້າ pain-free 3 ມື້"],["Sun","Easy 8–10km · ຢຸດຖ້າເຈັບ\n🏥 ແນະນຳພົບນັກກາຍະພາບບຳບັດ",1]]},
+ {w:18,ph:"Recovery",date:"06/07",focus:"ຄ່ອຍໆເພີ່ມ · cross-train",days:[
+   ["Tue","Easy 25min Zone1-2"],["Wed","REST ຫຼື cross-train 30min"],
+   ["Thu","Easy 30min · strides 4×50m ຖ້າດີ"],["Fri","Calf raises 3×15 · balance · core"],
+   ["Sat","Easy 25–30min + strides 4×80m"],["Sun","Easy 12km Pace 5:50–6:10\nrun/walk ໄດ້ຖ້າຈຳເປັນ",1]]},
+ {w:19,ph:"Recovery",date:"13/07",focus:"ເລີ່ມ tempo ສັ້ນເບົາ",days:[
+   ["Tue","Easy 35–40min · strides 4×100m"],["Wed","Easy 30min Zone1-2"],
+   ["Thu","Tempo ສັ້ນ 5km @ 4:40–4:50\nຍັງບໍ່ດັນ 4:18"],["Fri","Weight (Squat ເບົາ/Core/Calf)"],
+   ["Sat","Easy 6km + strides ×4"],["Sun","Long 16km Pace 5:30–5:50\nGel ທຸກ 35 ນາທີ",1]]},
+ {w:20,ph:"Specific",date:"20/07",focus:"Fartlek + Tempo ກັບມາ",days:[
+   ["Tue","Fartlek 1min F/S ×8 · 4:05–4:15"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 10km 4:20–4:28"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","20km 5:25–5:45 Zone 2-3",1]]},
+ {w:21,ph:"Specific",date:"27/07",focus:"MP ເລີ່ມ 4:40–4:45",days:[
+   ["Tue","Interval 1km ×6 · 4:05–4:15"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 14km 4:40–4:45"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","26km 5:20–5:40",1]]},
+ {w:22,ph:"Specific",date:"03/08",focus:"Hill ກັບມາເທື່ອທຳອິດ",days:[
+   ["Tue","Hill Repeats 60s ×8 · ເລັ່ງເບົາ"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 14km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","28km · last 5km MP 4:37–4:42",1]]},
+ {w:23,ph:"Peak",date:"10/08",focus:"MP 16km · long 30km",days:[
+   ["Tue","Interval 1km ×8 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 16km 4:37–4:40"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","30km · last 8km MP",1]]},
+ {w:24,ph:"Peak",date:"17/08",focus:"Tempo 15km · long 32km",days:[
+   ["Tue","Hill Repeats 60s ×10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 15km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","32km Zone 2",1]]},
+ {w:25,ph:"Peak",date:"24/08",focus:"🎯 MP ເຕັມ 4:35 · long 34km",days:[
+   ["Tue","Interval 1km ×10 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 18km 4:35–4:37 🎯"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","34km · last 8km MP (Longest)",1]]},
+ {w:26,ph:"Peak",date:"31/08",focus:"long 30km last 10km MP",days:[
+   ["Tue","Fartlek 2min F/S ×10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 14km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","30km · last 10km MP",1]]},
+ {w:27,ph:"Peak",date:"07/09",focus:"MP 18km · long 32km",days:[
+   ["Tue","Interval 800m ×10 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 18km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","32km · last 12km MP",1]]},
+ {w:28,ph:"Peak",date:"14/09",focus:"Hill ×12 · long 34km",days:[
+   ["Tue","Hill Repeats 60s ×12"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 14km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","34km · last 2km Hill",1]]},
+ {w:29,ph:"Peak",date:"21/09",focus:"MP 16km · long 28km",days:[
+   ["Tue","Interval 1km ×8 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 16km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","28km Zone 2",1]]},
+ {w:30,ph:"Peak",date:"28/09",focus:"Long run ໄກສຸດທ້າຍ",days:[
+   ["Tue","Fartlek 2min F/S ×10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 16km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","32km · last 10km MP (ໄກສຸດທ້າຍ)",1]]},
+ {w:31,ph:"Peak",date:"05/10",focus:"ຫຼຸດເລີ່ມ · MP 14km",days:[
+   ["Tue","Hill Repeats 60s ×10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 12km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","26km · last 5km MP",1]]},
+ {w:32,ph:"Peak",date:"12/10",focus:"Peak ສຸດທ້າຍ",days:[
+   ["Tue","Interval 800m ×8 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 14km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","24km Zone 2",1]]},
+ {w:33,ph:"Taper",date:"19/10",focus:"Taper ເລີ່ມ · ຫຼຸດ volume",days:[
+   ["Tue","Interval 1km ×6 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 12km 4:35–4:37"],["Fri","Core / Stretching"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","18km 5:20–5:40",1]]},
+ {w:34,ph:"Taper",date:"26/10",focus:"ຮັກສາຄວາມຄ່ອງ",days:[
+   ["Tue","Fartlek 2min F/S ×6"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 10km 4:35–4:37"],["Fri","Core / Stretching"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","15km 5:20–5:40",1]]},
+ {w:35,ph:"Taper",date:"02/11",focus:"ອາທິດກ່ອນແຂ່ງ · ພັກຂາ",days:[
+   ["Tue","Interval 400m ×6 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Easy 8km 5:15–6:00 · JP Build-Up"],["Fri","Stretching only"],
+   ["Sat","Easy 5km + strides ×4"],["Sun","10km 5:20–5:40",1]]},
+ {w:36,ph:"RACE",date:"09/11",focus:"🏆 RACE WEEK",days:[
+   ["Tue","Easy 5km + strides"],["Wed","REST"],
+   ["Thu","Easy 5km + strides"],["Fri","REST / Carb load"],
+   ["Sat","REST"],["Sun","🏆 RACE DAY — Sub 3:15!\nPace 4:37 · Gel ທຸກ 35 ນາທີ\nອອກໂຕບໍ່ໄວເກີນ 10km ທຳອິດ",1]]},
+];
+
+const rehab = [
+ {h:"☀️ ຕອນເຊົ້າ (ກ່ອນກ້າວທຳອິດ)",ex:[
+   {n:"ຍືດພື້ນຝາຕີນ (Plantar stretch)",s:"3×30s",how:"ດຶງນິ້ວຕີນຂຶ້ນຫາໜ້າແຂ້ງ ຈົນຕຶງໃຕ້ຝາຕີນ · ຄ້າງ ບໍ່ເດັ້ງ"},
+   {n:"ກິ້ງຂວດເຢັນ ໃຕ້ຝາຕີນ",s:"2–3 min",how:"ຂວດນ້ຳແຊ່ແຂງ = ນວດ + ປະຄົບເຢັນໃນຕົວ"},
+   {n:"ຍືດນ່ອງ ຕິດຝາ",s:"3×30s/ຂາ",how:"ເຂົ່າຊື່ (gastroc) + ເຂົ່າງໍ (soleus)"},
+ ]},
+ {h:"💪 Strength (ມື້ເວັ້ນມື້)",ex:[
+   {n:"High-Load Calf Raise",s:"3×12",how:"ຜ້າໃຕ້ນິ້ວ · ຂຶ້ນ3s ຄ້າງ2s ລົງ3s · ຄ່ອຍເພີ່ມນ້ຳໜັກ",star:1},
+   {n:"Toe Towel Curls",s:"2×15",how:"ໃຊ້ນິ້ວຕີນຫຍິບດຶງຜ້າ"},
+   {n:"Single-Leg Balance",s:"3×30s",how:"ຢືນຂາເຈັບຂາດຽວ · ຍາກຂຶ້ນ: ຫຼັບຕາ"},
+   {n:"Toe Spread / Short Foot",s:"2×10",how:"ສ້າງກ້າມ arch ໂດຍກົງ"},
+ ]},
+ {h:"🌙 ຕອນແລງ / ຫຼັງແລ່ນ",ex:[
+   {n:"ປະຄົບເຢັນ (Ice)",s:"15 min",how:"ຫຼຸດອັກເສບ · ບໍ່ເກີນ 20 ນາທີ"},
+   {n:"ຍືດນ່ອງ + ຝາຕີນ ຊ້ຳ",s:"2×30s",how:"ກ່ອນນອນ ຫຼຸດຕຶງເຊົ້າມື້ໜ້າ"},
+ ]},
+];
+
+// ---- localStorage (works on GitHub Pages / local; degrades gracefully) ----
+const store = {
+  get(){try{return JSON.parse(localStorage.getItem("m315done")||"{}")}catch(e){return{}}},
+  set(o){try{localStorage.setItem("m315done",JSON.stringify(o))}catch(e){}}
+};
+let done = store.get();
+
+// ---- countdown ----
+function tickDays(){
+  const d = Math.max(0, Math.ceil((RACE - new Date())/86400000));
+  document.getElementById("days").textContent = d;
+}
+tickDays(); setInterval(tickDays, 3600000);
+
+// ---- lane ----
+const laneTrack = document.getElementById("laneTrack");
+weeks.forEach(wk=>{
+  const c = document.createElement("div");
+  c.className = `lane-cell ph-${wk.ph}` + (wk.w===CURRENT_WEEK?" here":"") + (done[wk.w]?" done":"");
+  c.dataset.w = wk.w;
+  c.innerHTML = `<span class="wk">${wk.w}</span><span class="wt">${wk.ph.slice(0,4).toUpperCase()}</span>`;
+  c.onclick = ()=>{ document.getElementById("schedule").scrollIntoView(); openWeek(wk.w); };
+  laneTrack.appendChild(c);
+});
+
+// ---- zones ----
+const zg = document.getElementById("zonesGrid");
+zones.forEach(z=>{
+  const el = document.createElement("div"); el.className="zone";
+  el.innerHTML = `<div class="zt">${z.t}</div><div class="zn">${z.n}</div>
+    <div class="zp mono">${z.p}</div><div class="zd">${z.d}</div>
+    <div class="bar" style="background:${z.c}"></div>`;
+  zg.appendChild(el);
+});
+
+// ---- filters ----
+const phases = ["All","Recovery","Specific","Peak","Taper"];
+const fbox = document.getElementById("filters");
+let activeFilter = "All";
+phases.forEach(p=>{
+  const b=document.createElement("button"); b.textContent=p;
+  if(p==="All") b.classList.add("active");
+  b.onclick=()=>{activeFilter=p;[...fbox.children].forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");renderWeeks();};
+  fbox.appendChild(b);
+});
+
+// ---- weeks ----
+const wbox = document.getElementById("weeks");
+function renderWeeks(){
+  wbox.innerHTML="";
+  weeks.filter(wk=>activeFilter==="All"||wk.ph===activeFilter).forEach(wk=>{
+    const el=document.createElement("div"); el.className="week"; el.id="wk"+wk.w;
+    const daysHtml = wk.days.map(d=>
+      `<div class="day${d[2]?" long":""}"><div class="dn">${d[0]}</div><div class="dc">${d[1]}</div></div>`
+    ).join("");
+    el.innerHTML = `
+      <div class="week-head">
+        <div class="wk-check ${done[wk.w]?"on":""}" data-check="${wk.w}"></div>
+        <div class="wk-badge">W${wk.w}</div>
+        <div class="wk-phase pb-${wk.ph}">${wk.ph}</div>
+        <div class="wk-date mono">${wk.date}/26</div>
+        <div class="wk-focus">${wk.focus}</div>
+        <div class="wk-chevron">▶</div>
+      </div>
+      <div class="days">${daysHtml}</div>
+      ${wk.ph==="RACE"?'<div class="race-note">🎯 Race pacing: km 1–10 ຄຸມ 4:40 · km 11–32 ລັອກ 4:37 · km 33–42 ຖ້າແຮງເຫຼືອ ຄ່ອຍເລັ່ງ. Gel ທຸກ 35 ນາທີ ຢ່າລໍໃຫ້ຫິວ.</div>':''}`;
+    // toggle open
+    el.querySelector(".week-head").onclick=(e)=>{
+      if(e.target.closest("[data-check]"))return;
+      el.classList.toggle("open");
+    };
+    // check
+    el.querySelector("[data-check]").onclick=(e)=>{
+      e.stopPropagation();
+      done[wk.w]=!done[wk.w]; store.set(done);
+      renderWeeks(); refreshLane();
+    };
+    wbox.appendChild(el);
+  });
+}
+function refreshLane(){
+  [...laneTrack.children].forEach(c=>{
+    c.classList.toggle("done", !!done[c.dataset.w]);
+  });
+}
+function openWeek(w){
+  activeFilter="All";[...fbox.children].forEach(x=>x.classList.remove("active"));
+  fbox.children[0].classList.add("active");
+  renderWeeks();
+  const el=document.getElementById("wk"+w);
+  if(el){el.classList.add("open"); setTimeout(()=>el.scrollIntoView({block:"center"}),80);}
+}
+renderWeeks();
+
+// ---- rehab ----
+const rg=document.getElementById("rehabGrid");
+rehab.forEach(card=>{
+  const el=document.createElement("div"); el.className="rcard";
+  el.innerHTML=`<h3>${card.h}</h3>`+card.ex.map(x=>
+    `<div class="rex"><div class="rx-top"><span class="rx-name">${x.star?'<span class="rstar">★</span> ':''}${x.n}</span>
+     <span class="rx-sets">${x.s}</span></div><div class="rx-how">${x.how}</div></div>`
+  ).join("");
+  rg.appendChild(el);
+});
+</script>
+</body>
+</html>
