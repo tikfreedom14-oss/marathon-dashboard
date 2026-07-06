@@ -197,6 +197,182 @@ section{padding:40px 0}
 .rstar{color:var(--gold)}
 
 /* ---------- CALLOUT ---------- */
+/* technique */
+.tech-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.tcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;
+  position:relative;overflow:hidden}
+.tcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--mint)}
+.tcard.focus::before{background:var(--coral)}
+.tcard .th{font-family:"Oswald",sans-serif;font-weight:500;font-size:18px;margin-bottom:6px;
+  display:flex;align-items:center;gap:9px}
+.tcard .ttag{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;
+  padding:3px 8px;border-radius:10px;background:rgba(52,224,161,.16);color:var(--mint);margin-left:auto}
+.tcard.focus .ttag{background:rgba(255,90,60,.16);color:var(--coral)}
+.tcard .td{font-size:13.5px;color:#DCE6F3;line-height:1.6}
+
+/* shoes */
+.shoe-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.scard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+.scard .sname{font-family:"Oswald",sans-serif;font-weight:600;font-size:17px;color:var(--text)}
+.scard .suse{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--gold);margin:6px 0 10px}
+.scard .sdesc{font-size:12.5px;color:var(--muted);line-height:1.5}
+.scard .sbadge{display:inline-block;font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;
+  padding:4px 10px;border-radius:12px;margin-top:12px;text-transform:uppercase;font-weight:700}
+.sb-easy{background:rgba(255,184,77,.16);color:var(--amber)}
+.sb-long{background:rgba(52,224,161,.16);color:var(--mint)}
+.sb-fast{background:rgba(255,90,60,.16);color:var(--coral)}
+.sb-race{background:rgba(91,141,239,.16);color:var(--blue)}
+
+/* fueling */
+.fuel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:18px}
+.fcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;border-top:4px solid var(--gold)}
+.fcard.before{border-top-color:var(--blue)}
+.fcard.during{border-top-color:var(--coral)}
+.fcard.after{border-top-color:var(--mint)}
+.fcard .fh{font-family:"Oswald",sans-serif;font-weight:600;font-size:17px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.fcard ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.fcard li{font-size:13px;color:#DCE6F3;line-height:1.5;padding-left:16px;position:relative}
+.fcard li::before{content:"›";position:absolute;left:0;color:var(--gold);font-weight:700}
+
+/* RPE scale */
+.rpe-grid{display:flex;flex-direction:column;gap:6px}
+.rpe-row{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);
+  border-radius:10px;padding:11px 16px;border-left-width:5px}
+.rpe-row .rpe-n{font-family:"Oswald",sans-serif;font-weight:700;font-size:20px;min-width:44px;text-align:center}
+.rpe-row .rpe-feel{font-size:13.5px;color:#DCE6F3;flex:1}
+.rpe-row .rpe-zone{font-family:"Space Mono",monospace;font-size:11px;color:var(--muted);min-width:80px;text-align:right}
+
+/* wisdom */
+.wisdom{background:linear-gradient(160deg,var(--surface),var(--ink-2));border:1px solid var(--line);
+  border-radius:18px;padding:32px 28px;text-align:center;position:relative;overflow:hidden}
+.wisdom::before{content:"❝";position:absolute;top:6px;left:22px;font-size:70px;color:var(--coral);opacity:.14;font-family:Georgia,serif}
+.wisdom .wq{font-family:"Noto Serif Thai","Sarabun",serif;font-size:clamp(17px,3vw,22px);line-height:1.7;
+  color:var(--text);max-width:640px;margin:0 auto 14px;position:relative;z-index:1}
+.wisdom .wc{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:1px;color:var(--gold);text-transform:uppercase}
+.wisdom .wbtn{margin-top:20px;font-family:"Space Mono",monospace;font-size:12px;letter-spacing:1px;
+  background:var(--ink-2);color:var(--muted);border:1px solid var(--line);padding:9px 20px;border-radius:20px;
+  cursor:pointer;transition:.15s;text-transform:uppercase}
+.wisdom .wbtn:hover{color:var(--text);border-color:var(--coral)}
+
+/* HR vs Pace */
+.hp-grid{display:flex;flex-direction:column;gap:8px;margin-bottom:22px}
+.hpc{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:14px 18px}
+.hpc .hp-sess{font-family:"Oswald",sans-serif;font-weight:600;font-size:16px;min-width:150px;flex-shrink:0}
+.hpc .hp-watch{font-family:"Space Mono",monospace;font-size:12px;font-weight:700;padding:4px 11px;
+  border-radius:10px;white-space:nowrap;flex-shrink:0}
+.hp-hr{background:rgba(91,141,239,.18);color:var(--blue)}
+.hp-pace{background:rgba(52,224,161,.18);color:var(--mint)}
+.hp-both{background:rgba(255,184,77,.18);color:var(--amber)}
+.hpc .hp-why{font-size:13px;color:var(--muted);flex:1;line-height:1.5}
+.hp-cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.hp-warn,.hp-best{border-radius:14px;padding:20px}
+.hp-warn{background:rgba(255,90,60,.07);border:1px solid rgba(255,90,60,.28)}
+.hp-best{background:rgba(52,224,161,.07);border:1px solid rgba(52,224,161,.28)}
+.hp-wt{font-family:"Oswald",sans-serif;font-weight:600;color:var(--coral);text-transform:uppercase;
+  letter-spacing:.5px;font-size:15px;margin-bottom:12px}
+.hp-bt{font-family:"Oswald",sans-serif;font-weight:600;color:var(--mint);text-transform:uppercase;
+  letter-spacing:.5px;font-size:15px;margin-bottom:12px}
+.hp-warn ul,.hp-best ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.hp-warn li,.hp-best li{font-size:13.5px;color:#DCE6F3;line-height:1.5;padding-left:4px}
+@media(max-width:700px){
+  .hp-cols{grid-template-columns:1fr}
+  .hpc{flex-wrap:wrap;gap:8px 12px}
+  .hpc .hp-why{flex:1 1 100%}
+}
+
+/* zone guide */
+.zg-zones{display:flex;flex-direction:column;gap:8px}
+.zgz{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid var(--line);
+  border-radius:12px;padding:14px 18px;border-left-width:5px}
+.zgz .zgz-name{font-family:"Oswald",sans-serif;font-weight:600;font-size:17px;min-width:70px}
+.zgz .zgz-hr{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);min-width:82px}
+.zgz .zgz-feel{font-size:13px;color:#DCE6F3;min-width:150px;flex-shrink:0}
+.zgz .zgz-use{font-size:13px;color:var(--muted);flex:1}
+.zgz.star{background:rgba(52,224,161,.08)}
+.zgz.star .zgz-use{color:#CFE9DE}
+.zg-sub{font-family:"Oswald",sans-serif;font-weight:500;font-size:20px;margin:28px 0 14px;color:var(--text)}
+.zg-week{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.zgd{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;border-top-width:4px}
+.zgd .zgd-day{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.zgd .zgd-sess{font-family:"Oswald",sans-serif;font-weight:500;font-size:15px;margin:5px 0 6px}
+.zgd .zgd-zone{font-family:"Space Mono",monospace;font-size:11px;font-weight:700;padding:2px 8px;border-radius:8px;display:inline-block}
+.zgd .zgd-note{font-size:11.5px;color:var(--muted);margin-top:8px;line-height:1.4}
+
+@media(max-width:640px){
+  .zgz{flex-wrap:wrap;gap:6px 12px}
+  .zgz .zgz-feel,.zgz .zgz-use{min-width:0;flex:1 1 100%}
+}
+
+/* how to run */
+.howto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:16px}
+.hcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;position:relative}
+.hcard .hh{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.hcard .hname{font-family:"Oswald",sans-serif;font-weight:600;font-size:18px}
+.hcard .hmode{font-family:"Space Mono",monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;
+  padding:3px 9px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.hm-cont{background:rgba(52,224,161,.16);color:var(--mint)}
+.hm-int{background:rgba(255,90,60,.16);color:var(--coral)}
+.hm-rec{background:rgba(255,184,77,.16);color:var(--amber)}
+.hcard .hhow{font-size:13px;color:#DCE6F3;line-height:1.6;margin-bottom:12px}
+.hcard .hwatch{font-family:"Space Mono",monospace;font-size:11.5px;color:var(--muted);
+  background:var(--ink-2);border:1px solid var(--line);border-radius:8px;padding:10px 12px;line-height:1.5}
+.hcard .hwatch b{color:var(--blue);font-weight:400}
+
+/* section nav */
+.secnav{position:sticky;top:0;z-index:70;background:rgba(12,21,36,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);padding:10px 0}
+.secnav .wrap{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.secnav .wrap::-webkit-scrollbar{display:none}
+.secnav a{font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.5px;color:var(--muted);
+  text-decoration:none;padding:7px 13px;border-radius:20px;white-space:nowrap;transition:.15s;border:1px solid transparent}
+.secnav a:hover{color:var(--text);border-color:var(--line)}
+
+/* PR board */
+.pr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px}
+.pr{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 14px;text-align:center;position:relative}
+.pr .pd{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.pr .pv{font-family:"Oswald",sans-serif;font-weight:600;font-size:26px;color:var(--mint);margin-top:5px}
+.pr .py{font-family:"Space Mono",monospace;font-size:10px;color:var(--gold);margin-top:2px}
+.pr.hl .pv{color:var(--coral)}
+
+/* pacing */
+.pace-ctrl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.pace-ctrl label{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:1px}
+.pace-ctrl input{font-family:"Space Mono",monospace;background:var(--ink-2);border:1px solid var(--line);
+  color:var(--text);padding:8px 12px;border-radius:8px;width:90px;font-size:14px}
+.pace-ctrl .pill{font-family:"Oswald",sans-serif;font-size:20px;color:var(--coral);font-weight:600}
+.ptable,.logtable{width:100%;border-collapse:collapse;font-size:13.5px}
+.ptable th,.logtable th{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  color:var(--muted);text-align:left;padding:10px 12px;border-bottom:2px solid var(--line)}
+.ptable td,.logtable td{padding:10px 12px;border-bottom:1px solid var(--line);color:#DCE6F3}
+.ptable tr:hover td,.logtable tr:hover td{background:rgba(255,255,255,.03)}
+.ptable .mono,.logtable .mono{font-family:"Space Mono",monospace}
+.ptable-wrap,.logtable-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:6px 4px}
+.phalf td{background:rgba(255,214,90,.08)}
+
+/* forms (log + recovery) */
+.form-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px}
+.form-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin-bottom:12px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.field input,.field select{font-family:"Inter",sans-serif;background:var(--ink-2);border:1px solid var(--line);
+  color:var(--text);padding:9px 11px;border-radius:8px;font-size:14px}
+.field input:focus,.field select:focus{outline:none;border-color:var(--coral)}
+.btn-add{font-family:"Oswald",sans-serif;font-weight:600;font-size:15px;background:var(--coral);color:#fff;
+  border:none;padding:12px 28px;border-radius:24px;cursor:pointer;transition:.15s;letter-spacing:.5px}
+.btn-add:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(255,90,60,.3)}
+.del-btn{background:none;border:none;color:var(--muted);cursor:pointer;font-size:16px;padding:0 6px}
+.del-btn:hover{color:var(--coral)}
+.log-stats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.log-stat{background:var(--ink-2);border:1px solid var(--line);border-radius:12px;padding:14px 20px;flex:1;min-width:120px}
+.log-stat .ls-k{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.log-stat .ls-v{font-family:"Oswald",sans-serif;font-weight:600;font-size:28px;color:var(--mint);margin-top:4px}
+.pain-badge{display:inline-block;min-width:26px;text-align:center;padding:2px 7px;border-radius:8px;font-family:"Space Mono",monospace;font-size:12px;font-weight:700}
+.empty-msg{color:var(--muted);font-size:14px;text-align:center;padding:24px;font-style:italic}
+.spark{margin-top:6px}
+
 .callout{background:rgba(255,90,60,.08);border:1px solid rgba(255,90,60,.3);
   border-radius:14px;padding:20px 22px;margin-top:24px}
 .callout .ct{font-family:"Oswald",sans-serif;font-weight:600;color:var(--coral);
@@ -254,6 +430,27 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
   </div>
 </header>
 
+<nav class="secnav">
+  <div class="wrap">
+    <a href="#lane">🛤️ Lane</a>
+    <a href="#zones">⏱️ Zones</a>
+    <a href="#schedule">📅 Schedule</a>
+    <a href="#rehab">🦶 Rehab</a>
+    <a href="#technique">🏃 Technique</a>
+    <a href="#shoes">👟 Shoes</a>
+    <a href="#howto">📖 How to Run</a>
+    <a href="#zoneguide">🎯 Zone 80/20</a>
+    <a href="#hrpace">👁️ HR vs Pace</a>
+    <a href="#prs">🏅 PRs</a>
+    <a href="#pacing">🎯 Race Pace</a>
+    <a href="#runlog">📓 Run Log</a>
+    <a href="#recovery">💚 Recovery</a>
+    <a href="#fueling">🍚 Fueling</a>
+    <a href="#rpe">🎚️ RPE</a>
+    <a href="#wisdom">💭 Wisdom</a>
+  </div>
+</nav>
+
 <section id="lane">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title">The Lane · 20-Week Track</h2></div>
@@ -299,6 +496,231 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
         <li>Long-run MP segments ໃນ Peak phase ເຮັດໄດ້ຄົບ (ພິສູດ endurance)</li>
         <li>Race execution: ອອກໂຕບໍ່ໄວເກີນ 10km ທຳອິດ · Gel ທຸກ 35 ນາທີ</li>
       </ol>
+    </div>
+  </div>
+</section>
+
+<section id="technique">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Running Technique · ເทคนิคการวิ่ง</h2></div>
+    <p class="sec-desc">ເທคนิคที่ช่วยวิ่งประหยัดแรง ลดบาดเจ็บ และแก้การลงน้ำหนักขอบเท้าด้านนอก — เน้นสิ่งที่ตรงกับสถานการณ์ตอนนี้.</p>
+    <div class="tech-grid" id="techGrid"></div>
+  </div>
+</section>
+
+<section id="shoes">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Shoe Rotation · จับคู่เกิบ</h2></div>
+    <p class="sec-desc">7 คู่หมุนเวียน = กระจายแรงลงจุดต่างกัน ลดบาดเจ็บซ้ำที่เดิม. จับคู่เกิบให้เหมาะกับงานแต่ละวัน.</p>
+    <div class="shoe-grid" id="shoeGrid"></div>
+    <div class="callout" style="border-color:rgba(255,184,77,.4);background:rgba(255,184,77,.08)">
+      <div class="ct" style="color:var(--amber)">⚠️ ช่วงฟื้นตัวตอนนี้ (ขอบเท้ายังไม่นิ่ง 100%)</div>
+      <ol>
+        <li>Easy/recovery → ใช้เกิบซัพพอร์ตดี (Kayano 31) มากที่สุด</li>
+        <li>เลี่ยงเกิบ racing บางแข็ง (Noosa Tri, S4+) จนขอบเท้าไม่เจ็บตอนเร่ง</li>
+        <li>เกิบเก่า 2 ปีคู่เดิม → เลิกใช้/ทิ้ง (พื้นเอียงทำให้ลงขอบนอก)</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="howto">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">How to Run · วิธีแล่นแต่ละวัน</h2></div>
+    <p class="sec-desc">แต่ละ session แล่นยังไง ต่อเนื่องหรือซอย พร้อมโครงสร้างสำหรับตั้งค่าใน Garmin. ทุกวันเริ่มด้วย warm-up jog 10-15 นาที + strides จบด้วย cool-down.</p>
+    <div class="howto-grid" id="howtoGrid"></div>
+  </div>
+</section>
+
+<section id="zoneguide">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Zone Guide · 80/20</h2></div>
+    <p class="sec-desc">หลักการทองคำ: ~80% ของ mileage แล่นเบา (Zone 1-2) · ~20% หนัก (Zone 3-5). ซ้อมถูกทาง = พัฒนา aerobic เต็มที่ + ฟื้นตัวดี + ลดบาดเจ็บ.</p>
+    <div class="zg-zones" id="zgZones"></div>
+    <h3 class="zg-sub">📅 ตัวอย่างสัปดาห์ (Peak phase)</h3>
+    <div class="zg-week" id="zgWeek"></div>
+    <div class="callout" style="margin-top:20px;border-color:rgba(255,90,60,.35)">
+      <div class="ct">⚠️ กับดักใหญ่สุด</div>
+      <ol>
+        <li>แล่นหนักปานกลาง (Zone 3) "ทุกวัน" = เหนื่อยพอสะสมล้า แต่ไม่เบาพอฟื้น ไม่หนักพอพัฒนา</li>
+        <li>วันหนัก (Zone 3-5) ต้องตามด้วยวันเบา (Zone 1-2) เสมอ — สลับหนัก/เบา คือหัวใจ</li>
+        <li>Easy/Long ที่ "รู้สึกช้าเกินไป" มักคือความเร็วที่ถูกต้อง — อดใจไว้</li>
+        <li>ช่วงฟื้นตัวตอนนี้: เข้ม Zone 1-2 · เก็บ Zone 3-5 ไว้จนขอบเท้าไม่เจ็บ</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="hrpace">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">HR vs Pace · ดูอะไรเป็นหลัก</h2></div>
+    <p class="sec-desc">งานเบา ดู HR (กันเผลอเร็ว) · งานเร็ว ดู Pace (HR ตามไม่ทัน) · วันร้อน/ล้า เชื่อ HR มากกว่า.</p>
+    <div class="hp-grid" id="hpGrid"></div>
+    <div class="hp-cols">
+      <div class="hp-warn">
+        <div class="hp-wt">⚠️ ตัวแปรที่ทำ HR เพี้ยน</div>
+        <ul id="hpFactors"></ul>
+      </div>
+      <div class="hp-best">
+        <div class="hp-bt">✅ ดู 3 อย่างควบคู่</div>
+        <ul id="hpBest"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="fueling">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Fueling · โภชนาการ</h2></div>
+    <p class="sec-desc">จาก ebook บท 11 — คาร์บคือเชื้อเพลิงหลัก, ไขมันคือสำรอง, เติมพลังก่อนหมดแรง. ฝึก fueling ในซ้อมด้วย ไม่ใช่แค่วันแข่ง.</p>
+    <div class="fuel-grid" id="fuelGrid"></div>
+    <div class="callout" style="border-color:rgba(255,214,90,.4);background:rgba(255,214,90,.08)">
+      <div class="ct" style="color:var(--gold)">🏁 กลยุทธ์วันแข่ง (Bangsaen42)</div>
+      <ol>
+        <li>2-3 วันก่อน: carb-load เพิ่มคาร์บ (พาสต้า/ข้าว) เติม glycogen เต็มถัง</li>
+        <li>เช้าวันแข่ง: มื้อเบาย่อยง่าย 2-3 ชม.ก่อน (ขนมปัง/กล้วย) + จิบน้ำ</li>
+        <li>ระหว่างแข่ง: Gel ทุก 35 นาที (เริ่มตั้งแต่ km 8-10 อย่ารอหิว) + น้ำ/เกลือแร่ทุกจุด</li>
+        <li>ชนกำแพง km 30+ = glycogen หมด → การเติมสม่ำเสมอแต่ต้นช่วยชะลอ</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="rpe">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">RPE Scale · ความเหนื่อย 1-10</h2></div>
+    <p class="sec-desc">จาก ebook บท 23 — ความเหนื่อยไม่ใช่ศัตรู. ใช้ RPE (ความรู้สึก) ควบคู่ HR/pace. สำคัญ: แยก "เหนื่อยผลักผ่านได้" กับ "เจ็บต้องหยุด".</p>
+    <div class="rpe-grid" id="rpeGrid"></div>
+    <div class="callout" style="margin-top:18px;border-color:rgba(255,90,60,.4)">
+      <div class="ct">⚠️ เหนื่อย vs เจ็บ (บท 23)</div>
+      <ol>
+        <li>ความเหนื่อย = หนักที่ขา/ปอด ทั่วๆ → ผลักผ่านได้ (ในงานที่ตั้งใจหนัก)</li>
+        <li>ความเจ็บ = แหลม เฉพาะจุด ที่ข้อ/เอ็น/กระดูก → หยุดทันที อย่าฝืน</li>
+        <li>เจ็บขอบเท้าตอนเร่ง (ของเจ้า) = สัญญาณ "เจ็บ" ไม่ใช่ "เหนื่อย" → ถอย</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="prs">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">12</span><h2 class="sec-title">Personal Records</h2></div>
+    <p class="sec-desc">สถิติที่ดีที่สุด — Half PR 1:33:16 คือตัวทำนายที่บอกว่า Sub 3:15 อยู่ในเอื้อม (~3:14:30).</p>
+    <div class="pr-grid" id="prGrid"></div>
+  </div>
+</section>
+
+<section id="pacing">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">13</span><h2 class="sec-title">Race Pacing · Sub 3:15</h2></div>
+    <p class="sec-desc">ตารางเพซวันแข่ง Bangsaen42. ปรับเวลาเป้าหมายได้ ระบบคำนวณ split ให้อัตโนมัติ.</p>
+    <div class="pace-ctrl">
+      <label>เป้าหมาย (h:mm:ss)</label>
+      <input id="goalTime" type="text" value="3:15:00">
+      <span>=</span>
+      <span class="pill" id="goalPace">4:37 /km</span>
+    </div>
+    <div class="ptable-wrap">
+      <table class="ptable">
+        <thead><tr><th>ระยะ</th><th>เวลาสะสม</th><th>เพซ/km</th><th>หมายเหตุ</th></tr></thead>
+        <tbody id="paceBody"></tbody>
+      </table>
+    </div>
+    <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.35);background:rgba(52,224,161,.07)">
+      <div class="ct" style="color:var(--mint)">กลยุทธ์ Race Day (กันไม่ให้ faded)</div>
+      <ol>
+        <li>km 1-10: คุมช้ากว่าเป้าเล็กน้อย (~4:40) อย่าออกตัวเร็ว</li>
+        <li>km 11-32: ล็อกเพซเป้า 4:37 ให้นิ่ง</li>
+        <li>km 33-42: ถ้าแรงเหลือค่อยเร่ง · Gel ทุก 35 นาที อย่ารอให้หิว</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="runlog">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">14</span><h2 class="sec-title">Run Log · สมุดบันทึกการวิ่ง</h2></div>
+    <p class="sec-desc">ล็อกทุกการวิ่ง—เก็บในเบราว์เซอร์นี้ (ใช้บน GitHub Pages ได้). บันทึกเพซ HR เกิบที่ใส่ และคะแนนเจ็บเท้า เพื่อดูแนวโน้ม.</p>
+    <div class="log-stats">
+      <div class="log-stat"><div class="ls-k">อาทิตย์นี้</div><div class="ls-v" id="weekKm">0<span style="font-size:16px">km</span></div></div>
+      <div class="log-stat"><div class="ls-k">รวมทั้งหมด</div><div class="ls-v" id="totalKm">0<span style="font-size:16px">km</span></div></div>
+      <div class="log-stat"><div class="ls-k">จำนวน run</div><div class="ls-v" id="runCount">0</div></div>
+    </div>
+    <div class="form-card">
+      <div class="form-row">
+        <div class="field"><label>วันที่</label><input id="rlDate" type="date"></div>
+        <div class="field"><label>ประเภท</label><select id="rlType">
+          <option>Easy</option><option>Long</option><option>Tempo</option><option>MP</option>
+          <option>Interval</option><option>Hill</option><option>Fartlek</option><option>Recovery</option><option>Race</option>
+        </select></div>
+        <div class="field"><label>ระยะ (km)</label><input id="rlDist" type="number" step="0.01" placeholder="6.0"></div>
+        <div class="field"><label>เพซ (m:ss)</label><input id="rlPace" type="text" placeholder="6:30"></div>
+        <div class="field"><label>Avg HR</label><input id="rlHr" type="number" placeholder="140"></div>
+        <div class="field"><label>เจ็บเท้า 0-10</label><select id="rlPain">
+          <option value="0">0 · ไม่เจ็บ</option><option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+        </select></div>
+        <div class="field"><label>เกิบ</label><select id="rlShoe">
+          <option>Kayano 31</option><option>Superblast 3</option><option>Feidian 6 Elite</option>
+          <option>Red Hare 9 Ultra</option><option>Feidian 6 Challenger</option><option>Noosa Tri 16</option>
+          <option>S4+</option><option>อื่นๆ</option>
+        </select></div>
+        <div class="field"><label>โน้ต</label><input id="rlNote" type="text" placeholder="สั้นๆ"></div>
+      </div>
+      <button class="btn-add" onclick="addRun()">+ บันทึก run</button>
+    </div>
+    <div class="logtable-wrap">
+      <table class="logtable">
+        <thead><tr><th>วันที่</th><th>ประเภท</th><th>km</th><th>เพซ</th><th>HR</th><th>เจ็บ</th><th>เกิบ</th><th>โน้ต</th><th></th></tr></thead>
+        <tbody id="logBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="recovery">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">15</span><h2 class="sec-title">Recovery Tracker · ติดตามการฟื้นตัว</h2></div>
+    <p class="sec-desc">เช็คอินทุกเช้า: เจ็บก้าวแรก (0-10) + GCT balance จาก Garmin. เป้าหมาย: เจ็บ→0 และ balance→50/50.</p>
+    <div class="form-card">
+      <div class="form-row">
+        <div class="field"><label>วันที่</label><input id="rcDate" type="date"></div>
+        <div class="field"><label>เจ็บก้าวแรก 0-10</label><select id="rcPain">
+          <option value="0">0 · ไม่เจ็บ</option><option value="1">1</option><option value="2">2</option>
+          <option value="3">3</option><option value="4">4</option><option value="5">5</option>
+          <option value="6">6</option><option value="7">7</option><option value="8">8</option>
+        </select></div>
+        <div class="field"><label>GCT Left %</label><input id="rcGct" type="number" step="0.1" placeholder="48.2"></div>
+        <div class="field"><label>Resting HR (เช้า)</label><input id="rcRhr" type="number" placeholder="48"></div>
+        <div class="field"><label>นอน (ชม.)</label><input id="rcSleep" type="number" step="0.5" placeholder="7.5"></div>
+        <div class="field"><label>โน้ต</label><input id="rcNote" type="text" placeholder="เช่น คลายน่อง+ก้น"></div>
+      </div>
+      <button class="btn-add" onclick="addRecovery()">+ บันทึก</button>
+    </div>
+    <div class="log-stats">
+      <div class="log-stat"><div class="ls-k">เจ็บก้าวแรก (เทรนด์)</div><div class="spark" id="painSpark"></div></div>
+      <div class="log-stat"><div class="ls-k">GCT Balance (→50)</div><div class="spark" id="gctSpark"></div></div>
+      <div class="log-stat"><div class="ls-k">Resting HR เช้า</div><div class="spark" id="rhrSpark"></div></div>
+    </div>
+    <div id="otWarn"></div>
+    <div class="logtable-wrap">
+      <table class="logtable">
+        <thead><tr><th>วันที่</th><th>เจ็บก้าวแรก</th><th>GCT L%</th><th>RHR</th><th>นอน</th><th>โน้ต</th><th></th></tr></thead>
+        <tbody id="recBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="wisdom">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">16</span><h2 class="sec-title">Wisdom · ข้อคิดจาก ebook</h2></div>
+    <p class="sec-desc">ดึงหัวใจจากหนังสือ "วิ่ง" มาเตือนใจระหว่างการเดินทางสู่ Sub 3:15.</p>
+    <div class="wisdom">
+      <div class="wq" id="wisdomQuote"></div>
+      <div class="wc" id="wisdomChapter"></div>
+      <button class="wbtn" onclick="nextWisdom()">↻ ข้อคิดถัดไป</button>
     </div>
   </div>
 </section>
@@ -530,6 +952,373 @@ rehab.forEach(card=>{
   ).join("");
   rg.appendChild(el);
 });
+
+// ---------- Running Technique ----------
+const techniques = [
+ {icon:"🎯",title:"Cadence 175-180",tag:"focus",
+  desc:"ก้าวสั้นเร็ว ลงเท้าใต้ลำตัว ไม่ก้าวยาวเกิน. ช่วยลดแรงกระแทกและลดการลงน้ำหนักขอบเท้าด้านนอก. ตอนนี้ทำได้ 175 แล้ว—รักษาไว้."},
+ {icon:"🦶",title:"ลงเท้ากลางเท้า",tag:"focus",
+  desc:"ลงกลางเท้า (midfoot) ใต้สะโพก ไม่ลงส้นไกลไปหน้า และไม่พลิกลงขอบนอก. นึกถึงการ 'วางเบา' ไม่ 'กระแทก'."},
+ {icon:"⬆️",title:"เอนตัวจากข้อเท้า",tag:"ทั่วไป",
+  desc:"เอนไปข้างหน้าเล็กน้อยทั้งตัวจากข้อเท้า (ไม่ใช่งอเอว). ใช้แรงโน้มถ่วงพาไปข้างหน้า—วิ่งประหยัดแรงขึ้น."},
+ {icon:"💪",title:"ผ่อนคลายไหล่+มือ",tag:"ทั่วไป",
+  desc:"ไหล่ต่ำ ไม่ยกเกร็ง มือกำหลวมๆ เหมือนถือไข่. ความเกร็งกินพลังงานและทำให้ท่าวิ่งเสีย."},
+ {icon:"🔄",title:"แกว่งแขนตรง",tag:"ทั่วไป",
+  desc:"แขนงอ 90° แกว่งไปหน้า-หลัง ไม่ไขว้กลางลำตัว. การไขว้แขนทำให้ลำตัวบิด เสียสมดุลซ้าย-ขวา (GCT)."},
+ {icon:"🫁",title:"หายใจเป็นจังหวะ",tag:"ทั่วไป",
+  desc:"หายใจท้อง (กะบังลม) ผูกจังหวะกับก้าว เช่น เข้า 3 ก้าว-ออก 2 ก้าว. ช่วยคุมความเหนื่อยและผ่อนคลาย."},
+];
+const tg=document.getElementById("techGrid");
+techniques.forEach(t=>{
+  const el=document.createElement("div"); el.className="tcard"+(t.tag==="focus"?" focus":"");
+  el.innerHTML=`<div class="th">${t.icon} ${t.title}<span class="ttag">${t.tag==="focus"?"เน้นตอนนี้":"พื้นฐาน"}</span></div>
+    <div class="td">${t.desc}</div>`;
+  tg.appendChild(el);
+});
+
+// ---------- Shoe Rotation ----------
+const shoes = [
+ {name:"Asics Kayano 31",use:"Easy / Recovery",badge:"sb-easy",label:"Easy",
+  desc:"นุ่ม ซัพพอร์ตดีสุด. เหมาะช่วงฟื้นตัวตอนนี้ที่สุด—ใช้กับ Easy run วันที่ขาเมื่อย/ระวังขอบเท้า."},
+ {name:"Superblast 3",use:"Long Run",badge:"sb-long",label:"Long",
+  desc:"นุ่มเด้ง ทนระยะไกล ไม่ล้าเร็ว. ตัวหลักสำหรับ long run 20km+ ในช่วง Peak."},
+ {name:"LiNing Feidian 6 Elite",use:"Tempo / MP / เร็ว",badge:"sb-fast",label:"Fast",
+  desc:"ตัวแข่งเบา แผ่นคาร์บอน. ใช้กับ MP run และ tempo เมื่อกลับมาดัน pace (หลังขอบเท้าไม่เจ็บ)."},
+ {name:"LiNing Red Hare 9 Ultra",use:"Tempo / Interval",badge:"sb-fast",label:"Fast",
+  desc:"เบา ตอบสนองไว. สลับกับ Feidian Elite สำหรับงานเร็ว/interval."},
+ {name:"LiNing Feidian 6 Challenger",use:"Workout / เร็วปานกลาง",badge:"sb-race",label:"Race",
+  desc:"ตัวแข่งรุ่นรอง เบาแต่ทนกว่า Elite. เหมาะ workout ความเร็วปานกลาง."},
+ {name:"Asics Noosa Tri 16",use:"Speed สั้น (ระวัง)",badge:"sb-race",label:"Race",
+  desc:"เกิบ racing บาง. ⚠️ เลี่ยงช่วงนี้—บางแข็ง ไม่เหมาะจนขอบเท้านิ่ง 100%."},
+ {name:"Asics S4+",use:"Speed สั้น (ระวัง)",badge:"sb-race",label:"Race",
+  desc:"เบามาก racing flat. ⚠️ เลี่ยงช่วงนี้—เก็บไว้ใช้ตอน Peak/แข่งเมื่อหายดี."},
+];
+const sg=document.getElementById("shoeGrid");
+shoes.forEach(s=>{
+  const el=document.createElement("div"); el.className="scard";
+  el.innerHTML=`<div class="sname">${s.name}</div><div class="suse">${s.use}</div>
+    <div class="sdesc">${s.desc}</div><span class="sbadge ${s.badge}">${s.label}</span>`;
+  sg.appendChild(el);
+});
+
+// ---------- HR vs Pace ----------
+const hpData=[
+ {sess:"Easy / Recovery",watch:"🔵 HR Zone",cls:"hp-hr",why:"ต้องคุมให้เบาจริง ไม่เผลอเร็ว. ตั้ง HR alert เตือนเกิน Zone 2 (Easy) / Zone 1 (Recovery)"},
+ {sess:"Long Run",watch:"🔵 HR Zone",cls:"hp-hr",why:"เน้น Zone 2 ส่วนใหญ่. ระวัง cardiac drift (HR ไต่ขึ้นเองตอนแล่นนาน) — ช้าลงถ้าหลุดโซน"},
+ {sess:"Tempo",watch:"🟡 Pace + HR",cls:"hp-both",why:"ตั้งเพซเป้า (4:18-4:25) เป็นหลัก ดู HR ประกอบ. เพซตรงแต่ HR สูงผิด = ล้า/ไม่สด ควรถอย"},
+ {sess:"MP Run",watch:"🟡 Pace + HR",cls:"hp-both",why:"ล็อกเพซ 4:37 เป็นหลัก ฝึกให้ชินความรู้สึกเพซแข่ง. HR ช่วยเช็คว่าวันนั้นสดไหม"},
+ {sess:"Interval / Speed",watch:"🟢 Pace",cls:"hp-pace",why:"สั้น-เร็ว HR มี lag (ตามช้า) ตามไม่ทันจบท่อน. Pace บอกทันทีว่าเร็วพอไหม"},
+ {sess:"Hill Repeats",watch:"🟢 RPE + Pace",cls:"hp-pace",why:"ขึ้นเนิน HR/pace เพี้ยนทั้งคู่. ใช้ RPE (ความพยายาม) เป็นหลัก แล่นหนักสม่ำเสมอทุกท่อน"},
+];
+const hpg=document.getElementById("hpGrid");
+hpData.forEach(d=>{
+  const el=document.createElement("div"); el.className="hpc";
+  el.innerHTML=`<span class="hp-sess">${d.sess}</span><span class="hp-watch ${d.cls}">${d.watch}</span><span class="hp-why">${d.why}</span>`;
+  hpg.appendChild(el);
+});
+const hpFactors=[
+ "🌡️ อากาศร้อน (บ้านเรา!) → HR สูงขึ้น 5-10 bpm ที่เพซเดิม",
+ "😴 นอนน้อย / เครียด / ยังไม่ฟื้นตัว",
+ "☕ คาเฟอีน · 💧 ขาดน้ำ",
+ "⛰️ ขึ้นเนิน → HR เด้งชั่วคราว (ปกติ)",
+ "📉 Cardiac drift → แล่น long นานๆ HR ไต่ขึ้นเอง",
+ "💊 ป่วย/จะป่วย → HR เช้าสูงผิดปกติ = สัญญาณให้พัก",
+];
+document.getElementById("hpFactors").innerHTML=hpFactors.map(f=>`<li>${f}</li>`).join("");
+const hpBest=[
+ "1️⃣ HR → ความหนักภายใน (internal)",
+ "2️⃣ Pace → ผลลัพธ์ภายนอก (external)",
+ "3️⃣ RPE → คุยได้ไหม? เหนื่อยแค่ไหน?",
+ "→ 3 อย่างตรงกัน = ปกติ · ขัดกัน = สังเกต แล้วเชื่อ HR/ร่างกาย",
+ "⌚ ตั้ง data screen เห็น HR zone + pace พร้อมกัน + alert ตาม session",
+];
+document.getElementById("hpBest").innerHTML=hpBest.map(b=>`<li>${b}</li>`).join("");
+
+// ---------- Zone Guide ----------
+const zgColors={1:"#8598B5",2:"#5B8DEF",3:"#34E0A1",4:"#FFB84D",5:"#FF5A3C"};
+const zgData=[
+ {z:1,name:"Zone 1",hr:"110-135",feel:"สบายมาก · คุยได้ทั้งประโยค",use:"Recovery run (วันหลังหนัก) · warm-up/cool-down"},
+ {z:2,name:"Zone 2",hr:"136-148",feel:"สบาย · คุยเป็นประโยคได้",use:"★ พระเอก! Easy + Long run ส่วนใหญ่ (สร้าง endurance)",star:true},
+ {z:3,name:"Zone 3",hr:"149-159",feel:"เริ่มหนัก · พูดได้สั้นๆ",use:"Tempo · MP segment ท้าย long (ตั้งใจ ส่วนน้อย)"},
+ {z:4,name:"Zone 4",hr:"160-166",feel:"หนัก · พูดได้คำเดียว",use:"Threshold · tempo หนัก (น้อย)"},
+ {z:5,name:"Zone 5",hr:">166",feel:"หนักมาก · พูดไม่ได้",use:"Interval · speed (น้อยสุด)"},
+];
+const zgz=document.getElementById("zgZones");
+zgData.forEach(z=>{
+  const el=document.createElement("div"); el.className="zgz"+(z.star?" star":"");
+  el.style.borderLeftColor=zgColors[z.z];
+  el.innerHTML=`<span class="zgz-name" style="color:${zgColors[z.z]}">${z.name}</span>
+    <span class="zgz-hr">${z.hr} bpm</span><span class="zgz-feel">${z.feel}</span><span class="zgz-use">${z.use}</span>`;
+  zgz.appendChild(el);
+});
+const zgWeekData=[
+ {day:"จันทร์",sess:"Easy run",z:2,note:"สร้างฐาน · คุยได้สบาย"},
+ {day:"อังคาร",sess:"Interval / Speed",z:5,zlabel:"Zone 4-5",note:"หนัก (มีพัก) · WU/CD เป็น Zone 1"},
+ {day:"พุธ",sess:"Recovery run",z:1,note:"ช้ามาก · ให้ขาฟื้นหลังวันหนัก"},
+ {day:"พฤหัส",sess:"MP / Tempo",z:3,note:"ตั้งใจแตะ Zone 3 · เนื้อหลัก"},
+ {day:"ศุกร์",sess:"Strength + Prehab",z:1,zlabel:"พัก/เบา",note:"ไม่วิ่ง หรือ Easy สั้น"},
+ {day:"เสาร์",sess:"Easy + strides",z:2,note:"เบา เตรียมขาสำหรับ long"},
+ {day:"อาทิตย์",sess:"Long run",z:2,note:"เบาส่วนใหญ่ · last km ขยับ Zone 3 ได้"},
+];
+const zgw=document.getElementById("zgWeek");
+zgWeekData.forEach(d=>{
+  const col=zgColors[d.z];
+  const el=document.createElement("div"); el.className="zgd"; el.style.borderTopColor=col;
+  el.innerHTML=`<div class="zgd-day">${d.day}</div><div class="zgd-sess">${d.sess}</div>
+    <span class="zgd-zone" style="background:${col}22;color:${col}">${d.zlabel||("Zone "+d.z)}</span>
+    <div class="zgd-note">${d.note}</div>`;
+  zgw.appendChild(el);
+});
+
+// ---------- How to Run (session types) ----------
+const sessions = [
+ {name:"Easy / Recovery",mode:"ต่อเนื่อง",cls:"hm-cont",
+  how:"แล่นยาวรวดคงที่ Zone 1-2 คุยได้สบาย ยาวตามตาราง (6km ก็ 6km รวด). เป้าคือฟื้นตัว+สร้างฐาน—ห้ามเร็ว.",
+  watch:"⌚ Run ธรรมดา + ตั้ง <b>HR alert Zone 2</b> กันเผลอเร็ว"},
+ {name:"Long Run",mode:"ต่อเนื่อง",cls:"hm-cont",
+  how:"แล่นต่อเนื่องยาว Zone 2 ช้าๆ. ถ้าเขียน 'last Xkm MP' = แล่น Zone 2 ปกติ แล้วเร่งเป็น MP เฉพาะช่วงท้าย. Gel ทุก 35 นาที.",
+  watch:"⌚ Run + lap ทุก 1km. มี MP ท้าย → workout 2 steps (Easy + MP)"},
+ {name:"Tempo — Continuous",mode:"ต่อเนื่อง",cls:"hm-cont",
+  how:"WU → แล่น tempo pace รวดยาว (เช่น 10km @ 4:18-4:25 ต่อเนื่อง) → CD. ฝึกความทนที่ threshold.",
+  watch:"⌚ <b>WU 15min / Run 10km @4:18-4:25 / CD 10min</b>"},
+ {name:"Tempo — Intervals",mode:"ซอย ★ ช่วงนี้",cls:"hm-rec",
+  how:"ซอยเป็นท่อน เช่น 3×3km หรือ 4×2km @ tempo พัก jog เบา 60-90วิ ระหว่างท่อน. รวมระยะเท่ากันแต่คุมฟอร์มง่าย ลดเสี่ยงขอบเท้า.",
+  watch:"⌚ WU / <b>Repeat 3×(3km @4:20 + 90s recovery)</b> / CD"},
+ {name:"MP Run",mode:"ต่อเนื่อง",cls:"hm-cont",
+  how:"แล่น continuous ที่ MP 4:37 ตามระยะ ไม่ซอย เพราะต้องชินความรู้สึกแล่นเพซแข่งยาวๆ.",
+  watch:"⌚ WU / <b>Run [ระยะ] @4:35-4:37</b> / CD + pace alert"},
+ {name:"Interval",mode:"ซอย",cls:"hm-int",
+  how:"ซอยเป็นท่อนชัดเจน เช่น 6×1km @4:05-4:15 พัก jog เบา 200m/90วิ ระหว่างท่อน. ต้องมีพักถึงแล่นเร็วครบท่อน.",
+  watch:"⌚ WU / <b>Repeat 6×(1km @4:10 + 200m jog)</b> / CD"},
+ {name:"Build-up (บิ้วอัพ)",mode:"ต่อเนื่อง ไล่เพซ",cls:"hm-cont",
+  how:"แล่นไล่เพซขึ้นทีละช่วง เริ่มช้า→เร็วสุด. เช่น 8km: 2km@6:00→2km@5:30→2km@5:00→2km@4:40. ฝึกเร่งตอนล้า.",
+  watch:"⌚ <b>4 steps 2km ไล่ pace ลง</b> (6:00→5:30→5:00→4:40)"},
+ {name:"Fartlek",mode:"ซอย (อิสระ)",cls:"hm-int",
+  how:"เล่นเพซอิสระ เช่น 1min เร็ว / 1min ช้า ×8-10. ไม่ต้องเป๊ะ ฝึกเปลี่ยนเกียร์ สนุกกว่า interval.",
+  watch:"⌚ WU / <b>Repeat 8-10×(1min hard + 1min easy)</b> / CD"},
+ {name:"Hill Repeats",mode:"ซอย",cls:"hm-int",
+  how:"แล่นขึ้นเนินชัน 60วิ × จำนวนท่อน แล้ว jog ลงพัก. สร้างความแข็งแรง+ฟอร์ม แรงกระแทกน้อยกว่าวิ่งเร็วพื้นราบ.",
+  watch:"⌚ WU / <b>Repeat 8-12×(60s hill + jog down)</b> / CD"},
+];
+const hg=document.getElementById("howtoGrid");
+sessions.forEach(s=>{
+  const el=document.createElement("div"); el.className="hcard";
+  el.innerHTML=`<div class="hh"><span class="hname">${s.name}</span><span class="hmode ${s.cls}">${s.mode}</span></div>
+    <div class="hhow">${s.how}</div><div class="hwatch">${s.watch}</div>`;
+  hg.appendChild(el);
+});
+
+// ---------- Personal Records ----------
+const prs = [
+ {d:"1 km",v:"3:44",y:"2026"},{d:"1 mile",v:"6:13",y:"2026"},
+ {d:"5 km",v:"20:42",y:"2026"},{d:"10 km",v:"43:03",y:"2026"},
+ {d:"Half",v:"1:33:16",y:"2026",hl:true},{d:"Marathon",v:"3:57:18",y:"2025"},
+ {d:"Longest",v:"42.78km",y:"2023"},
+];
+const prg=document.getElementById("prGrid");
+prs.forEach(p=>{
+  const el=document.createElement("div"); el.className="pr"+(p.hl?" hl":"");
+  el.innerHTML=`<div class="pd">${p.d}</div><div class="pv">${p.v}</div><div class="py">${p.y}</div>`;
+  prg.appendChild(el);
+});
+
+// ---------- Race Pacing calculator ----------
+function parseHMS(s){ // h:mm:ss or mm:ss
+  const p=s.split(":").map(Number);
+  if(p.some(isNaN)) return null;
+  if(p.length===3) return p[0]*3600+p[1]*60+p[2];
+  if(p.length===2) return p[0]*60+p[1];
+  return null;
+}
+function fmtHMS(sec){
+  sec=Math.round(sec);
+  const h=Math.floor(sec/3600), m=Math.floor((sec%3600)/60), s=sec%60;
+  return (h>0? h+":"+String(m).padStart(2,"0") : m)+":"+String(s).padStart(2,"0");
+}
+function fmtPace(sec){
+  const m=Math.floor(sec/60), s=Math.round(sec%60);
+  return m+":"+String(s).padStart(2,"0");
+}
+const MARK = [
+ {km:5,n:""},{km:10,n:"คุมเพซช่วงต้น"},{km:15,n:""},{km:20,n:""},
+ {km:21.1,n:"ครึ่งทาง",half:true},{km:25,n:""},{km:30,n:"ระวัง the wall"},
+ {km:35,n:""},{km:40,n:"ช่วงตัดสิน"},{km:42.195,n:"🏁 FINISH"},
+];
+function renderPace(){
+  const total = parseHMS(document.getElementById("goalTime").value);
+  const body=document.getElementById("paceBody");
+  if(!total){ document.getElementById("goalPace").textContent="—"; body.innerHTML=""; return; }
+  const pace = total/42.195;
+  document.getElementById("goalPace").textContent = fmtPace(pace)+" /km";
+  body.innerHTML = MARK.map(m=>{
+    const t = fmtHMS(pace*m.km);
+    const label = m.km===42.195? "42.2 km": m.km+" km";
+    return `<tr class="${m.half?'phalf':''}"><td class="mono">${label}</td><td class="mono">${t}</td>
+      <td class="mono">${fmtPace(pace)}</td><td>${m.n}</td></tr>`;
+  }).join("");
+}
+document.getElementById("goalTime").addEventListener("input", renderPace);
+renderPace();
+
+// ---------- localStorage helpers ----------
+function lsGet(k){ try{return JSON.parse(localStorage.getItem(k)||"[]")}catch(e){return[]} }
+function lsSet(k,v){ try{localStorage.setItem(k,JSON.stringify(v))}catch(e){} }
+function isoWeek(d){ const dt=new Date(d); const day=(dt.getDay()+6)%7; dt.setDate(dt.getDate()-day);
+  return dt.toISOString().slice(0,10); }
+function painColor(p){ p=+p; if(p===0)return"var(--mint)"; if(p<=2)return"var(--gold)"; if(p<=4)return"var(--amber)"; return"var(--coral)"; }
+
+// ---------- Run Log ----------
+const today = new Date().toISOString().slice(0,10);
+document.getElementById("rlDate").value = today;
+function renderLog(){
+  const runs = lsGet("m315_runlog").sort((a,b)=>b.date.localeCompare(a.date));
+  const body=document.getElementById("logBody");
+  if(!runs.length){ body.innerHTML=`<tr><td colspan="9" class="empty-msg">ยังไม่มีบันทึก — เพิ่ม run แรกด้านบน</td></tr>`; }
+  else body.innerHTML = runs.map(r=>`<tr>
+    <td class="mono">${r.date.slice(5)}</td><td>${r.type}</td><td class="mono">${r.dist||"-"}</td>
+    <td class="mono">${r.pace||"-"}</td><td class="mono">${r.hr||"-"}</td>
+    <td><span class="pain-badge" style="background:${painColor(r.pain)}22;color:${painColor(r.pain)}">${r.pain}</span></td>
+    <td>${r.shoe||"-"}</td><td>${r.note||""}</td>
+    <td><button class="del-btn" onclick="delRun('${r.id}')">×</button></td></tr>`).join("");
+  const total = runs.reduce((s,r)=>s+(+r.dist||0),0);
+  const wk = isoWeek(today);
+  const weekKm = runs.filter(r=>isoWeek(r.date)===wk).reduce((s,r)=>s+(+r.dist||0),0);
+  document.getElementById("totalKm").innerHTML = total.toFixed(1)+'<span style="font-size:16px">km</span>';
+  document.getElementById("weekKm").innerHTML = weekKm.toFixed(1)+'<span style="font-size:16px">km</span>';
+  document.getElementById("runCount").textContent = runs.length;
+}
+function addRun(){
+  const dist=document.getElementById("rlDist").value;
+  const run={ id:Date.now()+""+Math.random().toString(36).slice(2,6),
+    date:document.getElementById("rlDate").value||today,
+    type:document.getElementById("rlType").value,
+    dist:dist, pace:document.getElementById("rlPace").value,
+    hr:document.getElementById("rlHr").value, pain:document.getElementById("rlPain").value,
+    shoe:document.getElementById("rlShoe").value, note:document.getElementById("rlNote").value };
+  if(!run.dist && run.type!=="Recovery"){ alert("ใส่ระยะทางด้วยครับ"); return; }
+  const runs=lsGet("m315_runlog"); runs.push(run); lsSet("m315_runlog",runs);
+  document.getElementById("rlDist").value=""; document.getElementById("rlPace").value="";
+  document.getElementById("rlHr").value=""; document.getElementById("rlNote").value="";
+  renderLog();
+}
+function delRun(id){ lsSet("m315_runlog", lsGet("m315_runlog").filter(r=>r.id!==id)); renderLog(); }
+renderLog();
+
+// ---------- Recovery Tracker ----------
+document.getElementById("rcDate").value = today;
+function sparkline(vals, target, lo, hi, goodDir){
+  if(!vals.length) return '<span class="empty-msg" style="padding:4px">ยังไม่มีข้อมูล</span>';
+  const w=200,h=40,pad=4;
+  const min=Math.min(lo,...vals), max=Math.max(hi,...vals);
+  const rng=(max-min)||1;
+  const pts=vals.map((v,i)=>{
+    const x=pad+(i/(Math.max(vals.length-1,1)))*(w-2*pad);
+    const y=h-pad-((v-min)/rng)*(h-2*pad);
+    return [x,y];
+  });
+  const path=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+","+p[1].toFixed(1)).join(" ");
+  const last=vals[vals.length-1];
+  let tY = h-pad-((target-min)/rng)*(h-2*pad);
+  const col = goodDir==="down" ? (last<=target?"var(--mint)":"var(--coral)") : (Math.abs(last-target)<=1?"var(--mint)":"var(--amber)");
+  return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
+    <line x1="0" y1="${tY.toFixed(1)}" x2="${w}" y2="${tY.toFixed(1)}" stroke="var(--gold)" stroke-width="1" stroke-dasharray="3 3" opacity="0.5"/>
+    <path d="${path}" fill="none" stroke="${col}" stroke-width="2" stroke-linejoin="round"/>
+    ${pts.map(p=>`<circle cx="${p[0].toFixed(1)}" cy="${p[1].toFixed(1)}" r="2.5" fill="${col}"/>`).join("")}
+    </svg> <span style="font-family:'Space Mono';font-size:15px;color:${col};font-weight:700">${last}</span>`;
+}
+function renderRecovery(){
+  const recs = lsGet("m315_recovery").sort((a,b)=>a.date.localeCompare(b.date));
+  const body=document.getElementById("recBody");
+  if(!recs.length){ body.innerHTML=`<tr><td colspan="7" class="empty-msg">ยังไม่มีข้อมูล — เช็คอินครั้งแรกด้านบน</td></tr>`; }
+  else body.innerHTML = recs.slice().reverse().map(r=>`<tr>
+    <td class="mono">${r.date.slice(5)}</td>
+    <td><span class="pain-badge" style="background:${painColor(r.pain)}22;color:${painColor(r.pain)}">${r.pain}</span></td>
+    <td class="mono">${r.gct||"-"}</td><td class="mono">${r.rhr||"-"}</td><td class="mono">${r.sleep||"-"}</td>
+    <td>${r.note||""}</td>
+    <td><button class="del-btn" onclick="delRec('${r.id}')">×</button></td></tr>`).join("");
+  const painVals=recs.map(r=>+r.pain);
+  const gctVals=recs.filter(r=>r.gct).map(r=>+r.gct);
+  const rhrVals=recs.filter(r=>r.rhr).map(r=>+r.rhr);
+  document.getElementById("painSpark").innerHTML = sparkline(painVals,0,0,10,"down");
+  document.getElementById("gctSpark").innerHTML = sparkline(gctVals,50,45,55,"target");
+  const rhrBase = rhrVals.length? Math.min(...rhrVals):50;
+  document.getElementById("rhrSpark").innerHTML = sparkline(rhrVals,rhrBase,rhrBase-2,rhrBase+8,"down");
+  // overtraining warning: RHR spike >7 above recent min, OR sleep <6 several days
+  let warn="";
+  if(rhrVals.length>=3){
+    const recent=rhrVals[rhrVals.length-1], base=Math.min(...rhrVals.slice(0,-1));
+    if(recent-base>=7) warn="🚩 Resting HR เช้าสูงผิดปกติ (+"+(recent-base)+" bpm) — สัญญาณยังไม่ฟื้นตัว/จะป่วย. พิจารณาพักหรือลด load";
+  }
+  const lowSleep = recs.slice(-3).filter(r=>r.sleep && +r.sleep<6).length;
+  if(!warn && lowSleep>=2) warn="😴 นอน <6 ชม. หลายวัน — การฟื้นตัวจะช้าลง เพิ่มเสี่ยงบาดเจ็บ (บท 10). ให้ความสำคัญกับการนอน";
+  document.getElementById("otWarn").innerHTML = warn?
+    `<div class="callout" style="border-color:rgba(255,90,60,.5);background:rgba(255,90,60,.1);margin-bottom:16px">
+     <div class="ct">⚠️ สัญญาณเตือน (Overtraining)</div><p style="color:#DCE6F3;font-size:14px;margin:0">${warn}</p></div>`:"";
+}
+function addRecovery(){
+  const rec={ id:Date.now()+""+Math.random().toString(36).slice(2,6),
+    date:document.getElementById("rcDate").value||today,
+    pain:document.getElementById("rcPain").value,
+    gct:document.getElementById("rcGct").value,
+    rhr:document.getElementById("rcRhr").value,
+    sleep:document.getElementById("rcSleep").value,
+    note:document.getElementById("rcNote").value };
+  const recs=lsGet("m315_recovery"); recs.push(rec); lsSet("m315_recovery",recs);
+  document.getElementById("rcGct").value=""; document.getElementById("rcNote").value="";
+  document.getElementById("rcRhr").value=""; document.getElementById("rcSleep").value="";
+  renderRecovery();
+}
+function delRec(id){ lsSet("m315_recovery", lsGet("m315_recovery").filter(r=>r.id!==id)); renderRecovery(); }
+renderRecovery();
+
+// ---------- Fueling ----------
+const fueling=[
+ {cls:"before",icon:"🍞",h:"ก่อนวิ่ง",items:["มื้อก่อน long/หนัก 2-3 ชม.: คาร์บย่อยง่าย ไม่หนักท้อง","วิ่งเช้าสั้นๆ: กล้วย/ขนมปังชิ้นเล็ก ก็พอ","จิบน้ำให้พอ อย่าเริ่มวิ่งทั้งที่ขาดน้ำ"]},
+ {cls:"during",icon:"⚡",h:"ระหว่างวิ่ง",items:["วิ่ง >90 นาที: เริ่มเติมคาร์บ (เจล/เครื่องดื่มน้ำตาล)","Gel ทุก 35 นาที เริ่มก่อนหมดแรง อย่ารอหิว","อากาศร้อน: เติมน้ำ+เกลือแร่ที่เสียไปกับเหงื่อ","ฝึก fueling ในซ้อมด้วย ให้ท้องชิน"]},
+ {cls:"after",icon:"🥤",h:"หลังวิ่ง",items:["หลังหนัก/ยาว: เติมคาร์บ+โปรตีน เร่งฟื้นตัว","เติม glycogen ที่ใช้ไป ภายใน 1-2 ชม.","ดื่มน้ำชดเชยเหงื่อที่เสีย","รากฐาน: อาหารสมดุลในชีวิตประจำวัน สำคัญกว่ากลเม็ดวันแข่ง"]},
+];
+const fg2=document.getElementById("fuelGrid");
+fueling.forEach(f=>{
+  const el=document.createElement("div"); el.className="fcard "+f.cls;
+  el.innerHTML=`<div class="fh">${f.icon} ${f.h}</div><ul>${f.items.map(i=>`<li>${i}</li>`).join("")}</ul>`;
+  fg2.appendChild(el);
+});
+
+// ---------- RPE Scale ----------
+const rpe=[
+ {n:"1-2",feel:"เบามาก · เดิน/warm-up · คุยสบายมาก",zone:"Zone 1",c:"#8598B5"},
+ {n:"3-4",feel:"เบา · Easy/Recovery · คุยเป็นประโยคได้",zone:"Zone 2",c:"#5B8DEF"},
+ {n:"5-6",feel:"ปานกลาง · Long/MP · พูดได้สั้นๆ",zone:"Zone 3",c:"#34E0A1"},
+ {n:"7-8",feel:"หนัก · Tempo/Threshold · พูดได้คำเดียว",zone:"Zone 4",c:"#FFB84D"},
+ {n:"9-10",feel:"หนักมาก · Interval/Sprint · พูดไม่ได้",zone:"Zone 5",c:"#FF5A3C"},
+];
+const rg2=document.getElementById("rpeGrid");
+rpe.forEach(x=>{
+  const el=document.createElement("div"); el.className="rpe-row"; el.style.borderLeftColor=x.c;
+  el.innerHTML=`<span class="rpe-n" style="color:${x.c}">${x.n}</span>
+    <span class="rpe-feel">${x.feel}</span><span class="rpe-zone">${x.zone}</span>`;
+  rg2.appendChild(el);
+});
+
+// ---------- Wisdom ----------
+const wisdoms=[
+ {q:"ร่างกายไม่ได้แข็งแรงขึ้นตอนฝึก แต่แข็งแรงขึ้นตอนพัก การพักจึงไม่ใช่การเสียเวลา แต่คือส่วนที่ขาดไม่ได้ของการฝึก",ch:"บท 7 · ความล้าและการฟื้นตัว"},
+ {q:"ความสม่ำเสมอมีพลังมากกว่าความหักโหมเป็นครั้งคราว ร่างกายให้รางวัลแก่ผู้ที่ปรากฏตัวอย่างสม่ำเสมอ",ch:"บท 9 · หลักการพัฒนา"},
+ {q:"ความก้าวหน้าไม่เคยเป็นเส้นตรง อุปสรรคเป็นส่วนหนึ่งของการเดินทาง ไม่ใช่การเบี่ยงเบนออกจากมัน",ch:"บท 27 · ความก้าวหน้าไม่เป็นเส้นตรง"},
+ {q:"ความแข็งแรงที่แท้จริงบางครั้งแสดงออกด้วยการยอมถอย การหยุดพักเมื่อร่างกายต้องการ ต้องใช้ความเข้มแข็งมากกว่าการฝืน",ch:"บท 25 · ความแข็งแรงที่แท้จริง"},
+ {q:"ความเหนื่อยไม่ใช่ศัตรู มันเป็นครูที่สอนเราถึงขีดจำกัดและศักยภาพของตัวเอง",ch:"บท 23 · ความเหนื่อยไม่ใช่ศัตรู"},
+ {q:"คู่แข่งที่แท้จริงเพียงคนเดียวคือตัวเราในวันวาน การเป็นนักวิ่งที่ดีขึ้นกว่าเมื่อวาน คือชัยชนะที่มีความหมาย",ch:"บท 29 · คู่แข่งที่แท้จริง"},
+ {q:"การวิ่งไม่มีวันสมบูรณ์แบบ และนั่นคือความงามของมัน เพราะมันหมายความว่ามีที่ให้เติบโตเสมอ",ch:"บท 34 · การวิ่งไม่มีวันสมบูรณ์แบบ"},
+ {q:"อย่าให้ความรู้สึก 'โอ้ ดีแล้ว!' หลอกให้โดดข้ามขั้น ร่างกายที่แข็งแรงช้าที่สุดคือเอ็นและกระดูก จงเคารพความเร็วในการปรับตัวของมัน",ch:"บท 8 · การปรับตัวของร่างกาย"},
+ {q:"เหตุผลที่ลึกที่สุดและยั่งยืนที่สุดในการวิ่งคือความสุข เราวิ่งเพราะมันทำให้เรารู้สึกมีชีวิต",ch:"บท 32 · ความสุขของการวิ่ง"},
+];
+let wIdx = Math.floor(Math.random()*wisdoms.length);
+function showWisdom(){
+  document.getElementById("wisdomQuote").textContent = "“"+wisdoms[wIdx].q+"”";
+  document.getElementById("wisdomChapter").textContent = wisdoms[wIdx].ch;
+}
+function nextWisdom(){ wIdx=(wIdx+1)%wisdoms.length; showWisdom(); }
+showWisdom();
 </script>
 </body>
 </html>
