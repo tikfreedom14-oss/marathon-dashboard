@@ -413,8 +413,8 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
       </div>
       <div class="stat blue">
         <div class="k">Current week</div>
-        <div class="v">W17</div>
-        <div class="u">of 20 · recovery</div>
+        <div class="v">W18</div>
+        <div class="u">of 20 · ກັບເກັບໄລຍະ</div>
       </div>
       <div class="stat gold">
         <div class="k">Longest run</div>
@@ -478,7 +478,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 <section id="schedule">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Weekly Schedule</h2></div>
-    <p class="sec-desc">ກົດແຕ່ລະອາທິດເພື່ອເປີດເບິ່ງ 6 ມື້. ກົດ ☐ ເພື່ອໝາຍວ່າສຳເລັດ (ບັນທຶກໄວ້ໃນ browser ຂອງເຈົ້າ).</p>
+    <p class="sec-desc">ໂຄງ: ຈ.ພັກ · ອ.Speed · ພ.Easy · ພฤ.Tempo · ສ.Strength · ເສົາ Easy+strides · ທิด Long. ໄຕຈາก Long 15km (W17) → 16→18→20→23→26→30→34km. ທຸກວັນ speed/tempo ລະບຸ pace ເປົ້າ + ວິທີຊ້ອມ + recovery — เปิดวันเดียวรู้ครบ.</p>
     <div class="filters" id="filters"></div>
     <div class="weeks" id="weeks"></div>
   </div>
@@ -751,81 +751,61 @@ const weeks = [
    ["Tue","REST ຫຼື jog 15–20min\nຖ້າເຈັບ: ພັກ + ປະຄົບເຢັນ"],["Wed","Easy 20–30min\nPace ບໍ່ສຳຄັນ ເນັ້ນບໍ່ເຈັບ"],
    ["Thu","REST + Calf raises 2×15\nຍືດ plantar fascia + foam roll"],["Fri","Bodyweight ເບົາ\ncore + hip stability"],
    ["Sat","Easy 20min ຖ້າ pain-free 3 ມື້"],["Sun","Easy 8–10km · ຢຸດຖ້າເຈັບ\n🏥 ແນະນຳພົບນັກກາຍະພາບບຳບັດ",1]]},
- {w:18,ph:"Recovery",date:"06/07",focus:"ຄ່ອຍໆເພີ່ມ · cross-train",days:[
-   ["Tue","Easy 25min Zone1-2"],["Wed","REST ຫຼື cross-train 30min"],
-   ["Thu","Easy 30min · strides 4×50m ຖ້າດີ"],["Fri","Calf raises 3×15 · balance · core"],
-   ["Sat","Easy 25–30min + strides 4×80m"],["Sun","Easy 12km Pace 5:50–6:10\nrun/walk ໄດ້ຖ້າຈຳເປັນ",1]]},
- {w:19,ph:"Recovery",date:"13/07",focus:"ເລີ່ມ tempo ສັ້ນເບົາ",days:[
-   ["Tue","Easy 35–40min · strides 4×100m"],["Wed","Easy 30min Zone1-2"],
-   ["Thu","Tempo ສັ້ນ 5km @ 4:40–4:50\nຍັງບໍ່ດັນ 4:18"],["Fri","Weight (Squat ເບົາ/Core/Calf)"],
-   ["Sat","Easy 6km + strides ×4"],["Sun","Long 16km Pace 5:30–5:50\nGel ທຸກ 35 ນາທີ",1]]},
- {w:20,ph:"Specific",date:"20/07",focus:"Fartlek + Tempo ກັບມາ",days:[
-   ["Tue","Fartlek 1min F/S ×8 · 4:05–4:15"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 10km 4:20–4:28"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","20km 5:25–5:45 Zone 2-3",1]]},
- {w:21,ph:"Specific",date:"27/07",focus:"MP ເລີ່ມ 4:40–4:45",days:[
-   ["Tue","Interval 1km ×6 · 4:05–4:15"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 14km 4:40–4:45"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","26km 5:20–5:40",1]]},
- {w:22,ph:"Specific",date:"03/08",focus:"Hill ກັບມາເທື່ອທຳອິດ",days:[
-   ["Tue","Hill Repeats 60s ×8 · ເລັ່ງເບົາ"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 14km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","28km · last 5km MP 4:37–4:42",1]]},
- {w:23,ph:"Peak",date:"10/08",focus:"MP 16km · long 30km",days:[
-   ["Tue","Interval 1km ×8 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 16km 4:37–4:40"],["Fri","Weight (Squat/Core/Calf)"],
+ {w:18,ph:"Base+",date:"06/07",focus:"ໄຕຈาก Long 15km · ຫาย​ดี ຄຸມຄວາມเข้ม",days:[["Tue","Speed ເບົາ 6×200m @4:00–4:10\nWU 15min+strides · recovery jog 200m\nເລັ່ງລื่นๆ ບໍ່ຊັດສຸດ · ເບິ່ງขอบตีน"],["Wed","Easy 6km @5:50–6:10 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ກ່ອນ/ຫຼัง · ดู HR alert"],["Thu","Tempo ຊອຍ 3×2km @4:25–4:30\nพัก jog 90s · WU/CD 10min\nฝึก threshold ຄຸมฟอร์มง่าย"],["Fri","Strength + Prehab\nSquat/Core/Calf+Glute+Eversion"],["Sat","Easy 5km @5:50–6:10 + strides 4×80m"],["Sun","Long 16km @5:50–6:10 Zone 2\nคุยได้สบาย · Gel ທຸກ 35 ນາທີ",1]]}, {w:19,ph:"Base+",date:"13/07",focus:"tempo ຍາวขึ้น · long 18km",days:[["Tue","Speed 8×200m @4:00–4:05\nrecovery jog 200m · WU/CD\nเร็วสม่ำเสมอทุกเที่ยว"],["Wed","Easy 6–7km @5:45–6:00 Zone 2"],["Thu","Tempo ຊອຍ 4×2km @4:22–4:28\nพัก jog 90s · เริ่มดัน pace เข้า"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides 4×100m"],["Sun","Long 18km @5:40–5:55 Zone 2\nGel ທຸກ 35 ນາທີ",1]]}, {w:20,ph:"Specific",date:"20/07",focus:"Tempo ຕໍ່ເນື່ອງ ກັບมา · long 20km",days:[["Tue","Fartlek 1min hard/1min easy ×8\nhard @4:05–4:15 · WU/CD 10min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2"],["Thu","Tempo ຕໍ່ເນื่อง 8km @4:20–4:25\nWU 15min/CD 10min · ดู pace หลัก"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides ×4"],["Sun","Long 20km @5:35–5:50 Zone 2\nlast 3km ขยับ Zone 3 ได้",1]]}, {w:21,ph:"Specific",date:"27/07",focus:"MP ເລີ່ม 4:40–4:45 · long 23km",days:[["Tue","Interval 1km ×6 @4:05–4:15\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km @5:40–6:00"],["Thu","MP Run 12km @4:40–4:45\nຕໍ່ເນื่อง · ชินความรู้สึกเพซแข่ง"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides ×4"],["Sun","Long 23km @5:30–5:45 Zone 2",1]]}, {w:22,ph:"Specific",date:"03/08",focus:"Hill ກັບมา · long 26km",days:[["Tue","Hill Repeats 60s ×8 @RPE 8\njog ลงพัก · WU/CD · เลิ่งเบา"],["Wed","Easy 6–8km @5:40–6:00"],["Thu","Tempo 12km @4:20–4:25\nຕໍ່ເນื่อง · ดู pace หลัก+HR เช็ค"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides ×4"],["Sun","Long 26km @5:25–5:40\nlast 5km MP 4:37–4:42",1]]}, {w:23,ph:"Peak",date:"10/08",focus:"MP 16km · long 30km",days:[
+   ["Tue","Interval 1km ×8 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 16km @4:37–4:40\nຕໍ່ເนื่อง · pace หลัก+HR (Zone 3-4)"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","30km · last 8km MP",1]]},
  {w:24,ph:"Peak",date:"17/08",focus:"Tempo 15km · long 32km",days:[
-   ["Tue","Hill Repeats 60s ×10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 15km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Hill Repeats 60s ×10 @RPE 8–9\njog ลงพัก · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 15km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","32km Zone 2",1]]},
  {w:25,ph:"Peak",date:"24/08",focus:"🎯 MP ເຕັມ 4:35 · long 34km",days:[
-   ["Tue","Interval 1km ×10 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 18km 4:35–4:37 🎯"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Interval 1km ×10 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 18km @4:35–4:37 🎯\nຕໍ່ເนื่อง · pace เป้าแข่ง! Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","34km · last 8km MP (Longest)",1]]},
  {w:26,ph:"Peak",date:"31/08",focus:"long 30km last 10km MP",days:[
-   ["Tue","Fartlek 2min F/S ×10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 14km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Fartlek 2min hard/2min easy ×10\nhard @4:05–4:15 · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 14km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","30km · last 10km MP",1]]},
  {w:27,ph:"Peak",date:"07/09",focus:"MP 18km · long 32km",days:[
-   ["Tue","Interval 800m ×10 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 18km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Interval 800m ×10 @3:55–4:05\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 18km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","32km · last 12km MP",1]]},
  {w:28,ph:"Peak",date:"14/09",focus:"Hill ×12 · long 34km",days:[
-   ["Tue","Hill Repeats 60s ×12"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 14km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Hill Repeats 60s ×12 @RPE 8–9\njog ลงพัก · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 14km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","34km · last 2km Hill",1]]},
  {w:29,ph:"Peak",date:"21/09",focus:"MP 16km · long 28km",days:[
-   ["Tue","Interval 1km ×8 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 16km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Interval 1km ×8 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 16km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","28km Zone 2",1]]},
  {w:30,ph:"Peak",date:"28/09",focus:"Long run ໄກສຸດທ້າຍ",days:[
-   ["Tue","Fartlek 2min F/S ×10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 16km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Fartlek 2min hard/2min easy ×10\nhard @4:05–4:15 · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 16km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","32km · last 10km MP (ໄກສຸດທ້າຍ)",1]]},
  {w:31,ph:"Peak",date:"05/10",focus:"ຫຼຸດເລີ່ມ · MP 14km",days:[
-   ["Tue","Hill Repeats 60s ×10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 12km 4:18–4:25"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Hill Repeats 60s ×10 @RPE 8–9\njog ลงพัก · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Tempo 12km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","26km · last 5km MP",1]]},
  {w:32,ph:"Peak",date:"12/10",focus:"Peak ສຸດທ້າຍ",days:[
-   ["Tue","Interval 800m ×8 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 14km 4:35–4:37"],["Fri","Weight (Squat/Core/Calf)"],
+   ["Tue","Interval 800m ×8 @3:55–4:05\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 14km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง"],["Fri","Weight (Squat/Core/Calf)"],
    ["Sat","Easy 5km + strides ×4"],["Sun","24km Zone 2",1]]},
  {w:33,ph:"Taper",date:"19/10",focus:"Taper ເລີ່ມ · ຫຼຸດ volume",days:[
-   ["Tue","Interval 1km ×6 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 12km 4:35–4:37"],["Fri","Core / Stretching"],
+   ["Tue","Interval 1km ×6 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 12km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · taper"],["Fri","Core / Stretching"],
    ["Sat","Easy 5km + strides ×4"],["Sun","18km 5:20–5:40",1]]},
  {w:34,ph:"Taper",date:"26/10",focus:"ຮັກສາຄວາມຄ່ອງ",days:[
-   ["Tue","Fartlek 2min F/S ×6"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 10km 4:35–4:37"],["Fri","Core / Stretching"],
+   ["Tue","Fartlek 2min hard/2min easy ×6\nhard @4:05–4:15 · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","MP Run 10km @4:35–4:37\nสั้นลง · รักษาความคุ้น pace แข่ง"],["Fri","Core / Stretching"],
    ["Sat","Easy 5km + strides ×4"],["Sun","15km 5:20–5:40",1]]},
  {w:35,ph:"Taper",date:"02/11",focus:"ອາທິດກ່ອນແຂ່ງ · ພັກຂາ",days:[
-   ["Tue","Interval 400m ×6 · 4:00–4:10"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Easy 8km 5:15–6:00 · JP Build-Up"],["Fri","Stretching only"],
+   ["Tue","Interval 400m ×6 @3:50–4:00\nrecovery jog full · WU/CD · sharpen"],["Wed","Easy 6–8km 5:40–6:00"],
+   ["Thu","Build-up 8km ไล่ pace 6:00→4:40\nจบเร็ว · ปลุกขาก่อนแข่ง"],["Fri","Stretching only"],
    ["Sat","Easy 5km + strides ×4"],["Sun","10km 5:20–5:40",1]]},
  {w:36,ph:"RACE",date:"09/11",focus:"🏆 RACE WEEK",days:[
-   ["Tue","Easy 5km + strides"],["Wed","REST"],
-   ["Thu","Easy 5km + strides"],["Fri","REST / Carb load"],
+   ["Tue","Easy 5km @5:30–6:00 + strides 4×80m\nขาเบา สดชื่น ก่อนแข่ง"],["Wed","REST"],
+   ["Thu","Easy 5km @5:30–6:00 + strides 4×80m\nขาเบา ก่อนแข่ง"],["Fri","REST / Carb load"],
    ["Sat","REST"],["Sun","🏆 RACE DAY — Sub 3:15!\nPace 4:37 · Gel ທຸກ 35 ນາທີ\nອອກໂຕບໍ່ໄວເກີນ 10km ທຳອິດ",1]]},
 ];
 
