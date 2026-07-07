@@ -337,7 +337,40 @@ section{padding:40px 0}
 .pr .py{font-family:"Space Mono",monospace;font-size:10px;color:var(--gold);margin-top:2px}
 .pr.hl .pv{color:var(--coral)}
 
+/* peroneal strength */
+.pero-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.pcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;position:relative}
+.pcard.star{border-color:rgba(52,224,161,.4)}
+.pcard .pnum{position:absolute;top:16px;right:18px;font-family:"Oswald",sans-serif;font-weight:700;
+  font-size:32px;color:var(--line);line-height:1}
+.pcard .pico{width:100%;height:130px;background:var(--ink-2);border-radius:10px;margin-bottom:14px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pcard .pico svg{width:100%;height:100%}
+.pcard .ph{font-family:"Oswald",sans-serif;font-weight:600;font-size:18px;margin-bottom:4px;display:flex;align-items:center;gap:8px;padding-right:36px}
+.pcard .pstar{color:var(--mint);font-size:14px}
+.pcard .psets{font-family:"Space Mono",monospace;font-size:13px;color:var(--coral);font-weight:700;margin-bottom:4px}
+.pcard .pfreq{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--gold);margin-bottom:10px}
+.pcard .phow{font-size:13px;color:#DCE6F3;line-height:1.55;margin-bottom:8px}
+.pcard .ptempo{font-size:12px;color:var(--muted);background:var(--ink-2);border-radius:6px;padding:7px 10px;margin-bottom:12px}
+.pcard .ptempo b{color:var(--mint);font-weight:600}
+.pcheck{display:flex;align-items:center;gap:9px;cursor:pointer;font-family:"Space Mono",monospace;
+  font-size:12px;color:var(--muted);letter-spacing:1px;user-select:none}
+.pcheck .box{width:20px;height:20px;border:2px solid var(--line);border-radius:6px;display:flex;
+  align-items:center;justify-content:center;transition:.15s;font-size:13px}
+.pcheck.on .box{background:var(--mint);border-color:var(--mint);color:#05140d}
+.pcheck.on{color:var(--mint)}
+
 /* pacing */
+.goal-tabs{display:flex;gap:10px;margin-bottom:14px;flex-wrap:wrap}
+.goal-tab{flex:1;min-width:140px;font-family:"Oswald",sans-serif;font-weight:600;font-size:18px;
+  background:var(--surface);color:var(--muted);border:1.5px solid var(--line);padding:14px 16px;
+  border-radius:12px;cursor:pointer;transition:.15s;display:flex;flex-direction:column;gap:3px;align-items:center}
+.goal-tab span{font-family:"Space Mono",monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;font-weight:400}
+.goal-tab:hover{border-color:var(--muted);color:var(--text)}
+.goal-tab.active{border-color:var(--coral);color:var(--coral);background:rgba(255,90,60,.08)}
+.goal-desc{font-size:13.5px;color:var(--muted);margin-bottom:16px;padding:10px 14px;
+  background:var(--ink-2);border-radius:8px;border-left:3px solid var(--coral)}
+.goal-hl td{background:rgba(255,90,60,.1)!important}
 .pace-ctrl{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:18px}
 .pace-ctrl label{font-family:"Space Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:1px}
 .pace-ctrl input{font-family:"Space Mono",monospace;background:var(--ink-2);border:1px solid var(--line);
@@ -436,6 +469,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
     <a href="#zones">⏱️ Zones</a>
     <a href="#schedule">📅 Schedule</a>
     <a href="#rehab">🦶 Rehab</a>
+    <a href="#peroneal">💪 Peroneal</a>
     <a href="#technique">🏃 Technique</a>
     <a href="#shoes">👟 Shoes</a>
     <a href="#howto">📖 How to Run</a>
@@ -478,7 +512,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 <section id="schedule">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Weekly Schedule</h2></div>
-    <p class="sec-desc">ໂຄງ: ຈ.ພັກ · ອ.Speed · ພ.Easy · ພฤ.Tempo · ສ.Strength · ເສົາ Easy+strides · ທิด Long. ໄຕຈາก Long 15km (W17) → 16→18→20→23→26→30→34km. ທຸກວັນ speed/tempo ລະບຸ pace ເປົ້າ + ວິທີຊ້ອມ + recovery — เปิดวันเดียวรู้ครบ.</p>
+    <p class="sec-desc">ໂຄງ: ຈ.ພັກ · ອ.Speed · ພ.Easy · ພฤ.Tempo/MP · ສ.Strength · ເສົາ Easy+strides · ທิด Long. Long run ไต่ 16→18→20→<b>14(deload)</b>→22→24→26→<b>18(deload)</b>→28→30→32→<b>22(deload)</b>→30→32→34(longest)→taper 24→18→12→Race. Zone HR ปรับตาม LT=172 จริง.</p>
     <div class="filters" id="filters"></div>
     <div class="weeks" id="weeks"></div>
   </div>
@@ -500,9 +534,34 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
   </div>
 </section>
 
+<section id="peroneal">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Peroneal Strength · เสริมเอ็นข้อเท้า</h2></div>
+    <p class="sec-desc">เจ็บเฉพาะ pace เร็ว = เอ็น peroneal ยังไม่แข็งแรงพอรับแรงสูง. โปรแกรมนี้สร้างเอ็นให้กลับมารับ speed ได้. ทำ 3-4 วัน/สัปดาห์ (เน้นวันศุกร์ + ก่อน/หลังวิ่ง). กด ☐ เมื่อทำเสร็จ.</p>
+    <div class="pero-grid" id="peroGrid"></div>
+    <div class="callout" style="margin-top:20px;border-color:rgba(52,224,161,.35);background:rgba(52,224,161,.07)">
+      <div class="ct" style="color:var(--mint)">🎯 เกณฑ์กลับไป speed (อย่ารีบ)</div>
+      <ol>
+        <li>ทำโปรแกรม 2-3 สัปดาห์ ให้เอ็นแข็งแรงขึ้นก่อน</li>
+        <li>ทดสอบ: วิ่ง pace 5:00 สั้นๆ → ถ้าไม่เจ็บ ค่อยขยับ</li>
+        <li>ค่อยเพิ่ม pace: 5:00 → 4:40 → 4:20 → 4:10 ทีละสัปดาห์</li>
+        <li>⚠️ ถ้าหลัง 2 สัปดาห์ยังเจ็บตอน speed → พบนักกายภาพบำบัด</li>
+      </ol>
+    </div>
+    <div class="callout" style="border-color:rgba(255,184,77,.35);background:rgba(255,184,77,.06)">
+      <div class="ct" style="color:var(--amber)">📌 กฎเหล็ก</div>
+      <ol>
+        <li>ทำแล้วไม่เจ็บแหลม (ตึงได้) — เจ็บให้ลดแรง/จำนวน</li>
+        <li><b>Eccentric (ช่วงลง/กลับช้าๆ) สำคัญสุด</b> — สร้างเอ็นได้ดีที่สุด</li>
+        <li>สม่ำเสมอ > หนัก · คลาย(น่อง+ก้น)ก่อน แล้วค่อย strengthen</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section id="technique">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title">Running Technique · ເทคนิคการวิ่ง</h2></div>
+    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Running Technique · ເทคนิคการวิ่ง</h2></div>
     <p class="sec-desc">ເທคนิคที่ช่วยวิ่งประหยัดแรง ลดบาดเจ็บ และแก้การลงน้ำหนักขอบเท้าด้านนอก — เน้นสิ่งที่ตรงกับสถานการณ์ตอนนี้.</p>
     <div class="tech-grid" id="techGrid"></div>
   </div>
@@ -510,7 +569,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="shoes">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Shoe Rotation · จับคู่เกิบ</h2></div>
+    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">Shoe Rotation · จับคู่เกิบ</h2></div>
     <p class="sec-desc">7 คู่หมุนเวียน = กระจายแรงลงจุดต่างกัน ลดบาดเจ็บซ้ำที่เดิม. จับคู่เกิบให้เหมาะกับงานแต่ละวัน.</p>
     <div class="shoe-grid" id="shoeGrid"></div>
     <div class="callout" style="border-color:rgba(255,184,77,.4);background:rgba(255,184,77,.08)">
@@ -526,7 +585,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="howto">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">07</span><h2 class="sec-title">How to Run · วิธีแล่นแต่ละวัน</h2></div>
+    <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">How to Run · วิธีแล่นแต่ละวัน</h2></div>
     <p class="sec-desc">แต่ละ session แล่นยังไง ต่อเนื่องหรือซอย พร้อมโครงสร้างสำหรับตั้งค่าใน Garmin. ทุกวันเริ่มด้วย warm-up jog 10-15 นาที + strides จบด้วย cool-down.</p>
     <div class="howto-grid" id="howtoGrid"></div>
   </div>
@@ -534,8 +593,8 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="zoneguide">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">08</span><h2 class="sec-title">Zone Guide · 80/20</h2></div>
-    <p class="sec-desc">หลักการทองคำ: ~80% ของ mileage แล่นเบา (Zone 1-2) · ~20% หนัก (Zone 3-5). ซ้อมถูกทาง = พัฒนา aerobic เต็มที่ + ฟื้นตัวดี + ลดบาดเจ็บ.</p>
+    <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">Zone Guide · 80/20</h2></div>
+    <p class="sec-desc">หลักการทองคำ: ~80% ของ mileage แล่นเบา (Zone 1-2) · ~20% หนัก (Zone 3-5). Zone HR ปรับให้ตรงกับ LT จริง 172 bpm (test มิ.ย.) — ไม่ใช้ตัวเลขทั่วไปอีกต่อไป.</p>
     <div class="zg-zones" id="zgZones"></div>
     <h3 class="zg-sub">📅 ตัวอย่างสัปดาห์ (Peak phase)</h3>
     <div class="zg-week" id="zgWeek"></div>
@@ -553,7 +612,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="hrpace">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">09</span><h2 class="sec-title">HR vs Pace · ดูอะไรเป็นหลัก</h2></div>
+    <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">HR vs Pace · ดูอะไรเป็นหลัก</h2></div>
     <p class="sec-desc">งานเบา ดู HR (กันเผลอเร็ว) · งานเร็ว ดู Pace (HR ตามไม่ทัน) · วันร้อน/ล้า เชื่อ HR มากกว่า.</p>
     <div class="hp-grid" id="hpGrid"></div>
     <div class="hp-cols">
@@ -571,7 +630,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="fueling">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Fueling · โภชนาการ</h2></div>
+    <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">Fueling · โภชนาการ</h2></div>
     <p class="sec-desc">จาก ebook บท 11 — คาร์บคือเชื้อเพลิงหลัก, ไขมันคือสำรอง, เติมพลังก่อนหมดแรง. ฝึก fueling ในซ้อมด้วย ไม่ใช่แค่วันแข่ง.</p>
     <div class="fuel-grid" id="fuelGrid"></div>
     <div class="callout" style="border-color:rgba(255,214,90,.4);background:rgba(255,214,90,.08)">
@@ -588,7 +647,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="rpe">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">RPE Scale · ความเหนื่อย 1-10</h2></div>
+    <div class="sec-head"><span class="sec-num">12</span><h2 class="sec-title">RPE Scale · ความเหนื่อย 1-10</h2></div>
     <p class="sec-desc">จาก ebook บท 23 — ความเหนื่อยไม่ใช่ศัตรู. ใช้ RPE (ความรู้สึก) ควบคู่ HR/pace. สำคัญ: แยก "เหนื่อยผลักผ่านได้" กับ "เจ็บต้องหยุด".</p>
     <div class="rpe-grid" id="rpeGrid"></div>
     <div class="callout" style="margin-top:18px;border-color:rgba(255,90,60,.4)">
@@ -604,21 +663,35 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="prs">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">12</span><h2 class="sec-title">Personal Records</h2></div>
+    <div class="sec-head"><span class="sec-num">13</span><h2 class="sec-title">Personal Records</h2></div>
     <p class="sec-desc">สถิติที่ดีที่สุด — Half PR 1:33:16 คือตัวทำนายที่บอกว่า Sub 3:15 อยู่ในเอื้อม (~3:14:30).</p>
     <div class="pr-grid" id="prGrid"></div>
+    <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.4);background:rgba(52,224,161,.07)">
+      <div class="ct" style="color:var(--mint)">🔬 VO2max 54 (ดีเลิศ) + LT 172bpm @4:21/km (test มิ.ย.)</div>
+      <ol>
+        <li>ประเมินศักยภาพมาราธอน ~3:03-3:08 — Sub 3:15 อยู่ในเอื้อมสบายๆ</li>
+        <li>⚠️ MP practice runs ที่ผ่านมาเฉลี่ยช้ากว่าเป้าเสมอ (4:44-4:52 vs เป้า 4:35-4:37)</li>
+        <li>ร่างกายพร้อมกว่าที่ทำได้จริง — แผนใหม่เน้นฝึกที่ pace เป้าให้บ่อย+สม่ำเสมอขึ้น เพื่อปิดช่องว่างนี้</li>
+      </ol>
+    </div>
   </div>
 </section>
 
 <section id="pacing">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">13</span><h2 class="sec-title">Race Pacing · Sub 3:15</h2></div>
-    <p class="sec-desc">ตารางเพซวันแข่ง Bangsaen42. ปรับเวลาเป้าหมายได้ ระบบคำนวณ split ให้อัตโนมัติ.</p>
+    <div class="sec-head"><span class="sec-num">14</span><h2 class="sec-title">Race Pacing · เป้า A/B/C</h2></div>
+    <p class="sec-desc">ตารางเพซวันแข่ง Bangsaen42 · เป้า A/B/C ตามสภาพร่างกาย/อากาศ. กดเลือกเป้า หรือปรับเวลาเองก็ได้.</p>
+    <div class="goal-tabs" id="goalTabs">
+      <button class="goal-tab" data-time="3:15:00" data-label="A · ปลอดภัย" data-desc="มั่นใจสูง — เป้าหลักที่ต้องได้">A · Sub 3:15<span>ปลอดภัย</span></button>
+      <button class="goal-tab active" data-time="3:10:00" data-label="B · Realistic" data-desc="ตาม VO2max/LT จริง — ถ้าซ้อมครบ">B · 3:10<span>Realistic</span></button>
+      <button class="goal-tab" data-time="3:05:00" data-label="C · Dream" data-desc="ถ้าทุกอย่างลงตัว วันฟอร์มดี+อากาศเย็น">C · 3:05<span>Dream</span></button>
+    </div>
+    <div class="goal-desc" id="goalDesc"></div>
     <div class="pace-ctrl">
       <label>เป้าหมาย (h:mm:ss)</label>
-      <input id="goalTime" type="text" value="3:15:00">
+      <input id="goalTime" type="text" value="3:10:00">
       <span>=</span>
-      <span class="pill" id="goalPace">4:37 /km</span>
+      <span class="pill" id="goalPace">4:30 /km</span>
     </div>
     <div class="ptable-wrap">
       <table class="ptable">
@@ -626,12 +699,20 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
         <tbody id="paceBody"></tbody>
       </table>
     </div>
+    <h3 class="zg-sub" style="font-size:18px">📊 เทียบ 3 เป้า</h3>
+    <div class="ptable-wrap">
+      <table class="ptable">
+        <thead><tr><th>เป้า</th><th>เวลา</th><th>เพซ/km</th><th>ครึ่งทาง</th><th>เมื่อไรใช้</th></tr></thead>
+        <tbody id="goalCompare"></tbody>
+      </table>
+    </div>
     <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.35);background:rgba(52,224,161,.07)">
-      <div class="ct" style="color:var(--mint)">กลยุทธ์ Race Day (กันไม่ให้ faded)</div>
+      <div class="ct" style="color:var(--mint)">🏁 กลยุทธ์ Race Day (กันไม่ให้ faded)</div>
       <ol>
-        <li>km 1-10: คุมช้ากว่าเป้าเล็กน้อย (~4:40) อย่าออกตัวเร็ว</li>
-        <li>km 11-32: ล็อกเพซเป้า 4:37 ให้นิ่ง</li>
+        <li>km 1-10: คุมช้ากว่าเป้าเล็กน้อย (+3-5 วิ/km) อย่าออกตัวเร็ว</li>
+        <li>km 11-32: ล็อกเพซเป้าให้นิ่ง · ดู HR ไม่เกิน Zone 4 (172)</li>
         <li>km 33-42: ถ้าแรงเหลือค่อยเร่ง · Gel ทุก 35 นาที อย่ารอให้หิว</li>
+        <li>⚡ อากาศ Bangsaen ร้อน → ถ้า HR พุ่งเร็ว ให้ถอยไปเป้า A (เชื่อ HR)</li>
       </ol>
     </div>
   </div>
@@ -639,7 +720,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="runlog">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">14</span><h2 class="sec-title">Run Log · สมุดบันทึกการวิ่ง</h2></div>
+    <div class="sec-head"><span class="sec-num">15</span><h2 class="sec-title">Run Log · สมุดบันทึกการวิ่ง</h2></div>
     <p class="sec-desc">ล็อกทุกการวิ่ง—เก็บในเบราว์เซอร์นี้ (ใช้บน GitHub Pages ได้). บันทึกเพซ HR เกิบที่ใส่ และคะแนนเจ็บเท้า เพื่อดูแนวโน้ม.</p>
     <div class="log-stats">
       <div class="log-stat"><div class="ls-k">อาทิตย์นี้</div><div class="ls-v" id="weekKm">0<span style="font-size:16px">km</span></div></div>
@@ -681,7 +762,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="recovery">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">15</span><h2 class="sec-title">Recovery Tracker · ติดตามการฟื้นตัว</h2></div>
+    <div class="sec-head"><span class="sec-num">16</span><h2 class="sec-title">Recovery Tracker · ติดตามการฟื้นตัว</h2></div>
     <p class="sec-desc">เช็คอินทุกเช้า: เจ็บก้าวแรก (0-10) + GCT balance จาก Garmin. เป้าหมาย: เจ็บ→0 และ balance→50/50.</p>
     <div class="form-card">
       <div class="form-row">
@@ -715,7 +796,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="wisdom">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">16</span><h2 class="sec-title">Wisdom · ข้อคิดจาก ebook</h2></div>
+    <div class="sec-head"><span class="sec-num">17</span><h2 class="sec-title">Wisdom · ข้อคิดจาก ebook</h2></div>
     <p class="sec-desc">ดึงหัวใจจากหนังสือ "วิ่ง" มาเตือนใจระหว่างการเดินทางสู่ Sub 3:15.</p>
     <div class="wisdom">
       <div class="wq" id="wisdomQuote"></div>
@@ -737,11 +818,11 @@ const RACE = new Date("2026-11-09T05:00:00+07:00");
 const CURRENT_WEEK = 17;
 
 const zones = [
-  {t:"Interval",n:"Sub-Threshold",p:"4:00–4:10",d:"Cadence 176–182 · ກັບໃຊ້ເຕັມຄວາມໄວ ຫຼັງ W19 ຖ້າ pain-free",c:"var(--coral)"},
-  {t:"Tempo",n:"Threshold (TLA)",p:"4:18–4:25",d:"HR ~174–175 · W17–19 ໃຊ້ 4:40–4:50 ກ່ອນ",c:"var(--blue)"},
-  {t:"Marathon Pace",n:"MP · Goal",p:"4:35–4:37",d:"ເປົ້າສຸດທ້າຍ · W20–21 ໃຊ້ 4:40–4:45 ກ່ອນ",c:"var(--mint)"},
-  {t:"Long Run",n:"Endurance",p:"5:20–5:40",d:"Cadence 170–175 · W17–19 ໃຊ້ 5:30–6:10",c:"var(--gold)"},
-  {t:"Easy",n:"Recovery",p:"5:40–6:00",d:"Zone 1–2 · ຄຸຍໄດ້ສະບາຍ",c:"var(--amber)"},
+  {t:"Interval",n:"Sub-Threshold",p:"4:00–4:10",d:"Cadence 176–182 · HR แตะ Zone 5 (>172) · VO2max work",c:"var(--coral)"},
+  {t:"Tempo",n:"Threshold (LT)",p:"4:18–4:25",d:"LT ແທ້ 172bpm @4:21 (test มิ.ย.) · เพดาน HR 168–172",c:"var(--blue)"},
+  {t:"Marathon Pace",n:"MP · Goal",p:"4:35–4:37",d:"HR เป้า ~155–163 (Zone 3) · VO2max 54 ຮັບໄດ້ສະບາຍ",c:"var(--mint)"},
+  {t:"Long Run",n:"Endurance",p:"5:20–5:40",d:"Cadence 170–175 · Zone 2 (<148) ເປັນຫຼັກ",c:"var(--gold)"},
+  {t:"Easy",n:"Recovery",p:"5:40–6:00",d:"Zone 1–2 (<148) · ຄຸຍໄດ້ສະບາຍ",c:"var(--amber)"},
 ];
 
 // weeks: 17..36
@@ -751,62 +832,25 @@ const weeks = [
    ["Tue","REST ຫຼື jog 15–20min\nຖ້າເຈັບ: ພັກ + ປະຄົບເຢັນ"],["Wed","Easy 20–30min\nPace ບໍ່ສຳຄັນ ເນັ້ນບໍ່ເຈັບ"],
    ["Thu","REST + Calf raises 2×15\nຍືດ plantar fascia + foam roll"],["Fri","Bodyweight ເບົາ\ncore + hip stability"],
    ["Sat","Easy 20min ຖ້າ pain-free 3 ມື້"],["Sun","Easy 8–10km · ຢຸດຖ້າເຈັບ\n🏥 ແນະນຳພົບນັກກາຍະພາບບຳບັດ",1]]},
- {w:18,ph:"Base+",date:"06/07",focus:"ໄຕຈาก Long 15km · ຫาย​ดี ຄຸມຄວາມเข้ม",days:[["Tue","Speed ເບົາ 6×200m @4:00–4:10\nWU 15min+strides · recovery jog 200m\nເລັ່ງລื่นๆ ບໍ່ຊັດສຸດ · ເບິ່ງขอบตีน"],["Wed","Easy 6km @5:50–6:10 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ກ່ອນ/ຫຼัง · ดู HR alert"],["Thu","Tempo ຊອຍ 3×2km @4:25–4:30\nพัก jog 90s · WU/CD 10min\nฝึก threshold ຄຸมฟอร์มง่าย"],["Fri","Strength + Prehab\nSquat/Core/Calf+Glute+Eversion"],["Sat","Easy 5km @5:50–6:10 + strides 4×80m"],["Sun","Long 16km @5:50–6:10 Zone 2\nคุยได้สบาย · Gel ທຸກ 35 ນາທີ",1]]}, {w:19,ph:"Base+",date:"13/07",focus:"tempo ຍາวขึ้น · long 18km",days:[["Tue","Speed 8×200m @4:00–4:05\nrecovery jog 200m · WU/CD\nเร็วสม่ำเสมอทุกเที่ยว"],["Wed","Easy 6–7km @5:45–6:00 Zone 2"],["Thu","Tempo ຊອຍ 4×2km @4:22–4:28\nพัก jog 90s · เริ่มดัน pace เข้า"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides 4×100m"],["Sun","Long 18km @5:40–5:55 Zone 2\nGel ທຸກ 35 ນາທີ",1]]}, {w:20,ph:"Specific",date:"20/07",focus:"Tempo ຕໍ່ເນື່ອງ ກັບมา · long 20km",days:[["Tue","Fartlek 1min hard/1min easy ×8\nhard @4:05–4:15 · WU/CD 10min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2"],["Thu","Tempo ຕໍ່ເນื่อง 8km @4:20–4:25\nWU 15min/CD 10min · ดู pace หลัก"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides ×4"],["Sun","Long 20km @5:35–5:50 Zone 2\nlast 3km ขยับ Zone 3 ได้",1]]}, {w:21,ph:"Specific",date:"27/07",focus:"MP ເລີ່ม 4:40–4:45 · long 23km",days:[["Tue","Interval 1km ×6 @4:05–4:15\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km @5:40–6:00"],["Thu","MP Run 12km @4:40–4:45\nຕໍ່ເນื่อง · ชินความรู้สึกเพซแข่ง"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides ×4"],["Sun","Long 23km @5:30–5:45 Zone 2",1]]}, {w:22,ph:"Specific",date:"03/08",focus:"Hill ກັບมา · long 26km",days:[["Tue","Hill Repeats 60s ×8 @RPE 8\njog ลงพัก · WU/CD · เลิ่งเบา"],["Wed","Easy 6–8km @5:40–6:00"],["Thu","Tempo 12km @4:20–4:25\nຕໍ່ເນื่อง · ดู pace หลัก+HR เช็ค"],["Fri","Strength + Prehab"],["Sat","Easy 5km + strides ×4"],["Sun","Long 26km @5:25–5:40\nlast 5km MP 4:37–4:42",1]]}, {w:23,ph:"Peak",date:"10/08",focus:"MP 16km · long 30km",days:[
-   ["Tue","Interval 1km ×8 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 16km @4:37–4:40\nຕໍ່ເนื่อง · pace หลัก+HR (Zone 3-4)"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","30km · last 8km MP",1]]},
- {w:24,ph:"Peak",date:"17/08",focus:"Tempo 15km · long 32km",days:[
-   ["Tue","Hill Repeats 60s ×10 @RPE 8–9\njog ลงพัก · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 15km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","32km Zone 2",1]]},
- {w:25,ph:"Peak",date:"24/08",focus:"🎯 MP ເຕັມ 4:35 · long 34km",days:[
-   ["Tue","Interval 1km ×10 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 18km @4:35–4:37 🎯\nຕໍ່ເนื่อง · pace เป้าแข่ง! Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","34km · last 8km MP (Longest)",1]]},
- {w:26,ph:"Peak",date:"31/08",focus:"long 30km last 10km MP",days:[
-   ["Tue","Fartlek 2min hard/2min easy ×10\nhard @4:05–4:15 · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 14km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","30km · last 10km MP",1]]},
- {w:27,ph:"Peak",date:"07/09",focus:"MP 18km · long 32km",days:[
-   ["Tue","Interval 800m ×10 @3:55–4:05\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 18km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","32km · last 12km MP",1]]},
- {w:28,ph:"Peak",date:"14/09",focus:"Hill ×12 · long 34km",days:[
-   ["Tue","Hill Repeats 60s ×12 @RPE 8–9\njog ลงพัก · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 14km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","34km · last 2km Hill",1]]},
- {w:29,ph:"Peak",date:"21/09",focus:"MP 16km · long 28km",days:[
-   ["Tue","Interval 1km ×8 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 16km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","28km Zone 2",1]]},
- {w:30,ph:"Peak",date:"28/09",focus:"Long run ໄກສຸດທ້າຍ",days:[
-   ["Tue","Fartlek 2min hard/2min easy ×10\nhard @4:05–4:15 · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 16km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · Zone 3-4"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","32km · last 10km MP (ໄກສຸດທ້າຍ)",1]]},
- {w:31,ph:"Peak",date:"05/10",focus:"ຫຼຸດເລີ່ມ · MP 14km",days:[
-   ["Tue","Hill Repeats 60s ×10 @RPE 8–9\njog ลงพัก · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Tempo 12km @4:18–4:25\nຕໍ່ເนื่อง · threshold · pace หลัก"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","26km · last 5km MP",1]]},
- {w:32,ph:"Peak",date:"12/10",focus:"Peak ສຸດທ້າຍ",days:[
-   ["Tue","Interval 800m ×8 @3:55–4:05\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 14km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง"],["Fri","Weight (Squat/Core/Calf)"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","24km Zone 2",1]]},
- {w:33,ph:"Taper",date:"19/10",focus:"Taper ເລີ່ມ · ຫຼຸດ volume",days:[
-   ["Tue","Interval 1km ×6 @4:00–4:10\nrecovery jog 200m/90s · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 12km @4:35–4:37\nຕໍ່ເนื่อง · pace เป้าแข่ง · taper"],["Fri","Core / Stretching"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","18km 5:20–5:40",1]]},
- {w:34,ph:"Taper",date:"26/10",focus:"ຮັກສາຄວາມຄ່ອງ",days:[
-   ["Tue","Fartlek 2min hard/2min easy ×6\nhard @4:05–4:15 · WU/CD"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","MP Run 10km @4:35–4:37\nสั้นลง · รักษาความคุ้น pace แข่ง"],["Fri","Core / Stretching"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","15km 5:20–5:40",1]]},
- {w:35,ph:"Taper",date:"02/11",focus:"ອາທິດກ່ອນແຂ່ງ · ພັກຂາ",days:[
-   ["Tue","Interval 400m ×6 @3:50–4:00\nrecovery jog full · WU/CD · sharpen"],["Wed","Easy 6–8km 5:40–6:00"],
-   ["Thu","Build-up 8km ไล่ pace 6:00→4:40\nจบเร็ว · ปลุกขาก่อนแข่ง"],["Fri","Stretching only"],
-   ["Sat","Easy 5km + strides ×4"],["Sun","10km 5:20–5:40",1]]},
- {w:36,ph:"RACE",date:"09/11",focus:"🏆 RACE WEEK",days:[
-   ["Tue","Easy 5km @5:30–6:00 + strides 4×80m\nขาเบา สดชื่น ก่อนแข่ง"],["Wed","REST"],
-   ["Thu","Easy 5km @5:30–6:00 + strides 4×80m\nขาเบา ก่อนแข่ง"],["Fri","REST / Carb load"],
-   ["Sat","REST"],["Sun","🏆 RACE DAY — Sub 3:15!\nPace 4:37 · Gel ທຸກ 35 ນາທີ\nອອກໂຕບໍ່ໄວເກີນ 10km ທຳອິດ",1]]},
+ {w:18,ph:"Base",date:"06/07",focus:"ໄຕຈາก 15km · ตั้ง Zone ใหม่ (LT172)",days:[["Tue","Interval 1km ×6 @4:10–4:15\nrecovery jog 400m/2min · Zone 5 ระหว่างวิ่ง"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 8km @4:22–4:28\nຕໍ່ເนื่อง · HR เพดาน 168-172 (ใต้ LT)"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 16km @5:50–6:05 Zone 2\nHR เป้า <148 · Gel ทุก 35 นาที",1]]},
+ {w:19,ph:"Base",date:"13/07",focus:"เพิ่ม volume ต่อเนื่อง",days:[["Tue","Fartlek 1min hard/1min easy ×8\nhard @4:05–4:12 (Zone 4-5) · WU/CD"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:20–4:27\nຕໍ່ເนื่อง · HR เพดาน 168-172"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:45–6:00 Zone 2\nGel ทุก 35 นาที",1]]},
+ {w:20,ph:"Base",date:"20/07",focus:"ปิดบล็อก 1 · เตรียม deload",days:[["Tue","Hill Repeats 60s ×8 @RPE 8\njog ลงพัก · Zone 4-5 ช่วงขึ้น"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:20–4:25\nตั้งใจแตะ HR 172 (LT) ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 20km @5:40–5:55 Zone 2\nlast 2km ขยับ Zone 3",1]]},
+ {w:21,ph:"Recovery",date:"27/07",focus:"🔽 Deload · ฟื้นตัวรับบล็อกถัดไป",days:[["Tue","Interval 400m ×6 @4:05–4:15\nrecovery jog full · เบากว่าปกติ"],["Wed","Easy 5–6km @5:45–6:05 Zone 2"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up 4 เกียร์: 5:45→5:25→5:05→4:45"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 14km @5:50–6:10 Zone 2\nเบาๆ ให้ร่างกายซึมซับ",1]]},
+ {w:22,ph:"Base+",date:"03/08",focus:"เริ่มบล็อก 2 · MP เริ่มจริงจัง",days:[["Tue","Interval 1km ×8 @4:08–4:14\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 12km @4:35–4:40\nตั้งใจล็อก pace เป้า! HR ~155-163 (Zone 3)"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2",1]]},
+ {w:23,ph:"Base+",date:"10/08",focus:"VCR retest · เช็ค LT ใหม่",days:[["Tue","VCR Test 30min (Re-test LT)\nแล่นหนักสุด 30 นาที · ดู HR สูงสุดที่คงที่ = LT ใหม่"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 14km @4:35–4:40\nล็อก pace เป้า · เช็ค HR เทียบ LT ใหม่"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 24km @5:30–5:45 Zone 2",1]]},
+ {w:24,ph:"Base+",date:"17/08",focus:"ปิดบล็อก 2 · เตรียม deload",days:[["Tue","Hill Repeats 60s ×10 @RPE 8\njog ลงพัก"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 12km @4:20–4:26\nตั้งใจแตะ HR 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 26km @5:28–5:43 Zone 2\nlast 3km ขยับ Zone 3",1]]},
+ {w:25,ph:"Recovery",date:"24/08",focus:"🔽 Deload 2 · ฟื้นตัวรับ Specific",days:[["Tue","Fartlek 1min hard/1min easy ×10\nเบากว่าปกติ · hard @4:10–4:18"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:45–6:05 Zone 2",1]]},
+ {w:26,ph:"Specific",date:"31/08",focus:"เริ่มบล็อก 3 · ดัน MP เข้าเป้าเต็มที่",days:[["Tue","Interval 1km ×10 @4:05–4:12\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37 🎯\nล็อกให้แม่น! HR เป้า ~158-165"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 28km @5:25–5:40 Zone 2\nlast 5km MP 4:37–4:42",1]]},
+ {w:27,ph:"Specific",date:"07/09",focus:"MP ยาวขึ้น",days:[["Tue","Hill Repeats 60s ×12 @RPE 8-9\njog ลงพัก"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 14km @4:18–4:25\nตั้งใจแตะ LT 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 30km @5:22–5:38 Zone 2\nlast 8km MP 4:35–4:40",1]]},
+ {w:28,ph:"Specific",date:"14/09",focus:"ปิดบล็อก 3 · เตรียม deload",days:[["Tue","Interval 800m ×8 @4:00–4:08\nrecovery jog 300m/90s"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37\nล็อก pace เป้า"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 32km @5:20–5:35 Zone 2\nlast 8km MP",1]]},
+ {w:29,ph:"Recovery",date:"21/09",focus:"🔽 Deload 3 · ก่อน Peak",days:[["Tue","Fartlek 2min hard/2min easy ×6\nเบากว่าปกติ"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2",1]]},
+ {w:30,ph:"Peak",date:"28/09",focus:"Peak เริ่ม · MP นิ่งแล้ว",days:[["Tue","Interval 1km ×10 @4:05–4:12\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37\nHR ~158-165 · ล็อกให้นิ่ง"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 30km @5:22–5:38 Zone 2\nlast 8km MP",1]]},
+ {w:31,ph:"Peak",date:"05/10",focus:"Peak ต่อ",days:[["Tue","Hill Repeats 60s ×10 @RPE 8-9\njog ลงพัก"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 15km @4:18–4:25\nตั้งใจแตะ LT 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 32km @5:20–5:35 Zone 2\nlast 10km MP",1]]},
+ {w:32,ph:"Peak",date:"12/10",focus:"🎯 Peak สุดท้าย · Long ไกลสุด",days:[["Tue","Interval 1km ×8 @4:00–4:08\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 18km @4:35–4:37 🎯\npace เป้าแข่งเต็มที่!"],["Fri","Strength + Prehab (40min)\nSquat 3×10 · Lunge 3×10 · Core 3×30s\n+ Peroneal: Eversion/Calf/Balance (ดู §05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 34km (Longest!) @5:20–5:35\nlast 10km MP · ซ้อม fueling วันแข่ง",1]]},
+ {w:33,ph:"Taper",date:"19/10",focus:"Taper เริ่ม · ลด volume 30%",days:[["Tue","Interval 1km ×6 @4:05–4:12\nrecovery jog 400m/2min · สั้นลง"],["Wed","Easy 6km @5:40–6:00"],["Thu","MP Run 12km @4:35–4:37\nรักษาความคุ้น pace แข่ง"],["Fri","Core + Stretching เบา"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 24km @5:25–5:40 Zone 2",1]]},
+ {w:34,ph:"Taper",date:"26/10",focus:"Taper ต่อ · ลดอีก",days:[["Tue","Fartlek 2min hard/2min easy ×6\nเบา สั้นลง"],["Wed","Easy 6km @5:40–6:00"],["Thu","MP Run 10km @4:35–4:37\nสั้นลง · รักษาความคุ้น pace"],["Fri","Core + Stretching เบา"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:25–5:40 Zone 2",1]]},
+ {w:35,ph:"Taper",date:"02/11",focus:"อาทิตย์ก่อนแข่ง · พักขา",days:[["Tue","Interval 400m ×6 @4:00–4:10\nrecovery jog full · sharpen เบาๆ"],["Wed","Easy 5km @5:40–6:00"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up เบาๆ ปลุกขา"],["Fri","Stretching Only"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 10–12km @5:20–5:40\nเบาที่สุด · Carb-load เริ่ม",1]]},
+ {w:36,ph:"RACE",date:"09/11",focus:"🏆 RACE WEEK",days:[["Tue","Easy 5km @5:30–6:00 + strides\nขาเบา สดชื่น"],["Wed","Rest"],["Thu","Easy 5km @5:30–6:00 + strides\nขาเบา ก่อนแข่ง"],["Fri","Rest / Carb Load"],["Sat","Rest ຫຼือ jog เบามาก 15min"],["Sun","🏆 RACE DAY — Sub 3:15!\nPace เป้า 4:37 · Gel ทุก 35 นาที · Zone 3-4",1]]},
 ];
 
 const rehab = [
@@ -933,6 +977,79 @@ rehab.forEach(card=>{
   rg.appendChild(el);
 });
 
+// ---------- Peroneal Strength ----------
+const svgEversion=`<svg viewBox="0 0 200 130"><g fill="none" stroke="#5B8DEF" stroke-width="3" stroke-linecap="round">
+ <path d="M40 95 L90 95"/><path d="M90 95 L110 60" stroke="#8598B5"/>
+ <ellipse cx="120" cy="55" rx="10" ry="14" fill="#2b3a52" stroke="#8598B5"/>
+ <path d="M115 68 L150 78" stroke="#34E0A1" stroke-width="4"/>
+ <path d="M150 78 Q168 74 170 88" stroke="#FF5A3C" stroke-width="4"/>
+ <path d="M148 84 L172 92" stroke="#8598B5"/></g>
+ <path d="M155 60 L175 65 M172 60 L176 66 L170 70" stroke="#FF5A3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <text x="100" y="120" fill="#8fa5c0" font-size="11" text-anchor="middle" font-family="monospace">ดันเท้าออกด้านนอก →</text></svg>`;
+const svgCalf=`<svg viewBox="0 0 200 130"><g stroke="#34E0A1" stroke-width="3" fill="none" stroke-linecap="round">
+ <circle cx="100" cy="28" r="9" fill="#2b3a52"/><path d="M100 37 L100 78"/>
+ <path d="M100 78 L88 105" stroke-dasharray="0"/><path d="M100 55 L118 72"/></g>
+ <rect x="70" y="105" width="60" height="8" fill="#3a4a63" rx="2"/>
+ <path d="M84 105 L84 96" stroke="#FF5A3C" stroke-width="3" stroke-linecap="round"/>
+ <path d="M80 90 L84 84 L88 90" stroke="#FF5A3C" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+ <text x="100" y="126" fill="#8fa5c0" font-size="11" text-anchor="middle" font-family="monospace">เขย่งขึ้น-ลงช้าๆ</text></svg>`;
+const svgBalance=`<svg viewBox="0 0 200 130"><g stroke="#FFB84D" stroke-width="3" fill="none" stroke-linecap="round">
+ <circle cx="100" cy="26" r="9" fill="#2b3a52"/><path d="M100 35 L100 80"/>
+ <path d="M78 52 L100 60 L122 50"/><path d="M100 80 L100 108"/><path d="M100 80 L120 96"/></g>
+ <path d="M120 96 L124 88" stroke="#FFB84D" stroke-width="3" stroke-linecap="round"/>
+ <rect x="80" y="108" width="40" height="6" fill="#3a4a63" rx="3"/>
+ <path d="M60 70 Q68 76 60 82 M140 70 Q132 76 140 82" stroke="#8598B5" stroke-width="2" fill="none"/>
+ <text x="100" y="126" fill="#8fa5c0" font-size="11" text-anchor="middle" font-family="monospace">ยืนขาเดียว ทรงตัว</text></svg>`;
+const svgWalk=`<svg viewBox="0 0 200 130"><g stroke="#FF5A3C" stroke-width="3" fill="none" stroke-linecap="round">
+ <circle cx="70" cy="30" r="8" fill="#2b3a52"/><path d="M70 38 L70 72 L58 98"/><path d="M70 72 L84 96"/><path d="M70 50 L86 60"/>
+ <path d="M52 98 L60 94" stroke-width="4"/></g>
+ <g stroke="#FFB84D" stroke-width="3" fill="none" stroke-linecap="round">
+ <circle cx="135" cy="30" r="8" fill="#2b3a52"/><path d="M135 38 L135 72 L148 98"/><path d="M135 72 L122 96"/><path d="M135 50 L150 60"/>
+ <path d="M148 98 L142 92" stroke-width="4"/></g>
+ <text x="100" y="122" fill="#8fa5c0" font-size="10.5" text-anchor="middle" font-family="monospace">เดินส้น ↔ เดินปลายเท้า</text></svg>`;
+
+const peroneal=[
+ {id:"ev",star:true,icon:"⭐",svg:svgEversion,name:"Ankle Eversion (ยางยืด)",sets:"3 × 15 / ข้าง",freq:"ทุกวันได้",
+  how:"นั่งเหยียดขา คล้องยางยืดที่ปลายเท้า (ปลายอีกข้างผูกไว้) → ดันเท้าออกด้านนอกต้านแรงยาง → กลับช้าๆ. เคลื่อนแค่ข้อเท้า ไม่ใช่ทั้งขา.",
+  tempo:"ดันออก 2s · ค้าง 1s · <b>กลับช้า 3s</b> · เริ่มยางเบา",note:"ตรงจุดเอ็น peroneal ที่สุด"},
+ {id:"cr",star:true,icon:"⭐",svg:svgCalf,name:"Single-Leg Calf Raise",sets:"3 × 12 / ข้าง",freq:"วันเว้นวัน",
+  how:"ยืนขาเดียวบนขั้นบันได (ส้นยื่นออก) → เขย่งขึ้นสุด → ลงช้าๆ ให้ส้นต่ำกว่าขั้น. ทำทั้งเข่าตรง + เข่างอเล็กน้อย.",
+  tempo:"ขึ้น 2s · ค้าง 1s · <b>ลงช้า 3-4s (eccentric สำคัญสุด)</b>",note:"สร้างน่อง+เอ็นรอบข้อเท้า"},
+ {id:"bl",star:true,icon:"⭐",svg:svgBalance,name:"Single-Leg Balance",sets:"3 × 30s / ข้าง",freq:"ทุกวันได้",
+  how:"ยืนขาเดียว รักษาสมดุล. เพิ่มความยาก: หลับตา / ยืนบนหมอน / โยนรับลูกบอล. ถ้าโยกเยก = กล้ามเนื้อเล็กรอบข้อเท้ากำลังทำงาน (ดี!).",
+  tempo:"ค้าง 30 วินาที · หายใจปกติ",note:"ลดการ compensate (ต้นเหตุขอบเท้าเจ็บ)"},
+ {id:"wk",star:false,icon:"",svg:svgWalk,name:"Heel Walk / Toe Walk",sets:"3 รอบ",freq:"วันเว้นวัน",
+  how:"เดินด้วยส้นเท้า 20 ก้าว → สลับเดินด้วยปลายเท้า 20 ก้าว. เสริมกล้ามหน้าแข้ง + น่อง รอบข้อเท้าให้สมดุล.",
+  tempo:"20 ก้าว/แบบ · ช้าๆ ควบคุม",note:"สมดุลกล้ามเนื้อรอบข้อเท้า"},
+];
+const peroStore={get(){try{return JSON.parse(localStorage.getItem("m315_pero")||"{}")}catch(e){return{}}},
+  set(o){try{localStorage.setItem("m315_pero",JSON.stringify(o))}catch(e){}}};
+let peroDone=peroStore.get();
+// reset daily
+const todayStr=new Date().toISOString().slice(0,10);
+if(peroDone._date!==todayStr){ peroDone={_date:todayStr}; peroStore.set(peroDone); }
+const pg=document.getElementById("peroGrid");
+peroneal.forEach((p,i)=>{
+  const el=document.createElement("div"); el.className="pcard"+(p.star?" star":"");
+  const on=peroDone[p.id]?" on":"";
+  el.innerHTML=`<div class="pnum">${i+1}</div>
+    <div class="pico">${p.svg}</div>
+    <div class="ph">${p.icon} ${p.name}</div>
+    <div class="psets">${p.sets}</div>
+    <div class="pfreq">${p.freq}</div>
+    <div class="phow">${p.how}</div>
+    <div class="ptempo">⏱️ ${p.tempo}</div>
+    <div class="pcheck${on}" data-id="${p.id}"><span class="box">${peroDone[p.id]?"✓":""}</span> ทำวันนี้แล้ว</div>`;
+  pg.appendChild(el);
+});
+document.querySelectorAll(".pcheck").forEach(c=>{
+  c.onclick=()=>{
+    const id=c.dataset.id; peroDone[id]=!peroDone[id]; peroStore.set(peroDone);
+    c.classList.toggle("on",peroDone[id]);
+    c.querySelector(".box").textContent=peroDone[id]?"✓":"";
+  };
+});
+
 // ---------- Running Technique ----------
 const techniques = [
  {icon:"🎯",title:"Cadence 175-180",tag:"focus",
@@ -1017,11 +1134,11 @@ document.getElementById("hpBest").innerHTML=hpBest.map(b=>`<li>${b}</li>`).join(
 // ---------- Zone Guide ----------
 const zgColors={1:"#8598B5",2:"#5B8DEF",3:"#34E0A1",4:"#FFB84D",5:"#FF5A3C"};
 const zgData=[
- {z:1,name:"Zone 1",hr:"110-135",feel:"สบายมาก · คุยได้ทั้งประโยค",use:"Recovery run (วันหลังหนัก) · warm-up/cool-down"},
- {z:2,name:"Zone 2",hr:"136-148",feel:"สบาย · คุยเป็นประโยคได้",use:"★ พระเอก! Easy + Long run ส่วนใหญ่ (สร้าง endurance)",star:true},
- {z:3,name:"Zone 3",hr:"149-159",feel:"เริ่มหนัก · พูดได้สั้นๆ",use:"Tempo · MP segment ท้าย long (ตั้งใจ ส่วนน้อย)"},
- {z:4,name:"Zone 4",hr:"160-166",feel:"หนัก · พูดได้คำเดียว",use:"Threshold · tempo หนัก (น้อย)"},
- {z:5,name:"Zone 5",hr:">166",feel:"หนักมาก · พูดไม่ได้",use:"Interval · speed (น้อยสุด)"},
+ {z:1,name:"Zone 1",hr:"<130",feel:"สบายมาก · คุยได้ทั้งประโยค",use:"Recovery run (วันหลังหนัก) · warm-up/cool-down"},
+ {z:2,name:"Zone 2",hr:"130-148",feel:"สบาย · คุยเป็นประโยคได้",use:"★ พระเอก! Easy + Long run ส่วนใหญ่ (สร้าง endurance)",star:true},
+ {z:3,name:"Zone 3",hr:"149-160",feel:"เริ่มหนัก · พูดได้สั้นๆ",use:"MP effort จริง · steady-state"},
+ {z:4,name:"Zone 4",hr:"161-172",feel:"หนัก · พูดได้คำเดียว",use:"Threshold (LT=172) · tempo หนัก"},
+ {z:5,name:"Zone 5",hr:">172",feel:"หนักมาก · พูดไม่ได้",use:"Interval · VO2max work (น้อยสุด)"},
 ];
 const zgz=document.getElementById("zgZones");
 zgData.forEach(z=>{
@@ -1093,7 +1210,8 @@ const prs = [
  {d:"1 km",v:"3:44",y:"2026"},{d:"1 mile",v:"6:13",y:"2026"},
  {d:"5 km",v:"20:42",y:"2026"},{d:"10 km",v:"43:03",y:"2026"},
  {d:"Half",v:"1:33:16",y:"2026",hl:true},{d:"Marathon",v:"3:57:18",y:"2025"},
- {d:"Longest",v:"42.78km",y:"2023"},
+ {d:"Longest",v:"42.78km",y:"2023"},{d:"VO2max",v:"54",y:"ดีเลิศ",hl:true},
+ {d:"LT (threshold)",v:"172bpm",y:"@4:21/km"},
 ];
 const prg=document.getElementById("prGrid");
 prs.forEach(p=>{
@@ -1136,8 +1254,39 @@ function renderPace(){
     return `<tr class="${m.half?'phalf':''}"><td class="mono">${label}</td><td class="mono">${t}</td>
       <td class="mono">${fmtPace(pace)}</td><td>${m.n}</td></tr>`;
   }).join("");
+  renderGoalCompare();
 }
 document.getElementById("goalTime").addEventListener("input", renderPace);
+
+// ---------- A/B/C goal tabs ----------
+const GOALS=[
+ {time:"3:15:00",label:"A · ปลอดภัย",when:"เป้าหลัก · วันอากาศร้อน/ไม่สด"},
+ {time:"3:10:00",label:"B · Realistic",when:"ซ้อมครบ · ตาม VO2max/LT จริง"},
+ {time:"3:05:00",label:"C · Dream",when:"ฟอร์มดี+อากาศเย็น · ทุกอย่างลงตัว"},
+];
+function renderGoalCompare(){
+  const body=document.getElementById("goalCompare");
+  if(!body) return;
+  const cur=document.getElementById("goalTime").value;
+  body.innerHTML=GOALS.map(g=>{
+    const tot=parseHMS(g.time), pace=tot/42.195;
+    const half=fmtHMS(pace*21.1);
+    const hl=(g.time===cur)?' class="goal-hl"':'';
+    return `<tr${hl}><td>${g.label}</td><td class="mono">${g.time}</td>
+      <td class="mono">${fmtPace(pace)}</td><td class="mono">${half}</td><td>${g.when}</td></tr>`;
+  }).join("");
+}
+document.querySelectorAll(".goal-tab").forEach(tab=>{
+  tab.onclick=()=>{
+    document.querySelectorAll(".goal-tab").forEach(t=>t.classList.remove("active"));
+    tab.classList.add("active");
+    document.getElementById("goalTime").value=tab.dataset.time;
+    document.getElementById("goalDesc").textContent=tab.dataset.desc;
+    renderPace();
+  };
+});
+const activeTab=document.querySelector(".goal-tab.active");
+if(activeTab) document.getElementById("goalDesc").textContent=activeTab.dataset.desc;
 renderPace();
 
 // ---------- localStorage helpers ----------
