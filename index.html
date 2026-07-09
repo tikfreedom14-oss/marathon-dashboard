@@ -439,7 +439,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <header>
   <div class="wrap">
-    <div class="eyebrow">Bangsaen42 · 09 Nov 2026 · Modified Plan W17–W36</div>
+    <div class="eyebrow">Bangsaen42 · 15 Nov 2026 · Modified Plan W17–W36</div>
     <div class="goal">SUB <span class="col">3:15</span></div>
     <div class="goal-sub">Marathon Target · Pace 4:37 / km</div>
 
@@ -462,7 +462,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
       <div class="stat gold">
         <div class="k">Longest run</div>
         <div class="v">34<span style="font-size:20px">km</span></div>
-        <div class="u">peak · week 25</div>
+        <div class="u">peak · week 32</div>
       </div>
     </div>
 
@@ -504,6 +504,8 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
       <div class="lane-track" id="laneTrack"></div>
       <div class="lane-legend">
         <span><i class="dot" style="background:var(--amber)"></i>Recovery</span>
+        <span><i class="dot" style="background:#7DA9E0"></i>Base</span>
+        <span><i class="dot" style="background:#4F7FC0"></i>Build</span>
         <span><i class="dot" style="background:var(--blue)"></i>Specific</span>
         <span><i class="dot" style="background:var(--coral)"></i>Peak</span>
         <span><i class="dot" style="background:var(--mint)"></i>Taper</span>
@@ -524,6 +526,15 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Weekly Schedule</h2></div>
     <p class="sec-desc">ໂຄງ: ຈ.ພັກ · ອ.Speed · ພ.Easy · ພฤ.Tempo/MP · ສ.Strength · ເສົາ Easy+strides · ທิด Long. Long run ไต่ 16→18→20→<b>14(deload)</b>→22→24→26→<b>18(deload)</b>→28→30→32→<b>22(deload)</b>→30→32→34(longest)→taper 24→18→12→Race. Zone HR ปรับตาม LT=172 จริง.</p>
+    <div class="callout" style="margin-bottom:18px;border-color:rgba(255,90,60,.45);background:rgba(255,90,60,.1)">
+      <div class="ct">🦶 W18–W21 · โปรโตคอลกลับสู่ speed (เอ็น peroneal)</div>
+      <ol>
+        <li><b>W18 = ทดสอบ 5:00</b> → W19 = 4:40 → W20 = 4:20 → <b>W21 = 4:10</b> (ขั้นสุดท้าย)</li>
+        <li>ขยับขั้นถัดไป <b>เฉพาะเมื่อสัปดาห์ก่อนไม่เจ็บ</b> — เจ็บ = คงเพซเดิมอีก 1 สัปดาห์</li>
+        <li>เจ็บแหลมขณะวิ่ง = <b>หยุดทันที</b> เปลี่ยนเป็น Easy · ไม่ใช่ "เหนื่อย" (§13 RPE)</li>
+        <li>ทำ Peroneal Strength (§05) ควบคู่ทุกวัน · ถ้า 2 สัปดาห์ยังเจ็บ → พบนักกายภาพบำบัด</li>
+      </ol>
+    </div>
     <div class="filters" id="filters"></div>
     <div class="weeks" id="weeks"></div>
     <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.3);background:rgba(52,224,161,.06)">
@@ -540,13 +551,13 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
 <section id="rehab">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Rehab · Plantar Fascia</h2></div>
-    <p class="sec-desc">ໂຕນທ້າຍ W17–W19: ເຮັດທຸກວັນ. ກົດ: ເຈັບບໍ່ເກີນ 3/10 ຂະນະເຮັດ ແລະ ບໍ່ເຈັບເພີ່ມໃນເຊົ້າມື້ໜ້າ.</p>
+    <div class="sec-head"><span class="sec-num">04</span><h2 class="sec-title">Rehab · คลาย + ฟื้นฟูเท้า (ทุกวัน)</h2></div>
+    <p class="sec-desc">งานคลาย (mobility) ทำทุกวัน — <b>น่องตึงคือต้นเหตุของ peroneal tendonitis</b>. คลายก่อน แล้วค่อย strengthen (§05). กฎ: เจ็บไม่เกิน 3/10 ขณะทำ และไม่เจ็บเพิ่มในเช้าวันถัดไป.</p>
     <div class="rehab" id="rehabGrid"></div>
     <div class="callout">
       <div class="ct">3 ເງື່ອນໄຂ ສຳລັບ Sub 3:15</div>
       <ol>
-        <li>ພື້ນຝາຕີນຫາຍ 100% ບໍ່ບາດເຈັບຄືນ (ຄວາມສ່ຽງໃຫຍ່ສຸດຕອນນີ້)</li>
+        <li><b>ເອັນ peroneal (ຂອບຕີນດ້ານນອກ) ຫາຍ 100%</b> — ແລ່ນ pace 4:10 ໄດ້ໂດຍບໍ່ເຈັບ (ຄວາມສ່ຽງໃຫຍ່ສຸດຕອນນີ້)</li>
         <li>Long-run MP segments ໃນ Peak phase ເຮັດໄດ້ຄົບ (ພິສູດ endurance)</li>
         <li>Race execution: ອອກໂຕບໍ່ໄວເກີນ 10km ທຳອິດ · Gel ທຸກ 35 ນາທີ</li>
       </ol>
@@ -860,7 +871,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 </footer>
 
 <script>
-const RACE = new Date("2026-11-09T05:00:00+07:00");
+const RACE = new Date("2026-11-15T05:00:00+07:00");
 const CURRENT_WEEK = 18;
 
 const zones = [
@@ -877,10 +888,10 @@ const weeks = [
    ["Tue","REST ຫຼື jog 15–20min\nຖ້າເຈັບ: ພັກ + ປະຄົບເຢັນ"],["Wed","Easy 20–30min\nPace ບໍ່ສຳຄັນ ເນັ້ນບໍ່ເຈັບ"],
    ["Thu","REST + Calf raises 2×15\nຍືດ plantar fascia + foam roll"],["Fri","Bodyweight ເບົາ\ncore + hip stability"],
    ["Sat","Easy 20min ຖ້າ pain-free 3 ມື້"],["Sun","Easy 8–10km · ຢຸດຖ້າເຈັບ\n🏥 ແນະນຳພົບນັກກາຍະພາບບຳບັດ",1]]},
- {w:18,ph:"Base",date:"06/07",focus:"ໄຕຈາก 15km · ตั้ง Zone ใหม่ (LT172)",days:[["Tue","Interval 1km ×6 @4:10–4:15\nrecovery jog 400m/2min · Zone 5 ระหว่างวิ่ง"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 8km @4:22–4:28\nຕໍ່ເนื่อง · HR เพดาน 168-172 (ใต้ LT)"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 16km @5:50–6:05 Zone 2\nHR เป้า <148 · Gel ทุก 35 นาที",1]]},
- {w:19,ph:"Base",date:"13/07",focus:"เพิ่ม volume ต่อเนื่อง",days:[["Tue","Fartlek 1min hard/1min easy ×8\nhard @4:05–4:12 (Zone 4-5) · WU/CD"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:20–4:27\nຕໍ່ເนื่อง · HR เพดาน 168-172"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:45–6:00 Zone 2\nGel ทุก 35 นาที",1]]},
- {w:20,ph:"Base",date:"20/07",focus:"ปิดบล็อก 1 · เตรียม deload",days:[["Tue","Hill Repeats 60s ×8 @RPE 8\njog ลงพัก · Zone 4-5 ช่วงขึ้น"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:20–4:25\nตั้งใจแตะ HR 172 (LT) ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 20km @5:40–5:55 Zone 2\nlast 2km ขยับ Zone 3",1]]},
- {w:21,ph:"Recovery",date:"27/07",focus:"🔽 Deload · ฟื้นตัวรับบล็อกถัดไป",days:[["Tue","Interval 400m ×6 @4:05–4:15\nrecovery jog full · เบากว่าปกติ"],["Wed","Easy 5–6km @5:45–6:05 Zone 2"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up 4 เกียร์: 5:45→5:25→5:05→4:45"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 14km @5:50–6:10 Zone 2\nเบาๆ ให้ร่างกายซึมซับ",1]]},
+ {w:18,ph:"Base",date:"06/07",focus:"🦶 ทดสอบเพซ 5:00 · กลับสู่ speed ขั้นที่ 1",days:[["Tue","🧪 Speed Test 4×400m @5:00–5:10\nrecovery jog เต็มที่ · WU/CD\n⚠️ เจ็บขอบเท้า = หยุดทันที เปลี่ยนเป็น Easy"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 6km @5:00–5:10 (ทดสอบ)\nต่อเนื่อง · เพซช้าก่อน เช็คเอ็น\n⚠️ เจ็บ = ถอยเป็น Easy ทันที"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m\n⚠️ strides เร่งลื่นๆ ไม่ซัดสุด · เจ็บ = ข้าม"],["Sun","Long 16km @5:50–6:05 Zone 2\nHR เป้า <148 · Gel ทุก 35 นาที",1]]},
+ {w:19,ph:"Base",date:"13/07",focus:"กลับสู่ speed ขั้นที่ 2 · เพซ 4:40",days:[["Tue","Interval 5×600m @4:40–4:50\nrecovery jog 300m · WU/CD\n(ทำต่อเมื่อ W18 ไม่เจ็บ · เจ็บ = คงที่ 5:00)"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 8km @4:45–4:55\nต่อเนื่อง · HR เพดาน 168-172\nเจ็บ = ถอยกลับเพซ W18"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:45–6:00 Zone 2\nGel ทุก 35 นาที",1]]},
+ {w:20,ph:"Base",date:"20/07",focus:"กลับสู่ speed ขั้นที่ 3 · เพซ 4:20",days:[["Tue","Interval 5×800m @4:20–4:30\nrecovery jog 400m · WU/CD\n(ทำต่อเมื่อ W19 ไม่เจ็บ)"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:30–4:40\nต่อเนื่อง · HR เพดาน 170-172\nยังไม่ต้องแตะ LT เต็มที่"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 20km @5:40–5:55 Zone 2\nlast 2km ขยับ Zone 3",1]]},
+ {w:21,ph:"Recovery",date:"27/07",focus:"🔽 Deload · ขั้นสุดท้าย เพซ 4:10",days:[["Tue","Interval 400m ×6 @4:10–4:20\nrecovery jog เต็มที่ · เบา สั้น\n🎯 ขั้นสุดท้ายของการกลับสู่ speed"],["Wed","Easy 5–6km @5:45–6:05 Zone 2"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up 4 เกียร์: 5:45→5:25→5:05→4:45"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 14km @5:50–6:10 Zone 2\nเบาๆ ให้ร่างกายซึมซับ",1]]},
  {w:22,ph:"Build",date:"03/08",focus:"เริ่มบล็อก 2 · MP เริ่มจริงจัง",days:[["Tue","Interval 1km ×8 @4:08–4:14\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 12km @4:35–4:40\nตั้งใจล็อก pace เป้า! HR ~155-163 (Zone 3)"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2",1]]},
  {w:23,ph:"Build",date:"10/08",focus:"VCR retest · เช็ค LT ใหม่",days:[["Tue","VCR Test 30min (Re-test LT)\nแล่นหนักสุด 30 นาที · ดู HR สูงสุดที่คงที่ = LT ใหม่"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 14km @4:35–4:40\nล็อก pace เป้า · เช็ค HR เทียบ LT ใหม่"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 24km @5:30–5:45 Zone 2",1]]},
  {w:24,ph:"Build",date:"17/08",focus:"ปิดบล็อก 2 · เตรียม deload",days:[["Tue","Hill Repeats 60s ×10 @RPE 8\njog ลงพัก"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 12km @4:20–4:26\nตั้งใจแตะ HR 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 26km @5:28–5:43 Zone 2\nlast 3km ขยับ Zone 3",1]]},
@@ -982,7 +993,7 @@ function renderWeeks(){
         <div class="wk-chevron">▶</div>
       </div>
       <div class="days">${daysHtml}</div>
-      ${wk.ph==="RACE"?'<div class="race-note">🎯 Race pacing: km 1–10 ຄຸມ 4:40 · km 11–32 ລັອກ 4:37 · km 33–42 ຖ້າແຮງເຫຼືອ ຄ່ອຍເລັ່ງ. Gel ທຸກ 35 ນາທີ ຢ່າລໍໃຫ້ຫິວ.</div>':''}`;
+      ${wk.ph==="RACE"?'<div class="race-note">🎯 Race pacing: km 1–10 ຄຸມຊ້າກວ່າເປົ້າ 3-5 ວິ/km · km 11–32 ລັອກເພຊເປົ້າ (ເບິ່ງ §15 A/B/C) · km 33–42 ຖ້າແຮງເຫຼືອ ຄ່ອຍເລັ່ງ. Gel ທຸກ 35 ນາທີ ຢ່າລໍໃຫ້ຫິວ.</div>':''}`;
     // toggle open
     el.querySelector(".week-head").onclick=(e)=>{
       if(e.target.closest("[data-check]"))return;
@@ -1272,9 +1283,9 @@ zgData.forEach(z=>{
   zgz.appendChild(el);
 });
 const zgWeekData=[
- {day:"จันทร์",sess:"Easy run",z:2,note:"สร้างฐาน · คุยได้สบาย"},
+ {day:"จันทร์",sess:"REST · พัก",z:1,zlabel:"พัก",note:"พักเต็มวัน · prehab/ยืดได้"},
  {day:"อังคาร",sess:"Interval / Speed",z:5,zlabel:"Zone 4-5",note:"หนัก (มีพัก) · WU/CD เป็น Zone 1"},
- {day:"พุธ",sess:"Recovery run",z:1,note:"ช้ามาก · ให้ขาฟื้นหลังวันหนัก"},
+ {day:"พุธ",sess:"Easy run",z:2,note:"เบา Zone 2 · ให้ขาฟื้นหลังวันหนัก"},
  {day:"พฤหัส",sess:"MP / Tempo",z:3,note:"ตั้งใจแตะ Zone 3 · เนื้อหลัก"},
  {day:"ศุกร์",sess:"Strength + Prehab",z:1,zlabel:"พัก/เบา",note:"ไม่วิ่ง หรือ Easy สั้น"},
  {day:"เสาร์",sess:"Easy + strides",z:2,note:"เบา เตรียมขาสำหรับ long"},
@@ -1319,6 +1330,9 @@ const sessions = [
  {name:"Hill Repeats",mode:"ซอย",cls:"hm-int",
   how:"แล่นขึ้นเนินชัน 60วิ × จำนวนท่อน แล้ว jog ลงพัก. สร้างความแข็งแรง+ฟอร์ม แรงกระแทกน้อยกว่าวิ่งเร็วพื้นราบ.",
   watch:"⌚ WU / <b>Repeat 8-12×(60s hill + jog down)</b> / CD"},
+ {name:"Strides",mode:"ท้าย easy run",cls:"hm-rec",
+  how:"เร่งสั้นๆ 80-100 เมตร ×4 ตอนท้าย easy run (วันเสาร์). เร่งลื่นๆ ขึ้นความเร็วทีละนิด <b>ไม่ใช่สปรินต์สุดแรง</b> · พักเดิน/jog ให้หายเหนื่อยระหว่างเที่ยว. ปลุกระบบประสาท+ฟอร์ม โดยไม่สร้างความล้า.",
+  watch:"⌚ หลัง easy run: <b>4×(80-100m เร่งลื่นๆ + เดินพักเต็มที่)</b><br>⚠️ ช่วงฟื้นตัว: เจ็บขอบเท้า = ข้ามไปเลย"},
 ];
 const hg=document.getElementById("howtoGrid");
 sessions.forEach(s=>{
