@@ -660,7 +660,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 <section id="hrpace">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">11</span><h2 class="sec-title">HR vs Pace · ดูอะไรเป็นหลัก</h2></div>
-    <p class="sec-desc">งานเบา ดู HR (กันเผลอเร็ว) · งานเร็ว ดู Pace (HR ตามไม่ทัน) · วันร้อน/ล้า เชื่อ HR มากกว่า.</p>
+    <p class="sec-desc">งานเบา ดู HR (กันเผลอเร็ว) · งานเร็ว ดู Pace (HR ตามไม่ทัน) · วันร้อน/ล้า เชื่อ HR มากกว่า. <b>⚠️ ช่วง W18-W21 (return-to-speed) ใช้ HR นำทุก session — ตั้งแต่ W22 กลับมาใช้ pace นำตามปกติ (ดูกล่องด้านล่าง).</b></p>
     <div class="hp-grid" id="hpGrid"></div>
     <div class="hp-cols">
       <div class="hp-warn">
@@ -671,6 +671,17 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
         <div class="hp-bt">✅ ดู 3 อย่างควบคู่</div>
         <ul id="hpBest"></ul>
       </div>
+    </div>
+
+    <div class="callout" style="margin-top:20px;border-color:rgba(52,224,161,.4);background:rgba(52,224,161,.07)">
+      <div class="ct" style="color:var(--mint)">🔄 สลับหลักคิด: HR นำ → Pace นำ (ตั้งแต่ W22)</div>
+      <ol>
+        <li><b>W18-W21 (return-to-speed · จบแล้ว ✓):</b> ใช้ <b>HR เป็นตัวคุมหลัก</b> เพราะ fitness ยังไม่กลับเต็มที่ — pace เป้าในตารางอ้างอิงจากตอนก่อนบาดเจ็บ ถ้าไล่ pace ตอนนั้นจะฝืนเกิน (เคยเกิดแล้ว: tempo HR พุ่ง Zone 5 ถึง 51%)</li>
+        <li><b>W22 เป็นต้นไป:</b> กลับมา <b>ล็อก pace เป้าเป็นหลัก · HR เป็นตัวเช็ค</b> — เพราะ pace คือสิ่งที่ใช้จริงวันแข่ง ร่างกายต้องคุ้นความรู้สึกของมัน</li>
+        <li><b>วิธีใช้ HR เป็นตัวเช็คในเฟสนี้:</b> pace ตรงเป้าแต่ HR สูงผิดปกติ = วันนั้นล้า/ไม่สด → ถอย ไม่ใช่ฝืนให้ครบ</li>
+        <li><b>เพดานที่ยังต้องเคารพ:</b> Tempo ไม่เกิน HR 172 (LT) · MP อยู่ราว 155-165 (Zone 3) · ร้อนจัด/นอนน้อย เชื่อ HR มากกว่า pace เสมอ</li>
+        <li>🔬 <b>ยืนยันอีกครั้งที่ W23</b> (VCR retest) — ได้ค่า LT จริงแล้วค่อยปรับ pace เป้าให้ตรงกับ fitness ปัจจุบัน</li>
+      </ol>
     </div>
   </div>
 </section>
@@ -945,7 +956,7 @@ const weeks = [
  {w:19,ph:"Base",date:"13/07",focus:"กลับสู่ speed ขั้นที่ 2 · เพซ 4:40",days:[["Tue","Interval 5×600m @4:40–4:50\nrecovery jog 300m · WU/CD\n(ทำต่อเมื่อ W18 ไม่เจ็บ · เจ็บ = คงที่ 5:00)"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 8km @4:45–4:55\nต่อเนื่อง · HR เพดาน 168-172\nเจ็บ = ถอยกลับเพซ W18"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:45–6:00 Zone 2\nGel ทุก 25–30 นาที",1]]},
  {w:20,ph:"Base",date:"20/07",focus:"กลับสู่ speed ขั้นที่ 3 · เพซ 4:20",days:[["Tue","Interval 5×800m @4:20–4:30\nrecovery jog 400m · WU/CD\n(ทำต่อเมื่อ W19 ไม่เจ็บ)"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:30–4:40\nต่อเนื่อง · HR เพดาน 170-172\nยังไม่ต้องแตะ LT เต็มที่"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 20km @5:40–5:55 Zone 2\nlast 2km ขยับ Zone 3",1]]},
  {w:21,ph:"Recovery",date:"27/07",focus:"🔽 Deload · ขั้นสุดท้าย เพซ 4:10",days:[["Tue","Interval 400m ×6 @4:10–4:20\nrecovery jog เต็มที่ · เบา สั้น\n🎯 ขั้นสุดท้ายของการกลับสู่ speed"],["Wed","Easy 5–6km @5:45–6:05 Zone 2"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up 4 เกียร์: 5:45→5:25→5:05→4:45"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 14km @5:50–6:10 Zone 2\nเบาๆ ให้ร่างกายซึมซับ",1]]},
- {w:22,ph:"Build",date:"03/08",focus:"เริ่มบล็อก 2 · MP เริ่มจริงจัง",days:[["Tue","Interval 1km ×8 @4:08–4:14\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 12km @4:35–4:40\nตั้งใจล็อก pace เป้า! HR ~155-163 (Zone 3)"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2",1]]},
+ {w:22,ph:"Build",date:"03/08",focus:"เริ่มบล็อก 2 · MP เริ่มจริงจัง · กลับมาใช้ pace นำ",days:[["Tue","Interval 1km ×8 @4:08–4:14\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 12km @4:35–4:40\nตั้งใจล็อก pace เป้า! HR ~155-163 (Zone 3)\n⭐ MP ครั้งแรกหลังบาดเจ็บ: 2-3km แรกช้ากว่าเป้านิด แล้วค่อยเข้า pace · ถ้าขอบเท้าส่งสัญญาณ ตัดเหลือ 8-10km ได้ ไม่ถือว่าหลุดแผน"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2",1]]},
  {w:23,ph:"Build",date:"10/08",focus:"VCR retest · เช็ค LT ใหม่",days:[["Tue","VCR Test 30min (Re-test LT)\nแล่นหนักสุด 30 นาที · ดู HR สูงสุดที่คงที่ = LT ใหม่"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 14km @4:35–4:40\nล็อก pace เป้า · เช็ค HR เทียบ LT ใหม่"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 24km @5:30–5:45 Zone 2",1]]},
  {w:24,ph:"Build",date:"17/08",focus:"ปิดบล็อก 2 · เตรียม deload",days:[["Tue","Hill Repeats 60s ×10 @RPE 8\njog ลงพัก"],["Wed","Easy 6–8km @5:40–6:00 Zone 2\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 12km @4:20–4:26\nตั้งใจแตะ HR 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 26km @5:28–5:43 Zone 2\nlast 3km ขยับ Zone 3",1]]},
  {w:25,ph:"Recovery",date:"24/08",focus:"🔽 Deload 2 · ฟื้นตัวรับ Specific",days:[["Tue","Fartlek 1min hard/1min easy ×10\nเบากว่าปกติ · hard @4:10–4:18"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:40–6:00 + strides 4×80m"],["Sun","Long 18km @5:45–6:05 Zone 2",1]]},
