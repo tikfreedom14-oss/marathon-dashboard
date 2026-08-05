@@ -166,6 +166,10 @@ section{padding:40px 0}
 .pb-Peak{background:rgba(255,90,60,.16);color:var(--coral)}
 .pb-Taper{background:rgba(52,224,161,.16);color:var(--mint)}
 .pb-RACE{background:rgba(255,214,90,.18);color:var(--gold)}
+.wk-km{font-size:12px;padding:2px 8px;border-radius:20px;background:rgba(255,255,255,.06);color:var(--muted);white-space:nowrap}
+.wk-km.km-ok{background:rgba(52,224,161,.15);color:var(--mint)}
+.wk-km.km-mid{background:rgba(255,184,77,.15);color:var(--amber)}
+.wk-km.km-low{background:rgba(255,90,60,.15);color:var(--coral)}
 .wk-date{font-family:"Space Mono",monospace;font-size:13px;color:var(--muted)}
 .wk-focus{flex:1;font-size:13.5px;color:var(--muted);text-align:right;min-width:0;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -512,6 +516,30 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
         <span><i class="dot" style="background:var(--gold)"></i>Race</span>
       </div>
     </div>
+
+    <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.4);background:rgba(52,224,161,.07)">
+      <div class="ct" style="color:var(--mint)">📊 Benchmark กลุ่ม 3:00-3:30 — เราอยู่ตรงไหน</div>
+      <div class="ptable-wrap" style="margin:12px 0">
+        <table class="ptable">
+          <thead><tr><th>ตัวชี้วัด</th><th>กลุ่ม 3:00-3:30</th><th>ของเรา</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">Volume/สัปดาห์</td><td class="mono">64-72 km</td><td class="mono" style="color:var(--coral)">ตอนนี้ ~51 · <b>เป้าใหม่ 58-67 ภายใน W28</b></td></tr>
+            <tr><td class="mono">สัดส่วน Easy</td><td class="mono">~70%</td><td class="mono">ดูหลัก 80/20 ใน §10</td></tr>
+            <tr><td class="mono">Peak long run</td><td class="mono">30-32 km</td><td class="mono" style="color:var(--amber)">แผนไต่ถึง 34 km — <b>พิจารณาหยุดที่ 32</b></td></tr>
+            <tr><td class="mono">Quality/สัปดาห์</td><td class="mono">1-2 ครั้ง</td><td class="mono" style="color:var(--amber)">มี 3 (อ./พฤ./อา.) — <b>มากกว่ามาตรฐาน</b></td></tr>
+            <tr><td class="mono">วันซ้อม/สัปดาห์</td><td class="mono">5-6 วัน</td><td class="mono">6 วัน ✅</td></tr>
+            <tr><td class="mono">Intensity distribution</td><td class="mono">Pyramidal</td><td class="mono">Pyramidal ✅</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ol>
+        <li><b>ที่มา:</b> งานวิจัยจากบันทึกการซ้อม Strava <b>119,452 คน · มาราธอน 151,813 ครั้ง</b> (เผยแพร่ปลายปี 2024) + กลุ่มตัวอย่าง Boston Marathon 917 คน</li>
+        <li>🔑 <b>สิ่งที่ควรจำที่สุด:</b> ปริมาณที่เพิ่มขึ้นซึ่งแยกนักวิ่งเร็วออกจากนักวิ่งช้า <b>เกือบทั้งหมดเป็นการวิ่งแบบสบาย ๆ ไม่ใช่งานหนัก</b> — เพิ่ม volume ด้วย easy run เท่านั้น</li>
+        <li>📌 <b>Peak long run เกือบเท่ากันทุกกลุ่ม (30-32 km)</b> — ความต่างอยู่ที่ volume รวม ไม่ใช่ความยาวของ long run · แผนเราไต่ถึง 34 km ซึ่งยาวกว่าค่ากลางของกลุ่ม Sub-3 ด้วยซ้ำ</li>
+        <li>🚴 <b>Cross-training:</b> ใน 4 เดือนสุดท้ายก่อนแข่ง การเพิ่ม cross-training 1 ครั้ง/สัปดาห์ สัมพันธ์กับเวลาเข้าเส้นชัย<b>เร็วขึ้นราว 6 นาที</b> · ไม่พบผลถ้าทำในช่วง 12-4 เดือนก่อน — <b>ตอนนี้เหลือ ~15 สัปดาห์ = อยู่ในหน้าต่างนั้นพอดี</b><br>
+          ✅ ใส่ไว้ในตารางตั้งแต่ W23 แล้ว (วันจันทร์) — <b>ปั่นจักรยาน/ว่ายน้ำ 45-60 นาที · เบา ไม่ใช่ session หนัก</b> · เพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก ซึ่งตรงกับข้อจำกัดเรื่องเอ็นของเรา</li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -525,7 +553,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 <section id="schedule">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title">Weekly Schedule</h2></div>
-    <p class="sec-desc">ໂຄງ: ຈ.ພັກ · ອ.Speed · ພ.Easy · ພฤ.Tempo/MP · ສ.Strength · ເສົາ Easy+strides · ທิด Long. Long run ไต่ 16→18→20→<b>14(deload)</b>→22→24→26→<b>18(deload)</b>→28→30→32→<b>22(deload)</b>→30→32→34(longest)→taper 24→18→12→Race. Zone HR ปรับตาม LT=172 จริง.</p>
+    <p class="sec-desc">ໂຄງ: <b>ຈ. ພັກ (W23+ ເພີ່ມ cross-training ເບົາ 45–60 ນາທີ)</b> · ອ.Speed · ພ.Easy · ພฤ.Tempo/MP · ສ.Strength · ເສົາ Easy+strides · ທິດ Long. Long run ไต่ 16→18→20→<b>14(deload)</b>→22→24→26→<b>18(deload)</b>→28→30→32→<b>22(deload)</b>→30→32→34(longest)→taper 24→18→12→Race. Zone HR ปรับใหม่ตาม <b>LTHR ≈ 180</b> (VCR test 10/03) — ดูที่มาใน §10.</p>
     <div class="filters" id="filters"></div>
     <div class="weeks" id="weeks"></div>
     <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.3);background:rgba(52,224,161,.06)">
@@ -585,6 +613,16 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">06</span><h2 class="sec-title">Strength for Runners · โพสทีเรียร์เชน</h2></div>
     <p class="sec-desc">วันศุกร์. Strength ที่ดีสำหรับนักวิ่งไม่ใช่แค่ squat — แต่คือ <b>hip hinge</b> ที่ฝึกจัดการแรงผ่านสะโพก (glute/hamstring/core) เพื่อรักษาฟอร์มตอนล้า km 30+ และ Running Economy. เน้นฟอร์มถูก > น้ำหนักมาก. <b>⚠️ หยุดก่อนหมดแรง 1-3 ครั้ง (RIR 1-3)</b> — เก็บงบฟื้นตัวไว้ให้วัน Long/MP (ดู §15).</p>
+    <div class="callout" style="margin-bottom:16px;border-color:rgba(255,184,77,.4);background:rgba(255,184,77,.07)">
+      <div class="ct" style="color:var(--amber)">🏋️ อุปกรณ์ที่มี + สิ่งที่ปรับใหม่ (05/08)</div>
+      <ol>
+        <li><b>อุปกรณ์:</b> ดัมเบล 8kg × 1 คู่ · ดัมเบล 2.5kg × 1 คู่ · ยางยืด — เพียงพอสำหรับทุกท่าในหน้านี้ ไม่ต้องซื้อเพิ่ม</li>
+        <li>✂️ <b>ลดเหลือ 2 เซ็ต (เดิม 3)</b> — เพราะความล้าจากวันศุกร์ค้างถึงเสาร์-อาทิตย์ · เกณฑ์ง่าย ๆ: <b>ถ้าวันเสาร์ขายังหนัก แปลว่าวันศุกร์หนักเกินไป</b> ไม่ว่าจะรู้สึกดีแค่ไหนตอนทำ</li>
+        <li>🔄 <b>สลับ Glute Bridge → Split Squat</b> (ไม่ได้เพิ่มท่า ยังคง 4 ท่า) — เหตุผล: ทั้ง 4 ท่าเดิมเป็นสองขาหมด แต่การวิ่งคือกีฬาขาเดียว · และหลักฐานจาก half 28/02 ชี้ว่าสิ่งที่พังคือ<b>การผลิตแรงต่อก้าว</b> (stride หด 15% · GCT +20ms) ซึ่งท่าสองขาตรวจไม่เจอ</li>
+        <li>⚠️ <b>เริ่ม Split Squat วันศุกร์ W23 ไม่ใช่ W22</b> — ท่าใหม่มักสร้าง DOMS มากกว่าปกติในครั้งแรก และ W22 มี MP 12km + Long 22km รออยู่ · W22 ให้คงท่าเดิม 4 ท่า ลดเหลือ 2 เซ็ตก่อน</li>
+        <li>📌 <b>ข้อสังเกตที่ต้องรู้:</b> §07 เขียนว่า "Maximum Strength เป็นหลัก" แต่ท่าจริงอยู่ในช่วง 8-15 ครั้ง ซึ่งไม่ใช่ max strength (3-6 ครั้ง หนัก) · ชุดนี้เหมาะกับช่วงหลังบาดเจ็บ <b>แต่อย่าคาดหวังผลแบบ max strength จากมัน</b> — ของจริงเริ่ม W24 พร้อม plyometric (§06 เงื่อนไข)</li>
+      </ol>
+    </div>
     <div class="pero-grid" id="strGrid"></div>
     <div class="callout" style="margin-top:20px;border-color:rgba(91,141,239,.35);background:rgba(91,141,239,.07)">
       <div class="ct" style="color:var(--blue)">🔑 ทำไม hip hinge สำคัญกับนักวิ่งไกล</div>
@@ -661,7 +699,17 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 <section id="zoneguide">
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">10</span><h2 class="sec-title">Zone Guide · 80/20</h2></div>
-    <p class="sec-desc">หลักการทองคำ: ~80% ของ mileage แล่นเบา (Zone 1-2) · ~20% หนัก (Zone 3-5). Zone HR ปรับให้ตรงกับ LT จริง 172 bpm (test มิ.ย.) — ไม่ใช้ตัวเลขทั่วไปอีกต่อไป.</p>
+    <p class="sec-desc">หลักการทองคำ: ~80% ของ mileage แล่นเบา (Zone 1-2) · ~20% หนัก (Zone 3-5). Zone HR ปรับใหม่ตาม <b>LTHR ≈ 180</b> จากผล VCR test 10/03/2026 (ใส่สายคาดอก) — ไม่ใช่ 172 อีกต่อไป.</p>
+    <div class="callout" style="margin:14px 0;border-color:rgba(255,90,60,.45);background:rgba(255,90,60,.08)">
+      <div class="ct">⚠️ โซนชุดนี้แก้ใหม่ทั้งหมด — อ่านก่อนใช้</div>
+      <ol>
+        <li><b>ที่มา:</b> VCR test 30 นาที 10/03/2026 (ใส่สายคาดอก · เชื่อถือได้) → <b>4:12/km · HR เฉลี่ย 177 · ช่วง 20 นาทีท้าย ~180</b> · โซนที่ Garmin คำนวณเองวันนั้นคือ Z4 173-181 / Z5 &gt;181 ⇒ <b>LTHR ≈ 180-181</b></li>
+        <li><b>ของเดิมใช้ LT=172 (จาก lab มิ.ย.) ซึ่งต่ำไป ~8 bpm</b> — ทำให้หลาย session ขึ้น "Zone 5" ทั้งที่ความรู้สึกไม่หนัก และทำให้เพดาน Easy/MP ถูกตั้งต่ำเกินจริง</li>
+        <li>✅ <b>ปริศนาที่ไขได้:</b> W20 Tempo 10km ที่ HR ค้าง 182 เคยดูเหมือน "เหนือ LT 10 bpm ซึ่งเป็นไปไม่ได้" — <b>ถ้า LTHR จริงคือ ~180 ก็คือค้างอยู่ที่ LT พอดี ซึ่งปกติสมบูรณ์</b></li>
+        <li>📌 <b>ผลย้อนหลัง:</b> Long run 14km (02/08) HR เฉลี่ย 149 ที่เคยอ่านว่า "Zone 3 ถึง 46% = เกินเป้า" <b>ที่จริงคือ Zone 2 ล่าง — อยู่ในเกณฑ์ถูกต้องแล้ว</b></li>
+        <li>⚠️ <b>ข้อควรระวัง:</b> ค่านี้มาจากเดือน 3 <b>ก่อนบาดเจ็บ 2 รอบ</b> · LT <b>pace</b> 4:12 อาจไม่จริงแล้ววันนี้ (Garmin ก.ค. บอก 4:29) แต่ <b>LT HR เปลี่ยนช้ากว่า LT pace มาก</b> จึงใช้ ~180 เป็นฐานได้ · <b>VCR retest W23 จะยืนยันอีกครั้ง</b></li>
+      </ol>
+    </div>
     <div class="zg-zones" id="zgZones"></div>
     <h3 class="zg-sub">📅 ตัวอย่างสัปดาห์ (Peak phase)</h3>
     <div class="zg-week" id="zgWeek"></div>
@@ -707,11 +755,11 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
     <div class="callout" style="margin-top:20px;border-color:rgba(91,141,239,.4);background:rgba(91,141,239,.07)">
       <div class="ct" style="color:var(--blue)">💚 Zone 1 vs Zone 2 · วิ่ง Z2 ตลอดจะฟื้นไม่ทันไหม</div>
       <ol>
-        <li><b>ไม่ — Z2 ไม่ขัดการฟื้นตัว.</b> เส้นที่กำหนดว่า session กินงบฟื้นตัวหรือไม่ <b>ไม่ใช่</b>ขอบ Z1/Z2 แต่คือ<b>เส้นแอโรบิก ~148</b> · ต่ำกว่านั้นใช้ไขมันเป็นหลัก ไม่สะสมแลคเตต ไม่รบกวนระบบประสาท</li>
-        <li>Easy 60 นาที @HR 144 ฟื้นตัวไม่ช้ากว่า @HR 132 อย่างมีนัย — <b>ตัวกำหนดการฟื้นตัวจริงคือ ระยะทาง+เวลารวม ไม่ใช่ 12 bpm นั้น</b> · นี่คือเหตุผลที่หลัก 80/20 (§10) จัด Z1 และ Z2 ไว้ฝั่ง "เบา" ด้วยกัน</li>
+        <li><b>ไม่ — Z2 ไม่ขัดการฟื้นตัว.</b> เส้นที่กำหนดว่า session กินงบฟื้นตัวหรือไม่ <b>ไม่ใช่</b>ขอบ Z1/Z2 แต่คือ<b>เส้นแอโรบิก ~161 (ขอบบน Z2)</b> · ต่ำกว่านั้นใช้ไขมันเป็นหลัก ไม่สะสมแลคเตต ไม่รบกวนระบบประสาท</li>
+        <li>Easy 60 นาที @HR 155 ฟื้นตัวไม่ช้ากว่า @HR 140 อย่างมีนัย — <b>ตัวกำหนดการฟื้นตัวจริงคือ ระยะทาง+เวลารวม ไม่ใช่ 12 bpm นั้น</b> · นี่คือเหตุผลที่หลัก 80/20 (§10) จัด Z1 และ Z2 ไว้ฝั่ง "เบา" ด้วยกัน</li>
         <li><b>✅ วิธีที่ถูก — เริ่ม Z1 แล้วค่อยไต่ขึ้น:</b> WU 10 นาทีที่ Z1 คือ warm-up ที่ถูกสุขลักษณะ ไม่มีโค้ชคนไหนแนะนำให้เข้า Z2 ตั้งแต่นาทีแรก · <b>แต่หลัง WU จบต้องปล่อยให้ค้าง Z2 จริง ไม่ใช่ค้าง Z1 ทั้ง session</b></li>
-        <li><b>🏃 Easy (พุธ/เสาร์) → HR 138–145 (Z2 ล่าง):</b> หน้าที่คือพักฟื้นจริงๆ · วันไหนล้ามาก อยู่ Z1 ทั้งวันก็ได้ ไม่ผิด</li>
-        <li><b>🏃‍♂️ Long (อาทิตย์) → HR 142–148 (Z2 กลาง-บน):</b> ต่างจาก Easy — Long run คือ session ที่ต้องการ <b>stimulus</b> ไม่ใช่พัก · อยู่ Z1 ทั้ง 22km จะได้ระยะแต่ไม่ได้ mitochondria/capillary adaptation ที่อยู่ขอบบน Z2</li>
+        <li><b>🏃 Easy (พุธ/เสาร์) → HR 146–155 (Z2 ล่าง):</b> หน้าที่คือพักฟื้นจริงๆ · วันไหนล้ามาก อยู่ Z1 ทั้งวันก็ได้ ไม่ผิด</li>
+        <li><b>🏃‍♂️ Long (อาทิตย์) → HR 152–161 (Z2 กลาง-บน):</b> ต่างจาก Easy — Long run คือ session ที่ต้องการ <b>stimulus</b> ไม่ใช่พัก · อยู่ Z1 ทั้ง 22km จะได้ระยะแต่ไม่ได้ mitochondria/capillary adaptation ที่อยู่ขอบบน Z2</li>
         <li>🎯 <b>ตรงกับ §16 โดยตรง:</b> marathon-specific endurance สร้างที่<b>ขอบบน Z2</b> ไม่ใช่ Z1 — นี่คือช่องที่เราขาดอยู่</li>
         <li>⚠️ <b>ข้อยกเว้นที่ต้องระวัง:</b> สัปดาห์ที่ปริมาณสูงอยู่แล้ว (เช่น W24: Long 26km + Tempo 12km + Hills) ถ้า Easy ไปอยู่ขอบบน Z2 ด้วยจะหนักเกินจริง<br><b>กฎง่ายๆ: Easy อยู่ขอบล่าง Z2 · Long อยู่ขอบบน Z2 · ไม่สลับกัน</b></li>
       </ol>
@@ -758,21 +806,27 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
       </ol>
     </div>
 
+    <div class="callout" style="margin-top:20px;border-color:rgba(255,90,60,.45);background:rgba(255,90,60,.08)">
+      <div class="ct">🔴 ຄ່າ HR ໃນຕາຕະລາງລຸ່ມນີ້ແກ້ໃໝ່ແລ້ວ (03/08)</div>
+      <ol><li>ອີງ <b>LTHR ≈ 180</b> ຈາກ VCR test 10/03/2026 (ໃສ່ສາຍຄາດເອິກ) ບໍ່ແມ່ນ 172 ຄືເກົ່າ — ທຸກເກນເລື່ອນຂຶ້ນ 6–9 bpm · ທີ່ມາຢູ່ໃນ §10</li>
+      <li>⌚ <b>ວັນພະຫັດຕ້ອງໃສ່ສາຍຄາດເອິກ</b> — checkpoint ທັງໝົດໃຊ້ HR ເປັນເກນ</li></ol>
+    </div>
+
     <div class="ptable-wrap" style="margin-top:20px">
       <table class="ptable">
         <thead><tr><th>Checkpoint</th><th>ຄ່າທີ່ເຫັນ</th><th>ເຮັດຫຍັງ</th></tr></thead>
         <tbody>
-          <tr><td class="mono" rowspan="3" style="color:var(--mint)"><b>ຈົບ km 3</b><br><span style="color:var(--muted);font-size:12px">ເຊັກ HR</span></td><td class="mono">HR ≤ 152</td><td>ດີ — ເຂົ້າ block 2 ຕາມແຜນ</td></tr>
-          <tr><td class="mono">HR 153–160</td><td>ຍັງໄປໄດ້ ແຕ່ block 2 ໃຊ້ 4:50 ບໍ່ແມ່ນ 4:46</td></tr>
-          <tr><td class="mono" style="color:var(--coral)"><b>HR &gt; 161</b></td><td><b>ຕັດ block 3 (4:37) ອອກ</b> → ແລ່ນທັງ session ເປັນ MP-effort ຄຸມ HR 165 ປ່ອຍ pace ເປັນຫຍັງກໍໄດ້ · ບັນທຶກເປັນ baseline ໃຫ້ VCR W23</td></tr>
+          <tr><td class="mono" rowspan="3" style="color:var(--mint)"><b>ຈົບ km 3</b><br><span style="color:var(--muted);font-size:12px">ເຊັກ HR</span></td><td class="mono">HR ≤ 158</td><td>ດີ — ເຂົ້າ block 2 ຕາມແຜນ</td></tr>
+          <tr><td class="mono">HR 159–166</td><td>ຍັງໄປໄດ້ ແຕ່ block 2 ໃຊ້ 4:50 ບໍ່ແມ່ນ 4:46</td></tr>
+          <tr><td class="mono" style="color:var(--coral)"><b>HR &gt; 167</b></td><td><b>ຕັດ block 3 (4:37) ອອກ</b> → ແລ່ນທັງ session ເປັນ MP-effort ຄຸມ HR 171 ປ່ອຍ pace ເປັນຫຍັງກໍໄດ້ · ບັນທຶກເປັນ baseline ໃຫ້ VCR W23</td></tr>
 
-          <tr><td class="mono" rowspan="3" style="color:var(--blue)"><b>ຈົບ km 6</b><br><span style="color:var(--muted);font-size:12px">HR + cadence</span></td><td class="mono">HR ≤ 162 <b>ແລະ</b> cad ≥ 170</td><td>ໄປຕໍ່ຄົບ 12km ພ້ອມ block 3</td></tr>
-          <tr><td class="mono">HR 163–168</td><td>ໄປຕໍ່ຄົບ 12km ແຕ່ <b>block 3 ໃຊ້ 4:42 ບໍ່ແມ່ນ 4:37</b></td></tr>
+          <tr><td class="mono" rowspan="3" style="color:var(--blue)"><b>ຈົບ km 6</b><br><span style="color:var(--muted);font-size:12px">HR + cadence</span></td><td class="mono">HR ≤ 168 <b>ແລະ</b> cad ≥ 170</td><td>ໄປຕໍ່ຄົບ 12km ພ້ອມ block 3</td></tr>
+          <tr><td class="mono">HR 169–174</td><td>ໄປຕໍ່ຄົບ 12km ແຕ່ <b>block 3 ໃຊ້ 4:42 ບໍ່ແມ່ນ 4:37</b></td></tr>
           <tr><td class="mono" style="color:var(--amber)"><b>cad &lt; 168</b> ທັງທີ່ pace ຢູ່</td><td>ສັນຍານກົນໄກເລີ່ມພັງ (ບໍ່ແມ່ນຫົວໃຈ) → ຕັດເປັນ 10km<br><span style="color:var(--muted);font-size:12px">⚠️ ອ່ານຈາກ lap ຂອງຊ່ວງແລ່ນຕໍ່ເນື່ອງ — MP run ບໍ່ມີຍ່າງ ຈຶ່ງໃຊ້ຄ່າສະເລ່ຍໄດ້ເລີຍ</span></td></tr>
 
-          <tr><td class="mono" rowspan="3" style="color:var(--gold)"><b>ຈົບ km 9</b><br><span style="color:var(--muted);font-size:12px">ຈຸດຕັດສິນໃຈໃຫຍ່</span></td><td class="mono">HR ≤ 166 + ຂອບເທ້າງຽບ</td><td><b>ຢືນຢັດ</b> — ເຂົ້າ block 3 @4:37 ຕາມແຜນ</td></tr>
-          <tr><td class="mono">HR 167–172</td><td>ຈົບທີ່ 10km @4:48 · ຢ່າຝືນ block 3</td></tr>
-          <tr><td class="mono" style="color:var(--coral)"><b>HR &gt; 172 (LT)</b></td><td><b>ຢຸດ MP ທັນທີ → CD</b> · ບໍ່ຕໍ່ລອງ ເປັນເພດານທີ່ຕົກລົງກັນໄວ້</td></tr>
+          <tr><td class="mono" rowspan="3" style="color:var(--gold)"><b>ຈົບ km 9</b><br><span style="color:var(--muted);font-size:12px">ຈຸດຕັດສິນໃຈໃຫຍ່</span></td><td class="mono">HR ≤ 172 + ຂອບເທ້າງຽບ</td><td><b>ຢືນຢັດ</b> — ເຂົ້າ block 3 @4:37 ຕາມແຜນ</td></tr>
+          <tr><td class="mono">HR 173–178</td><td>ຈົບທີ່ 10km @4:48 · ຢ່າຝືນ block 3</td></tr>
+          <tr><td class="mono" style="color:var(--coral)"><b>HR &gt; 181 (LT ໃໝ່)</b></td><td><b>ຢຸດ MP ທັນທີ → CD</b> · ບໍ່ຕໍ່ລອງ · ເພດານໃໝ່ຈາກ VCR 10/03 (LTHR ~180)</td></tr>
 
           <tr><td class="mono" rowspan="3" style="color:var(--coral)"><b>ຕະຫຼອດເສັ້ນ</b><br><span style="color:var(--muted);font-size:12px">ຂອບເທ້າ (peroneal)</span></td><td class="mono">0–1/10 ບໍ່ເພີ່ມ</td><td>ໄປຕໍ່ — ອ້າງອີງ: build-up 8km ໃຫ້ 1/10 ແລ້ວຫາຍ</td></tr>
           <tr><td class="mono">2/10 ຫຼື ໄຕ່ຂຶ້ນ</td><td>ຈົບທີ່ km ຖັດໄປ</td></tr>
@@ -831,7 +885,7 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
     <div class="callout" style="margin-top:16px">
       <div class="ct">🧠 ຄຳຖາມທີ່ຄວນຕອບຕົວເອງກ່ອນນອນວັນພຸດ</div>
       <ol>
-        <li><b>ຖ້າ km 9 HR ຢູ່ 167 ແລະ ຂາຍັງໄຫວ — ຈະເຂົ້າ block 3 @4:37 ຫຼື ຈະຈົບທີ່ 10km?</b></li>
+        <li><b>ຖ້າ km 9 HR ຢູ່ 173 ແລະ ຂາຍັງໄຫວ — ຈະເຂົ້າ block 3 @4:37 ຫຼື ຈະຈົບທີ່ 10km?</b></li>
         <li>ຕອບໄວ້ຕອນນີ້ — ເພາະຕອນ km 9 ຈິງໆ ສະໝອງຈະຫາເຫດຜົນໃຫ້ໄປຕໍ່ສະເໝີ</li>
         <li>ຄວາມສ່ຽງບໍ່ໄດ້ຢູ່ທີ່ session ນີ້ — ແຕ່ຢູ່ທີ່ <b>14 ອາທິດຂ້າງໜ້າທີ່ຈະເສຍໄປ</b> ຖ້າ peroneal ກັບມາ</li>
       </ol>
@@ -1018,10 +1072,11 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
             <tr><td class="mono">1. HR drift ที่ pace คงที่<br><span style="color:var(--muted);font-size:12px">จุดที่ pace เริ่มตก ถูกเลื่อนออกไปไหม</span></td><td>HR ครึ่งหลัง เทียบครึ่งแรก ที่ pace ใกล้เคียงกัน</td><td class="mono">Long 32km (21/06): 135→160 = <b>~18%</b><br>Long 14km (02/08): 142→158 = ~10%</td></tr>
             <tr><td class="mono">2. Cadence retention</td><td>cadence ของ km ท้าย เทียบ km ต้น (ข้าม WU)<br><b>เกณฑ์: ตก &gt;5 spm = RE เสื่อม</b></td><td class="mono">✅ <b>ไม่ใช่จุดอ่อน</b> — Long 32km cadence 176 นิ่งตลอด 3 ชม.</td></tr>
             <tr><td class="mono">3. Cost ต่อก้าว</td><td>Power (W) ที่ pace เดียวกัน เทียบข้ามสัปดาห์ · ต่ำลง = ประหยัดขึ้น</td><td class="mono">21/06: <b>262W @5:44</b> (32km)<br>02/08: 257W @5:50 (14km)</td></tr>
-            <tr><td class="mono">4. GCT Balance drift<br><span style="color:var(--muted);font-size:12px">ดูภายใน run เท่านั้น</span></td><td>ดู<b>กราฟ</b>ว่าเริ่มเอียงตั้งแต่นาทีที่เท่าไหร่ — ไม่ใช่ดูค่าเฉลี่ย</td><td class="mono">✅ <b>ค่าเฉลี่ยคงที่ 47.9-48.9L มา 12 เดือนเต็ม = asymmetry ประจำตัว ไม่ใช่สิ่งที่กำลังแย่ลง</b><br>ภายใน run: 32km เริ่มเอียงขวานาทีที่ ~30 · 14km กลับมาสมดุลช่วงท้าย</td></tr>
-            <tr><td class="mono" style="color:var(--coral)"><b>5. Vertical Ratio</b> ⭐<br><span style="color:var(--muted);font-size:12px">RE · ⚠️ ต้องเทียบที่เพซเดียวกัน</span></td><td>⚠️ <b>ห้ามเทียบค่าเฉลี่ยรายเดือน</b> — VR = VO ÷ stride length และ stride length ขึ้นกับเพซโดยตรง วิ่งช้า → ก้าวสั้น → ตัวหารเล็กลง → VR สูงขึ้นเองแม้ฟอร์มไม่ได้แย่ลง<br>✅ <b>วิธีที่ถูก:</b> เทียบ VR ของ long run ที่เพซใกล้เคียงกัน ข้ามเดือน</td><td class="mono">Easy @6:30: 9.7 · Long @5:50: 9.3<br>Long @5:44 (มิ.ย.): 9.5<br><b>🎯 เป้า: VR ที่เพซ 5:50 ให้ได้ 9.0 ภายใน 3 เดือน</b></td></tr>
-            <tr><td class="mono">6. Stamina drain</td><td>ค่า ending potential ของ Garmin</td><td class="mono">32km: 100→<b>36</b> · 14km: 100→68</td></tr>
-            <tr><td class="mono">7. ตอนฟอร์มเปลี่ยน รู้ตัวไหม</td><td>ระหว่าง long run พอถึงราว 70% ของระยะ <b>ทายก่อน</b>ว่า cadence/balance เปลี่ยนหรือยัง แล้วค่อยดูนาฬิกาเช็ค</td><td class="mono">ยังไม่เคยทดสอบ</td></tr>
+            <tr><td class="mono" style="color:var(--coral)"><b>4. GCT drift ภายใน race</b> ⭐⭐<br><span style="color:var(--muted);font-size:12px">คำตอบที่ชัดที่สุด · ไม่ต้องพึ่ง HR</span></td><td>GCT + stride length ของ km ท้าย เทียบ km ต้น<br><b>เกณฑ์: GCT ยาวขึ้น &gt;15ms = การผลิตแรงตก</b></td><td class="mono">🔴 <b>Half 28/02: GCT 230 → 250ms (+20ms) · stride 1.24 → 1.05m (−15%) · cadence 178 → 175 (แทบไม่ตก)</b><br>เพซตก 4:30 → 5:30 พร้อมกัน<br>✅ Half 11/01 (15°C): GCT 228ms นิ่ง · จบแรง km21 3:52</td></tr>
+            <tr><td class="mono">5. GCT Balance drift<br><span style="color:var(--muted);font-size:12px">ดูภายใน run เท่านั้น</span></td><td>ดู<b>กราฟ</b>ว่าเริ่มเอียงตั้งแต่นาทีที่เท่าไหร่ — ไม่ใช่ดูค่าเฉลี่ย</td><td class="mono">✅ <b>ค่าเฉลี่ยคงที่ 47.9-48.9L มา 12 เดือนเต็ม = asymmetry ประจำตัว ไม่ใช่สิ่งที่กำลังแย่ลง</b><br>ภายใน run: 32km เริ่มเอียงขวานาทีที่ ~30 · 14km กลับมาสมดุลช่วงท้าย</td></tr>
+            <tr><td class="mono">6. Vertical Ratio<br><span style="color:var(--muted);font-size:12px">RE · ⚠️ ต้องเทียบที่เพซเดียวกัน</span></td><td>⚠️ <b>ห้ามเทียบค่าเฉลี่ยรายเดือน</b> — VR = VO ÷ stride length และ stride length ขึ้นกับเพซโดยตรง วิ่งช้า → ก้าวสั้น → ตัวหารเล็กลง → VR สูงขึ้นเองแม้ฟอร์มไม่ได้แย่ลง<br>✅ <b>วิธีที่ถูก:</b> เทียบ VR ของ long run ที่เพซใกล้เคียงกัน ข้ามเดือน</td><td class="mono">✅ <b>ปิดคดีแล้ว — VR ไม่ใช่จุดอ่อน</b><br>Half @4:25: <b>7.4%</b> (โซนเขียว/ฟ้า) · VO 9.3cm · stride 1.26m<br>Half @5:00: 8.1% · Long @5:50: 9.3% · Easy @6:30: 9.7%<br><b>VO แทบไม่เปลี่ยนเลย (9.2-9.3cm) ทุกเพซ — ที่เปลี่ยนคือ stride</b></td></tr>
+            <tr><td class="mono">7. Stamina drain</td><td>ค่า ending potential ของ Garmin</td><td class="mono">32km: 100→<b>36</b> · 14km: 100→68</td></tr>
+            <tr><td class="mono">8. ตอนฟอร์มเปลี่ยน รู้ตัวไหม</td><td>ระหว่าง long run พอถึงราว 70% ของระยะ <b>ทายก่อน</b>ว่า cadence/balance เปลี่ยนหรือยัง แล้วค่อยดูนาฬิกาเช็ค</td><td class="mono">ยังไม่เคยทดสอบ</td></tr>
           </tbody>
         </table>
       </div>
@@ -1044,13 +1099,21 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
 
       <ol style="margin-top:12px">
         <li>🔍 <b>"อะไรพังก่อน" — สิ่งที่ตัดออกได้แล้ว:</b> ไม่ใช่ cadence retention (นิ่ง 176 ตลอด 3 ชม. ใน long run 32km) และไม่ใช่ GCT balance (คงที่ 47.9-48.9L มา 12 เดือน = ลักษณะประจำตัว ไม่ใช่สิ่งที่กำลังแย่ลง)</li>
-        <li>⚠️ <b>VR ก็ยังสรุปไม่ได้ — ต้องระวัง pace confound:</b> VR รายเดือนขึ้นจาก 8.8% (ม.ค. เพซ 5:42) เป็น 10.0% (ก.ค. เพซ 6:17) ดูเหมือนเสื่อม <b>แต่เพซช้าลง ~10% ก็ดัน VR ขึ้นเป็น ~9.7 ได้เองอยู่แล้ว</b> โดยที่ฟอร์มไม่ได้แย่ลงเลย<br>
-          ส่วนที่เกินจากนั้นมีน้อยมาก → <b>แนวโน้ม VR รายเดือนส่วนใหญ่คือ artifact จากเพซ ไม่ใช่หลักฐานว่าฟอร์มเสื่อม</b><br>
-          👉 คำถามนี้จึง<b>ยังเปิดอยู่</b> · ต้องรอเทียบ VR ที่เพซเดียวกันข้ามเดือน (long run @5:50) จึงจะตอบได้จริง</li>
+        <li>🔴 <b>คำตอบแล้ว — "อะไรพังก่อน" คือการผลิตแรง:</b> ในการแข่ง half 28/02 เพซตกจาก 4:30 เป็น 5:30 โดยที่ <b>cadence แทบไม่ตกเลย (178 → 175)</b> แต่ <b>stride หดลง 15% และ GCT ยาวขึ้น 20ms</b><br>
+          จังหวะยังอยู่ · หัวใจไม่ใช่ตัวจำกัด · สิ่งที่หายไปคือ<b>แรงที่ส่งออกในแต่ละก้าว</b> — เกินเกณฑ์ &gt;15ms ที่ตั้งไว้ · และข้อมูลชุดนี้มาจาก accelerometer ไม่ใช่ optical sensor จึงเชื่อถือได้แม้วันนั้นไม่ได้ใส่สายคาดอก</li>
+        <li>✅ <b>VR ปิดคดีแล้ว — ไม่ใช่จุดอ่อน:</b> ที่เพซแข่ง 4:25 VR อยู่ที่ <b>7.4%</b> ซึ่งเป็นโซนเขียว/ฟ้า (นักวิ่งมีประสบการณ์) · และ VO แทบคงที่ 9.2-9.3cm ทุกเพซ — ที่ทำให้ VR ดูแย่ตอนวิ่งช้าคือ stride ที่สั้นลง ไม่ใช่การเด้งที่มากขึ้น</li>
+        <li>⚠️ <b>บริบทที่ทำให้แนวโน้มรายเดือนอ่านผิดได้ 2 ชั้น:</b> (1) <b>pace confound</b> — VR รายเดือนขึ้นจาก 8.8% (ม.ค.) เป็น 10.0% (ก.ค.) แต่เพซช้าลง ~10% ก็ดัน VR ขึ้นเป็น ~9.7 ได้เองแล้ว<br>
+          (2) <b>คนละบล็อกการซ้อม</b> — พ.ย.-ม.ค. คือ <b>บล็อกฮาล์ฟมาราธอน</b> (volume ต่ำ quality สูง เพซเร็ว) ส่วน ก.พ. เป็นต้นมาคือ <b>บล็อกมาราธอน</b> (volume สูง easy run เยอะ เพซช้า) · <b>นี่คือ periodization ที่ถูกต้อง ไม่ใช่การเสื่อม</b> — การคาดหวังให้ตัวเลขบล็อกฮาล์ฟคงอยู่ตอนซ้อมมาราธอนเป็นการคาดหวังที่ผิด</li>
         <li>⚠️ <b>รูปแบบที่นำไปสู่การบาดเจ็บ — เห็นชัดในข้อมูล 12 เดือน:</b> ม.ค. 127km @<b>5:42</b> (เร็วสุดของปี · VR 8.8 · cad 172) แล้วเพิ่มระยะติดกัน 5 เดือนโดยไม่มีเดือนผ่อนเลย → 173 → 197 → 226 → 267 → 276 km (<b>+117% ใน 5 เดือน</b>)<br>
           ผลคือ pace เฉลี่ยช้าลงจาก 5:42 เป็น 6:05 และ %HR ตกจาก 80% เหลือ 77% — <b>ร่างกายปรับตัวด้วยการช้าลง แทนที่จะแข็งแรงขึ้น</b> แล้วจึงบาดเจ็บ · สาเหตุไม่ใช่ session ใด session หนึ่ง แต่คือ 5 เดือนที่ไม่เคยผ่อน<br><span style="color:var(--muted);font-size:13px">(ข้อนี้ยืนอยู่บนเพซและ %HR ซึ่งไม่มี confound — ต่างจาก VR)</span></li>
-        <li>✅ <b>นัยต่อ 15 สัปดาห์ข้างหน้า:</b> <b>อย่าไล่ volume กลับไป 275km/เดือน</b> — นั่นคือเดือนที่พัง · เป้าคือ 200-240 km/เดือน พร้อมคุณภาพที่ดีกว่า<br>
-          <b>ตัวชี้วัดความสำเร็จคือเพซที่ %HR เดิม ไม่ใช่ระยะทาง</b> — ม.ค. ทำ 5:42 ที่ %HR 80 · ถ้ากลับไปหาตัวเลขนั้นได้ที่ volume 200-240 km/เดือน แปลว่ามาถูกทาง · VR ใช้เป็นตัวเสริมได้ <b>แต่ต้องเทียบที่เพซเดียวกันเท่านั้น</b> · และโครง 3:1 ในตารางนี้ต้องทำตามจริง เพราะ 12 เดือนที่ผ่านมาแทบไม่มีเดือนผ่อนเลย</li>
+        <li>⚠️ <b>แก้เป้า volume (05/08) — ข้อมูลใหม่ค้านคำแนะนำเดิม:</b> ก่อนหน้านี้ตั้งไว้ 200-240 km/เดือน (46-55 km/สัปดาห์) <b>ซึ่งเป็นระดับของคนที่จบ 3:30-4:00 ไม่ใช่ 3:15</b><br>
+          จากข้อมูล Strava 119,452 คน · มาราธอน 151,813 ครั้ง: <b>กลุ่ม 3:00-3:30 ซ้อม 64-72 km/สัปดาห์</b> · Sub-3:00 ซ้อม 80-120 · 3:30-4:00 ซ้อม 50-60 — Runalyze ก็เรียกร้อง 69 km/สัปดาห์เช่นกัน<br>
+          🎯 <b>เป้าใหม่: ไต่ไปหา 58-67 km/สัปดาห์ (250-290 km/เดือน) ภายใน W28</b></li>
+        <li>🔑 <b>แต่ความจริงอีกด้าน: เราบาดเจ็บที่ 62-64 km/สัปดาห์</b> — ทางแก้ไม่ใช่เลือกข้าง แต่คือ<b>ไปให้ถึงตัวเลขเดิมด้วยเส้นทางที่ต่างจากเดิม</b><br>
+          · <b>เดิม:</b> ขึ้น 5 เดือนติดโดยไม่มีเดือนผ่อนเลย → พัง<br>
+          · <b>ใหม่:</b> ขึ้นช้ากว่า · deload จริงตามโครง 3:1 · และ<b>เพิ่มด้วย easy ไม่ใช่เพิ่มด้วย quality</b><br>
+          ข้อมูล Strava ยืนยันข้อสุดท้ายชัดมาก — <b>สิ่งที่แยกนักวิ่งเร็วออกจากช้า เกือบทั้งหมดคือปริมาณ easy ไม่ใช่ปริมาณงานหนัก</b></li>
+        <li>📊 <b>ตัวชี้วัดความสำเร็จยังคงเป็นเพซที่ %HR เดิม ไม่ใช่ระยะทางอย่างเดียว</b> — ม.ค. ทำ 5:42 ที่ %HR 80 · VR ใช้เป็นตัวเสริมได้ แต่ต้องเทียบที่เพซเดียวกันเท่านั้น · และโครง 3:1 ต้องทำตามจริง เพราะ 12 เดือนที่ผ่านมาแทบไม่มีเดือนผ่อนเลย</li>
         <li>📉 <b>ต้องยอมรับ: fitness ตกจริง</b> — 21/06 วิ่ง 32km @5:44 ที่ HR 147 · 02/08 วิ่ง 14km @5:50 ที่ HR 149 · <b>ไกลกว่า 2.3 เท่า เร็วกว่า ด้วย HR ต่ำกว่า</b> · Marathon Shape 62% ของ Runalyze จึงสะท้อนความจริง ไม่ใช่ artifact จากการวิ่งช้าล้วน ๆ อย่างที่เคยสรุปไว้ · ข่าวดีคือนี่คือ fitness ที่<b>เคยมี</b> — คืนมาได้เร็วกว่าสร้างใหม่</li>
         <li>🎯 <b>สมมติฐานที่ต้องพิสูจน์:</b> มาราธอน 3:57 เทียบกับ capacity ที่ควรให้ ~3:20 — ถ้ารูปแบบเป็นแบบเดียวกับที่พบทั่วไป (pace ตกราว 70% ของระยะ) <b>จุดที่ pace เริ่มตกน่าจะอยู่ราว km 28-32</b> · นี่คือสิ่งที่ MP run ที่ยาวขึ้นเรื่อย ๆ และ Long run 30km+ มีไว้หาคำตอบ — <b>ไม่ใช่เพื่อสะสมระยะ แต่เพื่อรู้ว่าจุดนั้นอยู่ตรงไหน แล้วเลื่อนมันออกไป</b></li>
         <li>📌 <b>นัยต่อ Plyometric:</b> Gait Retention คือช่องที่ Max Strength / Hill Sprint / Plyometric ตอบโดยตรง (สร้างแรง → นำแรงไปใช้ในท่าวิ่ง → รับและส่งแรงกลับ) · แผนเราเลื่อนไว้หลัง VCR W23 ด้วยเหตุผล peroneal ซึ่งหนักแน่น — <b>และเหตุผลที่ต้องเริ่ม W24 ตามแผน ไม่ใช่เพราะ VR</b> (ซึ่งยังสรุปไม่ได้) <b>แต่เพราะ 5 เดือนที่เพิ่มระยะ 117% ทำให้เพซช้าลง ไม่ได้เร็วขึ้น</b> — พิสูจน์แล้วว่าการวิ่งเพิ่มอย่างเดียวไม่ได้ผลกับเรา · Strength/Hill/Plyometric คือช่องทางที่ยังไม่เคยลองจริงจัง</li>
@@ -1088,10 +1151,37 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
         <tbody id="goalCompare"></tbody>
       </table>
     </div>
+    <div class="callout" style="margin-top:18px;border-color:rgba(255,90,60,.4);background:rgba(255,90,60,.07)">
+      <div class="ct">🌡️ บทเรียนจาก 2 การแข่งฮาล์ฟ — ความร้อนกับการออกตัว</div>
+      <div class="ptable-wrap" style="margin:12px 0">
+        <table class="ptable">
+          <thead><tr><th></th><th>ขอนแก่น 11/01</th><th>เวียงจันทน์ 28/02</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">อากาศ</td><td class="mono" style="color:var(--mint)"><b>15°C</b> เช้า</td><td class="mono" style="color:var(--coral)"><b>28°C</b> เย็น</td></tr>
+            <tr><td class="mono">เส้นทาง</td><td class="mono">มีเนิน (ขึ้นลง 47m)</td><td class="mono">พื้นราบ</td></tr>
+            <tr><td class="mono">ผลเวลา</td><td class="mono" style="color:var(--mint)"><b>1:33:29 · 4:25/km</b></td><td class="mono">1:47:35 · 5:00/km</td></tr>
+            <tr><td class="mono">Split</td><td class="mono" style="color:var(--mint)">จบแรง — km19 4:05 · km21 <b>3:52</b></td><td class="mono" style="color:var(--coral)">positive แรง — km1-5 4:30 → km14-21 5:13-5:36</td></tr>
+            <tr><td class="mono">GCT</td><td class="mono">228ms นิ่ง</td><td class="mono" style="color:var(--coral)">230 → <b>250ms</b></td></tr>
+            <tr><td class="mono">Stamina</td><td class="mono">—</td><td class="mono">90 → <b>14%</b></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ol>
+        <li><b>ต่างกัน 35 วิ/km ในเวลา 7 สัปดาห์</b> โดยที่ฟิตเนสไม่ได้หายไปไหน — ตัวแปรหลักคืออุณหภูมิที่ต่างกัน 13°C</li>
+        <li>⚠️ <b>จุดที่ต้องระวังที่สุด — RPE โกหกในอากาศร้อน:</b> 28/02 ออกตัว 5 กม.แรกที่ 4:30-4:34 ซึ่ง<b>เร็วกว่าเพซเฉลี่ยที่จบจริง 30 วิ/km</b> · ช่วง 20 นาทีแรกขายังสด adrenaline สูง ความร้อนยังไม่สะสม ความรู้สึก "สบาย" ตอนนั้นไม่ได้บอกว่าจะรักษาไว้ได้อีก 90 นาที<br>
+          ที่ขอนแก่น 15°C ไม่มีปัญหานี้ เพราะไม่มีความร้อนมาบิดความรู้สึก</li>
+        <li>🎯 <b>Bangsaen42 (15/11) อยู่ใกล้กรณี 28/02 มากกว่า 11/01</b> — ชายทะเล อาจ 26-29°C และชื้น<br>
+          👉 <b>10 กม.แรกล็อกด้วยเพซ ไม่ใช่ความรู้สึก</b> ตั้งนาฬิกาเตือนถ้าเร็วกว่าเป้า จากนั้นค่อยปล่อยให้ RPE นำ · เร็วเกิน 10 วิ/km ใน 10 กม.แรก คือสิ่งที่ทำให้ 30 กม.สุดท้ายพัง และเราเห็นรูปแบบนี้มาแล้ว 2 ครั้ง (มาราธอน 3:57 และ half 28/02)</li>
+        <li>⌚ <b>วันแข่งใส่สายคาดอกไว้ แต่ไม่ต้องดูมัน</b> — แข่งด้วย RPE ตามที่ถนัด ส่วนข้อมูลไว้ดูหลังจบ<br>
+          เหตุผล: ทั้ง 2 การแข่งที่ผ่านมาไม่ได้ใส่สาย ทำให้ HR วันนั้นเป็น wrist-only ที่เชื่อไม่ได้ (28/02 ขึ้น max 187 ขณะ cadence max 184 = cadence lock) · <b>ตอนนี้เราจึงไม่มีข้อมูล HR จากการแข่งจริงเลยสักครั้ง</b> ซึ่งเป็นช่องเดียวที่ยังว่างในคลังข้อมูล</li>
+        <li>✅ <b>สิ่งที่ทั้ง 2 ครั้งยืนยันตรงกัน:</b> 5 กม.แรกที่ 4:25-4:34 ได้สบายทั้งคู่ — <b>capacity มีจริง</b> · สิ่งที่ต่างคือรักษาไว้ได้นานแค่ไหน (§16)</li>
+      </ol>
+    </div>
+
     <div class="callout" style="margin-top:18px;border-color:rgba(52,224,161,.35);background:rgba(52,224,161,.07)">
       <div class="ct" style="color:var(--mint)">🏁 กลยุทธ์ Race Day (กันไม่ให้ faded)</div>
       <ol>
-        <li>km 1-10: คุมช้ากว่าเป้าเล็กน้อย (+3-5 วิ/km) อย่าออกตัวเร็ว</li>
+        <li>km 1-10: คุมช้ากว่าเป้าเล็กน้อย (+3-5 วิ/km) <b>ล็อกด้วยเพซ ไม่ใช่ความรู้สึก</b> — ตั้งเตือนบนนาฬิกา (ดูกล่องด้านบน)</li>
         <li>km 11-32: ล็อกเพซเป้าให้นิ่ง · ดู HR ไม่เกิน Zone 4 (172)</li>
         <li>km 33-42: ถ้าแรงเหลือค่อยเร่ง · Gel ทุก 25–30 นาที อย่ารอให้หิว</li>
         <li>⚡ อากาศ Bangsaen ร้อน → ถ้า HR พุ่งเร็ว ให้ถอยไปเป้า A (เชื่อ HR)</li>
@@ -1225,11 +1315,11 @@ const RACE = new Date("2026-11-15T05:00:00+07:00");
 
 const zones = [
   {t:"Interval",n:"MP-Tolerance",p:"4:20–4:28",d:"⚠️ ปรับใหม่ W22 (เดิม 4:00–4:10) · Koide: เร็วกว่านี้ไม่คุ้ม + โซนที่ peroneal เคยพัง · recovery jog 200–300m",c:"var(--coral)"},
-  {t:"Tempo",n:"Threshold (LT)",p:"4:32–4:38",d:"⚠️ ปรับใหม่ (เดิม 4:18–4:25) · anchor = Garmin LT 4:29 (18/07) · เพดาน HR 172",c:"var(--blue)"},
-  {t:"Marathon Pace",n:"MP · ปัจจุบัน",p:"4:45–4:50",d:"⭐ ตัวเปลี่ยนหลัก (เดิม 4:35–4:37) · MP จริงจาก LT 4:29 · HR ~155–165",c:"var(--mint)"},
+  {t:"Tempo",n:"Threshold (LT)",p:"4:32–4:38",d:"⚠️ ปรับใหม่ (เดิม 4:18–4:25) · anchor = Garmin LT 4:29 (18/07) · 🔴 เพดาน HR ใหม่ 181 (เดิม 172 — ดู §10)",c:"var(--blue)"},
+  {t:"Marathon Pace",n:"MP · ปัจจุบัน",p:"4:45–4:50",d:"⭐ ตัวเปลี่ยนหลัก (เดิม 4:35–4:37) · MP จริงจาก LT 4:29 · 🔴 HR เป้าใหม่ 158–168 (เดิม 155–165)",c:"var(--mint)"},
   {t:"MP-Goal block",n:"Sub 3:15 target",p:"4:37",d:"🎯 ใส่เฉพาะ 2–5km ท้าย MP session (two-track · ดู §12) · ไม่ใช่ทั้ง session",c:"var(--coral)"},
-  {t:"Long Run",n:"Endurance",p:"5:35–5:55",d:"🎯 HR เป้า 142–148 (Z2 กลาง-บน) · WU 10–15 นาที Z1 ก่อน · Cadence 170–175 · ⚠️ ไฟเหลืองถ้าช้ากว่า 6:00 → ไปเช็ค cadence ไม่ใช่ดัน pace",c:"var(--gold)"},
-  {t:"Easy",n:"Recovery",p:"5:45–6:10",d:"🎯 HR เป้า 138–145 (Z2 ล่าง) · WU 10 นาที Z1 ก่อน · ⚠️ ไฟเหลืองถ้าช้ากว่า 6:15 → ไปเช็ค cadence ไม่ใช่ดัน pace",c:"var(--amber)"},
+  {t:"Long Run",n:"Endurance",p:"5:35–5:55",d:"🎯 HR เป้าใหม่ 152–161 (Z2 กลาง-บน · เดิม 142–148) · WU 10–15 นาที Z1 ก่อน · Cadence 170–175 · ⚠️ ไฟเหลืองถ้าช้ากว่า 6:00 → เช็ค cadence ไม่ใช่ดัน pace",c:"var(--gold)"},
+  {t:"Easy",n:"Recovery",p:"5:45–6:10",d:"🎯 HR เป้าใหม่ 146–155 (Z2 ล่าง · เดิม 138–145) · WU 10 นาที Z1 ก่อน · ⚠️ ไฟเหลืองถ้าช้ากว่า 6:15 → เช็ค cadence ไม่ใช่ดัน pace",c:"var(--amber)"},
 ];
 
 // weeks: 17..36
@@ -1238,25 +1328,25 @@ const weeks = [
    ["Tue","REST ຫຼື jog 15–20min\nຖ້າເຈັບ: ພັກ + ປະຄົບເຢັນ"],["Wed","Easy 20–30min\nPace ບໍ່ສຳຄັນ ເນັ້ນບໍ່ເຈັບ"],
    ["Thu","REST + Calf raises 2×15\nຍືດ plantar fascia + foam roll"],["Fri","Bodyweight ເບົາ\ncore + hip stability"],
    ["Sat","Easy 20min ຖ້າ pain-free 3 ມື້"],["Sun","Easy 8–10km · ຢຸດຖ້າເຈັບ\n🏥 ແນະນຳພົບນັກກາຍະພາບບຳບັດ",1]]},
- {w:18,ph:"Base",date:"06/07",focus:"🦶 ทดสอบเพซ 5:00 · กลับสู่ speed ขั้นที่ 1",days:[["Tue","🧪 Speed Test 4×400m @5:00–5:10\nrecovery jog เต็มที่ · WU/CD\n⚠️ เจ็บขอบเท้า = หยุดทันที เปลี่ยนเป็น Easy"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 6km @5:00–5:10 (ทดสอบ)\nต่อเนื่อง · เพซช้าก่อน เช็คเอ็น\n⚠️ เจ็บ = ถอยเป็น Easy ทันที"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m\n⚠️ strides เร่งลื่นๆ ไม่ซัดสุด · เจ็บ = ข้าม"],["Sun","Long 16km @5:50–6:05 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nHR เป้า <148 · Gel ทุก 25–30 นาที",1]]},
- {w:19,ph:"Base",date:"13/07",focus:"กลับสู่ speed ขั้นที่ 2 · เพซ 4:40",days:[["Tue","Interval 5×600m @4:40–4:50\nrecovery jog 300m · WU/CD\n(ทำต่อเมื่อ W18 ไม่เจ็บ · เจ็บ = คงที่ 5:00)"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 8km @4:45–4:55\nต่อเนื่อง · HR เพดาน 168-172\nเจ็บ = ถอยกลับเพซ W18"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 18km @5:45–6:00 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nGel ทุก 25–30 นาที",1]]},
- {w:20,ph:"Base",date:"20/07",focus:"กลับสู่ speed ขั้นที่ 3 · เพซ 4:20",days:[["Tue","Interval 5×800m @4:20–4:30\nrecovery jog 400m · WU/CD\n(ทำต่อเมื่อ W19 ไม่เจ็บ)"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:30–4:40\nต่อเนื่อง · HR เพดาน 170-172\nยังไม่ต้องแตะ LT เต็มที่"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 20km @5:40–5:55 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 2km ขยับ Zone 3",1]]},
- {w:21,ph:"Recovery",date:"27/07",focus:"🔽 Deload · ขั้นสุดท้าย เพซ 4:10",days:[["Tue","Interval 400m ×6 @4:10–4:20\nrecovery jog เต็มที่ · เบา สั้น\n🎯 ขั้นสุดท้ายของการกลับสู่ speed"],["Wed","Easy 5–6km @5:45–6:05 Zone 2"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up 4 เกียร์: 5:45→5:25→5:05→4:45"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 14km @5:50–6:10 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nเบาๆ ให้ร่างกายซึมซับ",1]]},
- {w:22,ph:"Build",date:"03/08",focus:"เริ่มบล็อก 2 · MP เริ่มจริงจัง · กลับมาใช้ pace นำ",days:[["Tue","Interval 1km ×8 @4:20–4:28 ⚠️ปรับใหม่\nrecovery jog 200–300m (60–90 วิ)\n(เดิม 4:08–4:14 — เร็วกว่า LT · Koide: ไม่คุ้ม + โซนที่ peroneal เคยพัง)"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 12km · Two-track ⚠️ปรับใหม่\n9km @4:48 + 3km ท้าย @4:37\n🎯 แผนลงมือเต็ม + checkpoint 4 จุด ที่ §12\n(เดิม 12km @4:35–4:40 ทั้ง session — เร็วเกิน fitness ปัจจุบัน)\n⭐ MP ครั้งแรกหลังบาดเจ็บ · ขอบเท้าส่งสัญญาณ = ตัดเหลือ 8-10km ได้ ไม่ถือว่าหลุดแผน"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 22km @5:35–5:55 Zone 2 · HR 142–148 (Z2 กลาง-บน)\n⚠️ ไฟเหลืองถ้าช้ากว่า 6:00 → เช็ค cadence ช่วงวิ่งจริง (ไม่ใช่ค่าเฉลี่ย) ก่อนตัดสิน",1]]},
- {w:23,ph:"Build",date:"10/08",focus:"VCR retest · เช็ค LT ใหม่",days:[["Tue","🔬 VCR Test 30min (Re-test LT)\nแล่นหนักสุด 30 นาที\n⚠️ เก็บ 2 ค่า: (1) pace เฉลี่ย = LT pace ใหม่ (2) HR เฉลี่ย 20 นาทีท้าย = LT HR ใหม่\n→ โซน HR ทั้งหมดผูกกับ LT=172 ถ้าค่าใหม่ต่าง ต้องคำนวณโซนใหม่ทั้งชุด\n(ข้อสงสัย: W20 Tempo HR ขึ้น 182 ค้าง 10km สูงกว่า LT ที่อ้าง 10bpm ⇒ LT จริงอาจสูงกว่า 172)"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 14km · 🔬 ตั้งเลขใหม่หลัง VCR\nอย่าเพิ่งล็อกตัวเลข — ใช้ผล VCR วันอังคารตั้ง MP ใหม่\nโครงคงเดิม: ส่วนใหญ่ @MP ปัจจุบัน + 3–4km ท้าย @4:37"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 24km @5:30–5:50 Zone 2 · HR 142–148 (Z2 กลาง-บน)\n⚠️ ไฟเหลืองถ้าช้ากว่า 6:00 → เช็ค cadence ช่วงวิ่งจริงก่อน",1]]},
- {w:24,ph:"Build",date:"17/08",focus:"ปิดบล็อก 2 · เตรียม deload",days:[["Tue","Hill Repeats 60s ×10 @RPE 8 · jog ลงพัก\n⚠️ เงื่อนไข §06: ยังไม่ใส่ hill sprint/plyo จนกว่า (1) ผ่าน VCR W23 (2) ขอบเท้าเงียบ 4 สัปดาห์ติด\nถ้าไม่ครบ → เปลี่ยนเป็น Interval 1km ×6 @4:20–4:28"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 12km @4:32–4:38 ⚠️ปรับใหม่\n(เดิม 4:20–4:26) · 🔬 ปรับอีกครั้งตามผล VCR W23\nเพดาน HR 172 (หรือค่า LT ใหม่)"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 26km @5:28–5:48 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 3km ขยับ Zone 3 · ⚠️ ไฟเหลือง 6:00",1]]},
- {w:25,ph:"Recovery",date:"24/08",focus:"🔽 Deload 2 · ฟื้นตัวรับ Specific",days:[["Tue","Fartlek 1min hard/1min easy ×10\nเบากว่าปกติ · hard @4:20–4:28 ⚠️ปรับใหม่ (เดิม 4:10–4:18)"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 18km @5:45–6:05 Zone 2 · HR 142–148 (Z2 กลาง-บน)",1]]},
- {w:26,ph:"Specific",date:"31/08",focus:"เริ่มบล็อก 3 · ดัน MP เข้าเป้าเต็มที่",days:[["Tue","Interval 1km ×10 @4:05–4:12\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37 🎯\nล็อกให้แม่น! HR เป้า ~158-165"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 28km @5:25–5:40 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 5km MP 4:37–4:42",1]]},
- {w:27,ph:"Specific",date:"07/09",focus:"MP ยาวขึ้น",days:[["Tue","Hill Repeats 60s ×12 @RPE 8-9\njog ลงพัก"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 14km @4:18–4:25\nตั้งใจแตะ LT 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 30km @5:22–5:38 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 8km MP 4:35–4:40",1]]},
- {w:28,ph:"Specific",date:"14/09",focus:"ปิดบล็อก 3 · เตรียม deload",days:[["Tue","Interval 800m ×8 @4:00–4:08\nrecovery jog 300m/90s"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37\nล็อก pace เป้า"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 32km @5:20–5:35 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 8km MP",1]]},
- {w:29,ph:"Recovery",date:"21/09",focus:"🔽 Deload 3 · ก่อน Peak",days:[["Tue","Fartlek 2min hard/2min easy ×6\nเบากว่าปกติ"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2 · HR 142–148 (Z2 กลาง-บน)",1]]},
- {w:30,ph:"Peak",date:"28/09",focus:"Peak เริ่ม · Re-test LT #2",days:[["Tue","VCR Test 30min (Re-test LT #2)\nแล่นหนักสุด 30 นาที · อัปเดต Zone/Pace ก่อน Peak"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37\nHR ~158-165 · ล็อกให้นิ่ง"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 30km @5:22–5:38 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 8km MP",1]]},
- {w:31,ph:"Peak",date:"05/10",focus:"Peak ต่อ",days:[["Tue","Hill Repeats 60s ×10 @RPE 8-9\njog ลงพัก"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 15km @4:18–4:25\nตั้งใจแตะ LT 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 32km @5:20–5:35 Zone 2 · HR 142–148 (Z2 กลาง-บน)\nlast 10km MP",1]]},
- {w:32,ph:"Peak",date:"12/10",focus:"🎯 Peak สุดท้าย · Long ไกลสุด",days:[["Tue","Interval 1km ×8 @4:00–4:08\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:45–6:10 · HR 138–145 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 18km @4:35–4:37 🎯\npace เป้าแข่งเต็มที่!"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 34km (Longest!) @5:20–5:35\nlast 10km MP · ซ้อม fueling วันแข่ง",1]]},
- {w:33,ph:"Taper",date:"19/10",focus:"Taper เริ่ม · ลด volume 30%",days:[["Tue","Interval 1km ×6 @4:05–4:12\nrecovery jog 400m/2min · สั้นลง"],["Wed","Easy 6km @5:40–6:00"],["Thu","MP Run 12km @4:35–4:37\nรักษาความคุ้น pace แข่ง"],["Fri","Core + Stretching เบา"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 24km @5:25–5:40 Zone 2 · HR 142–148 (Z2 กลาง-บน)",1]]},
- {w:34,ph:"Taper",date:"26/10",focus:"Taper ต่อ · ลดอีก",days:[["Tue","Fartlek 2min hard/2min easy ×6\nเบา สั้นลง"],["Wed","Easy 6km @5:40–6:00"],["Thu","MP Run 10km @4:35–4:37\nสั้นลง · รักษาความคุ้น pace"],["Fri","Core + Stretching เบา"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 18km @5:25–5:40 Zone 2 · HR 142–148 (Z2 กลาง-บน)",1]]},
- {w:35,ph:"Taper",date:"02/11",focus:"อาทิตย์ก่อนแข่ง · พักขา",days:[["Tue","Interval 400m ×6 @4:00–4:10\nrecovery jog full · sharpen เบาๆ"],["Wed","Easy 5km @5:40–6:00"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up เบาๆ ปลุกขา"],["Fri","Stretching Only"],["Sat","Easy 5km @5:45–6:10 · HR 138–145 + strides 4×80m"],["Sun","Long 10–12km @5:20–5:40\nเบาที่สุด · Carb-load เริ่ม",1]]},
- {w:36,ph:"RACE",date:"09/11",focus:"🏆 RACE WEEK",days:[["Tue","Easy 5km @5:30–6:00 + strides\nขาเบา สดชื่น"],["Wed","Rest"],["Thu","Easy 5km @5:30–6:00 + strides\nขาเบา ก่อนแข่ง"],["Fri","Rest / Carb Load"],["Sat","Rest ຫຼือ jog เบามาก 15min"],["Sun","🏆 RACE DAY — Sub 3:15!\nPace เป้า 4:37 · Gel ทุก 25–30 นาที · Zone 3-4",1]]},
+ {w:18,ph:"Base",date:"06/07",focus:"🦶 ทดสอบเพซ 5:00 · กลับสู่ speed ขั้นที่ 1",days:[["Tue","🧪 Speed Test 4×400m @5:00–5:10\nrecovery jog เต็มที่ · WU/CD\n⚠️ เจ็บขอบเท้า = หยุดทันที เปลี่ยนเป็น Easy"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 6km @5:00–5:10 (ทดสอบ)\nต่อเนื่อง · เพซช้าก่อน เช็คเอ็น\n⚠️ เจ็บ = ถอยเป็น Easy ทันที"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m\n⚠️ strides เร่งลื่นๆ ไม่ซัดสุด · เจ็บ = ข้าม"],["Sun","Long 16km @5:50–6:05 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nHR เป้า <148 · Gel ทุก 25–30 นาที",1]]},
+ {w:19,ph:"Base",date:"13/07",focus:"กลับสู่ speed ขั้นที่ 2 · เพซ 4:40",days:[["Tue","Interval 5×600m @4:40–4:50\nrecovery jog 300m · WU/CD\n(ทำต่อเมื่อ W18 ไม่เจ็บ · เจ็บ = คงที่ 5:00)"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 8km @4:45–4:55\nต่อเนื่อง · HR เพดาน 168-172\nเจ็บ = ถอยกลับเพซ W18"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 18km @5:45–6:00 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nGel ทุก 25–30 นาที",1]]},
+ {w:20,ph:"Base",date:"20/07",focus:"กลับสู่ speed ขั้นที่ 3 · เพซ 4:20",days:[["Tue","Interval 5×800m @4:20–4:30\nrecovery jog 400m · WU/CD\n(ทำต่อเมื่อ W19 ไม่เจ็บ)"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 10km @4:30–4:40\nต่อเนื่อง · HR เพดาน 170-172\nยังไม่ต้องแตะ LT เต็มที่"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 20km @5:40–5:55 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 2km ขยับ Zone 3",1]]},
+ {w:21,ph:"Recovery",date:"27/07",focus:"🔽 Deload · ขั้นสุดท้าย เพซ 4:10",days:[["Tue","Interval 400m ×6 @4:10–4:20\nrecovery jog เต็มที่ · เบา สั้น\n🎯 ขั้นสุดท้ายของการกลับสู่ speed"],["Wed","Easy 5–6km @5:45–6:05 Zone 2"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up 4 เกียร์: 5:45→5:25→5:05→4:45"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 14km @5:50–6:10 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nเบาๆ ให้ร่างกายซึมซับ",1]]},
+ {w:22,ph:"Build",date:"03/08",focus:"เริ่มบล็อก 2 · MP เริ่มจริงจัง · กลับมาใช้ pace นำ",days:[["Tue","Interval 1km ×8 @4:20–4:28 ⚠️ปรับใหม่\nrecovery jog 200–300m (60–90 วิ)\n(เดิม 4:08–4:14 — เร็วกว่า LT · Koide: ไม่คุ้ม + โซนที่ peroneal เคยพัง)"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 12km · Two-track ⚠️ปรับใหม่\n9km @4:48 + 3km ท้าย @4:37\n🎯 แผนลงมือเต็ม + checkpoint 4 จุด ที่ §12\n(เดิม 12km @4:35–4:40 ทั้ง session — เร็วเกิน fitness ปัจจุบัน)\n⭐ MP ครั้งแรกหลังบาดเจ็บ · ขอบเท้าส่งสัญญาณ = ตัดเหลือ 8-10km ได้ ไม่ถือว่าหลุดแผน"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 22km @5:35–5:55 Zone 2 · HR 152–161 (Z2 กลาง-บน)\n⚠️ ไฟเหลืองถ้าช้ากว่า 6:00 → เช็ค cadence ช่วงวิ่งจริง (ไม่ใช่ค่าเฉลี่ย) ก่อนตัดสิน",1]]},
+ {w:23,ph:"Build",date:"10/08",focus:"VCR retest · เช็ค LT ใหม่",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","🔬 VCR Test 30min (Re-test LT)\nแล่นหนักสุด 30 นาที\n⚠️ เก็บ 2 ค่า: (1) pace เฉลี่ย = LT pace ใหม่ (2) HR เฉลี่ย 20 นาทีท้าย = LT HR ใหม่\n→ โซน HR ทั้งหมดผูกกับ LT=172 ถ้าค่าใหม่ต่าง ต้องคำนวณโซนใหม่ทั้งชุด\n(ข้อสงสัย: W20 Tempo HR ขึ้น 182 ค้าง 10km สูงกว่า LT ที่อ้าง 10bpm ⇒ LT จริงอาจสูงกว่า 172)"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 14km · 🔬 ตั้งเลขใหม่หลัง VCR\nอย่าเพิ่งล็อกตัวเลข — ใช้ผล VCR วันอังคารตั้ง MP ใหม่\nโครงคงเดิม: ส่วนใหญ่ @MP ปัจจุบัน + 3–4km ท้าย @4:37"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 24km @5:30–5:50 Zone 2 · HR 152–161 (Z2 กลาง-บน)\n⚠️ ไฟเหลืองถ้าช้ากว่า 6:00 → เช็ค cadence ช่วงวิ่งจริงก่อน",1]]},
+ {w:24,ph:"Build",date:"17/08",focus:"ปิดบล็อก 2 · เตรียม deload",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Hill Repeats 60s ×10 @RPE 8 · jog ลงพัก\n⚠️ เงื่อนไข §06: ยังไม่ใส่ hill sprint/plyo จนกว่า (1) ผ่าน VCR W23 (2) ขอบเท้าเงียบ 4 สัปดาห์ติด\nถ้าไม่ครบ → เปลี่ยนเป็น Interval 1km ×6 @4:20–4:28"],["Wed","Easy 10–12km @5:45–6:10 · HR 146–155 (Z2 ล่าง) ⚠️เพิ่มระยะ\n(เดิม 6–8km) — W24 ปิดบล็อก 2 ควรเป็น peak แต่เดิมกลับต่ำกว่า W23 · เพิ่มด้วย easy ไม่ใช่ quality\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 12km @4:32–4:38 ⚠️ปรับใหม่\n(เดิม 4:20–4:26) · 🔬 ปรับอีกครั้งตามผล VCR W23\nเพดาน HR 172 (หรือค่า LT ใหม่)"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 8km @5:45–6:10 · HR 146–155 + strides 4×80m ⚠️เพิ่มระยะ (เดิม 5km)"],["Sun","Long 26km @5:28–5:48 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 3km ขยับ Zone 3 · ⚠️ ไฟเหลือง 6:00",1]]},
+ {w:25,ph:"Recovery",date:"24/08",focus:"🔽 Deload 2 · ฟื้นตัวรับ Specific",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Fartlek 1min hard/1min easy ×10\nเบากว่าปกติ · hard @4:20–4:28 ⚠️ปรับใหม่ (เดิม 4:10–4:18)"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 18km @5:45–6:05 Zone 2 · HR 152–161 (Z2 กลาง-บน)",1]]},
+ {w:26,ph:"Specific",date:"31/08",focus:"เริ่มบล็อก 3 · ดัน MP เข้าเป้าเต็มที่",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Interval 1km ×10 @4:05–4:12\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37 🎯\nล็อกให้แม่น! HR เป้า ~158-165"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 28km @5:25–5:40 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 5km MP 4:37–4:42",1]]},
+ {w:27,ph:"Specific",date:"07/09",focus:"MP ยาวขึ้น",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Hill Repeats 60s ×12 @RPE 8-9\njog ลงพัก"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 14km @4:18–4:25\nตั้งใจแตะ LT 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 30km @5:22–5:38 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 8km MP 4:35–4:40",1]]},
+ {w:28,ph:"Specific",date:"14/09",focus:"ปิดบล็อก 3 · เตรียม deload",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Interval 800m ×8 @4:00–4:08\nrecovery jog 300m/90s"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37\nล็อก pace เป้า"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 32km @5:20–5:35 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 8km MP",1]]},
+ {w:29,ph:"Recovery",date:"21/09",focus:"🔽 Deload 3 · ก่อน Peak",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Fartlek 2min hard/2min easy ×6\nเบากว่าปกติ"],["Wed","Easy 5–6km @5:45–6:05"],["Thu","Easy 10km @5:15–6:00\nJP Build-Up 4 เกียร์"],["Fri","Bodyweight เบา + Stretching"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 22km @5:35–5:50 Zone 2 · HR 152–161 (Z2 กลาง-บน)",1]]},
+ {w:30,ph:"Peak",date:"28/09",focus:"Peak เริ่ม · Re-test LT #2",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","VCR Test 30min (Re-test LT #2)\nแล่นหนักสุด 30 นาที · อัปเดต Zone/Pace ก่อน Peak"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 16km @4:35–4:37\nHR ~158-165 · ล็อกให้นิ่ง"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 30km @5:22–5:38 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 8km MP",1]]},
+ {w:31,ph:"Peak",date:"05/10",focus:"Peak ต่อ",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Hill Repeats 60s ×10 @RPE 8-9\njog ลงพัก"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","Tempo 15km @4:18–4:25\nตั้งใจแตะ LT 172 ช่วงท้าย"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 32km @5:20–5:35 Zone 2 · HR 152–161 (Z2 กลาง-บน)\nlast 10km MP",1]]},
+ {w:32,ph:"Peak",date:"12/10",focus:"🎯 Peak สุดท้าย · Long ไกลสุด",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Interval 1km ×8 @4:00–4:08\nrecovery jog 400m/2min"],["Wed","Easy 6–8km @5:45–6:10 · HR 146–155 (Z2 ล่าง)\nຄາຍ ນ່ອງ+ກົ້ນ ຖ້າຈຳເປັນ"],["Thu","MP Run 18km @4:35–4:37 🎯\npace เป้าแข่งเต็มที่!"],["Fri","Strength + Prehab (40min)\nRDL/KB Swing/Glute/Core (ดู §06)\n+ Peroneal: Balance/Calf/Eversion (§05)"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 34km (Longest!) @5:20–5:35\nlast 10km MP · ซ้อม fueling วันแข่ง",1]]},
+ {w:33,ph:"Taper",date:"19/10",focus:"Taper เริ่ม · ลด volume 30%",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Interval 1km ×6 @4:05–4:12\nrecovery jog 400m/2min · สั้นลง"],["Wed","Easy 6km @5:40–6:00"],["Thu","MP Run 12km @4:35–4:37\nรักษาความคุ้น pace แข่ง"],["Fri","Core + Stretching เบา"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 24km @5:25–5:40 Zone 2 · HR 152–161 (Z2 กลาง-บน)",1]]},
+ {w:34,ph:"Taper",date:"26/10",focus:"Taper ต่อ · ลดอีก",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Fartlek 2min hard/2min easy ×6\nเบา สั้นลง"],["Wed","Easy 6km @5:40–6:00"],["Thu","MP Run 10km @4:35–4:37\nสั้นลง · รักษาความคุ้น pace"],["Fri","Core + Stretching เบา"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 18km @5:25–5:40 Zone 2 · HR 152–161 (Z2 กลาง-บน)",1]]},
+ {w:35,ph:"Taper",date:"02/11",focus:"อาทิตย์ก่อนแข่ง · พักขา",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Interval 400m ×6 @4:00–4:10\nrecovery jog full · sharpen เบาๆ"],["Wed","Easy 5km @5:40–6:00"],["Thu","Easy 8km @5:15–6:00\nJP Build-Up เบาๆ ปลุกขา"],["Fri","Stretching Only"],["Sat","Easy 5km @5:45–6:10 · HR 146–155 + strides 4×80m"],["Sun","Long 10–12km @5:20–5:40\nเบาที่สุด · Carb-load เริ่ม",1]]},
+ {w:36,ph:"RACE",date:"09/11",focus:"🏆 RACE WEEK",days:[["Mon","🚴 Cross-training 45–60 นาที (เบา)\nปั่นจักรยาน / ว่ายน้ำ / elliptical · HR ไม่เกิน Z2\n📊 ข้อมูล Strava: cross-training +1 ครั้ง/สัปดาห์ ใน 4 เดือนสุดท้าย = เข้าเส้นชัยเร็วขึ้นราว 6 นาที\nเพิ่ม aerobic load โดยไม่เพิ่มแรงกระแทก — ตรงกับข้อจำกัดเรื่องเอ็นของเรา\n⚠️ ถ้าสัปดาห์ไหนล้า/ขอบเท้าส่งสัญญาณ → พักเต็มวันแทน ไม่ต้องฝืน"],["Tue","Easy 5km @5:30–6:00 + strides\nขาเบา สดชื่น"],["Wed","Rest"],["Thu","Easy 5km @5:30–6:00 + strides\nขาเบา ก่อนแข่ง"],["Fri","Rest / Carb Load"],["Sat","Rest ຫຼือ jog เบามาก 15min"],["Sun","🏆 RACE DAY — Sub 3:15!\nPace เป้า 4:37 · Gel ทุก 25–30 นาที · Zone 3-4",1]]},
 ];function calcCurrentWeek(){
   const now = new Date(); now.setHours(0,0,0,0);
   let w = weeks[0].w;
@@ -1335,6 +1425,24 @@ phases.forEach(p=>{
 
 // ---- weeks ----
 const wbox = document.getElementById("weeks");
+// ---- weekly volume (auto-computed from session text) ----
+function weekKm(wk){
+  let km=0;
+  wk.days.forEach(d=>{
+    if(/Cross-training|REST|Strength|พัก/i.test(d[1].split("\n")[0]) && !/\d+\s*km/.test(d[1].split("\n")[0])) return;
+    const m=[...d[1].matchAll(/(\d+(?:\.\d+)?)(?:\s*[–-]\s*(\d+(?:\.\d+)?))?\s*km/g)];
+    if(m.length) km+=parseFloat(m[0][2]||m[0][1]);
+  });
+  return Math.round(km);
+}
+// benchmark 3:00-3:30 = 64-72 km/wk · เป้าเรา 58-67 ในช่วง build/specific/peak
+function kmClass(wk,km){
+  if(["Recovery","Taper","RACE","Base"].includes(wk.ph)) return "";
+  if(km>=58) return "km-ok";
+  if(km>=52) return "km-mid";
+  return "km-low";
+}
+
 function renderWeeks(){
   wbox.innerHTML="";
   weeks.filter(wk=>activeFilter==="All"||wk.ph===activeFilter).forEach(wk=>{
@@ -1348,6 +1456,7 @@ function renderWeeks(){
         <div class="wk-badge">W${wk.w}</div>
         <div class="wk-phase pb-${wk.ph}">${wk.ph}</div>
         <div class="wk-date mono">${wk.date}/26</div>
+        <div class="wk-km mono ${kmClass(wk,weekKm(wk))}">~${weekKm(wk)} km</div>
         <div class="wk-focus">${wk.focus}</div>
         <div class="wk-chevron">▶</div>
       </div>
@@ -1502,18 +1611,31 @@ const svgGlute=`<svg viewBox="0 0 200 130"><g stroke="#FF5A3C" stroke-width="3.5
  <path d="M96 66 Q100 54 108 58" stroke="#34E0A1" stroke-width="2.5" fill="none" stroke-linecap="round"/>
  <text x="100" y="122" fill="#8fa5c0" font-size="10.5" text-anchor="middle" font-family="monospace">ยกสะโพก บีบก้น</text></svg>`;
 
+const svgSplit=`<svg viewBox="0 0 200 130"><g stroke="#FF5A3C" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+ <circle cx="96" cy="26" r="8" fill="#2b3a52"/>
+ <path d="M96 34 L96 66"/>
+ <path d="M96 66 L74 92 L74 106"/>
+ <path d="M96 66 L124 84 L146 104"/>
+ <path d="M86 44 L74 62 M106 44 L118 62"/>
+</g>
+ <rect x="26" y="106" width="150" height="5" rx="2" fill="#3a4a63"/>
+ <rect x="66" y="56" width="16" height="7" rx="3" fill="#34E0A1"/>
+ <rect x="112" y="56" width="16" height="7" rx="3" fill="#34E0A1"/>
+ <text x="100" y="124" fill="#8fa5c0" font-size="10.5" text-anchor="middle" font-family="monospace">ขาหน้ารับน้ำหนัก · เข่าหลังจ่อพื้น</text></svg>`;
+
 const strength=[
- {id:"rdl",star:true,icon:"⭐",svg:svgRDL,name:"Romanian Deadlift (RDL)",sets:"3 × 8-10",freq:"วันศุกร์",
-  how:"ยืนถือน้ำหนัก (ดัมเบล/บาร์/ถุงทราย) → พับสะโพกไปหลัง ดันก้นออก หลังตรง เข่างอเล็กน้อย → ลดน้ำหนักตามหน้าขา จนตึง hamstring → ยืดสะโพกกลับบีบก้น.",
-  tempo:"ลง 3s · <b>ดันสะโพกกลับ บีบก้น</b> · หลังตรงเสมอ",adapt:"⭐ ท่าหลัก! ฝึก posterior chain (glute+hamstring) โดยตรง · เริ่มน้ำหนักเบา เน้นฟอร์ม",adaptType:"ok"},
- {id:"kb",star:true,icon:"⭐",svg:svgKB,name:"Kettlebell Swing",sets:"3 × 15",freq:"วันศุกร์",
-  how:"ยืนแยกขา ถือ KB/ดัมเบล → พับสะโพก แกว่งลงหว่างขา → สะบัดสะโพกไปหน้าแรงๆ บีบก้น ให้ KB ลอยขึ้นระดับอก (แรงจากสะโพก ไม่ใช่แขน).",
+ {id:"rdl",star:true,icon:"⭐",svg:svgRDL,name:"Romanian Deadlift (RDL)",sets:"2 × 8-10",freq:"วันศุกร์",
+  how:"🏋️ <b>ดัมเบล 8kg × 2 ข้าง (รวม 16kg)</b> — ถือข้างลำตัวหรือหน้าต้นขา → พับสะโพกไปหลัง ดันก้นออก หลังตรง เข่างอเล็กน้อย → ลดน้ำหนักตามหน้าขา จนตึง hamstring → ยืดสะโพกกลับบีบก้น.",
+  tempo:"ลง 3s · <b>ดันสะโพกกลับ บีบก้น</b> · หลังตรงเสมอ",adapt:"⭐ ท่าหลัก! ฝึก posterior chain (glute+hamstring) โดยตรง<br>📌 <b>W24+ เปลี่ยนเป็น 3 × 5-6 ครั้ง</b> = Maximum Strength จริง · 8kg คู่อาจเบาไปตอนนั้น → ทำขาเดียว (single-leg RDL 8kg) เพื่อเพิ่มโหลดโดยไม่ต้องซื้อดัมเบลเพิ่ม",adaptType:"ok"},
+ {id:"kb",star:true,icon:"⭐",svg:svgKB,name:"Kettlebell Swing",sets:"2 × 15",freq:"วันศุกร์",
+  how:"🏋️ <b>ดัมเบล 8kg หนึ่งตัว</b> จับสองมือที่หัวดัมเบล → ยืนแยกขา → พับสะโพก แกว่งลงหว่างขา → สะบัดสะโพกไปหน้าแรงๆ บีบก้น ให้ KB ลอยขึ้นระดับอก (แรงจากสะโพก ไม่ใช่แขน).",
   tempo:"สะบัดเร็ว · <b>แรงจากก้น/สะโพก</b> · แขนแค่ตาม",adapt:"⭐ ฝึก Stretch-Shortening Cycle (รับ→เก็บ→คืนแรง) = Running Economy",adaptType:"ok"},
- {id:"gb",star:false,icon:"",svg:svgGlute,name:"Glute Bridge / Hip Thrust",sets:"3 × 12",freq:"วันศุกร์",
-  how:"นอนหงาย ชันเข่า → ยกสะโพกขึ้นบีบก้นสุด ค้าง 2s → ลงช้าๆ. เพิ่มยาก: ขาเดียว หรือวางน้ำหนักบนสะโพก.",
-  tempo:"ยกขึ้น บีบก้น ค้าง 2s · ลงช้า",adapt:"✅ เสริม glute โดยตรง · แก้ก้นอ่อนแรง (ต้นเหตุลงน้ำหนักผิด)",adaptType:"ok"},
- {id:"pl",star:false,icon:"",svg:svgPlank,name:"Plank / Dead Bug (Core)",sets:"3 × 30-45s",freq:"วันศุกร์",
-  how:"Plank: ลำตัวตรงเป็นเส้นเดียว เกร็ง core. Dead bug: นอนหงาย ยื่นแขน-ขาสลับข้างช้าๆ. เน้น anti-rotation (กันลำตัวบิด) ไม่ใช่ sit-up.",
+ {id:"sp",star:true,icon:"⭐",svg:svgSplit,name:"Split Squat / Bulgarian (ขาเดียว)",sets:"2 × 8 / ข้าง",freq:"วันศุกร์",
+  how:"🏋️ <b>ถือดัมเบล 8kg สองมือ (ข้างละตัว)</b> · ยืนก้าวขาหน้า วางเท้าหลังบนเก้าอี้/ขั้นบันได (ถ้ายังไม่ถนัด วางเท้าหลังบนพื้นก่อน) → ย่อลงตรงๆ ให้เข่าหลังจ่อพื้น ลำตัวตั้ง → ดันขึ้นด้วยส้นเท้าหน้า.<br>ยังไม่ไหว → เริ่มด้วย 2.5kg หรือมือเปล่าก่อน 1-2 สัปดาห์",
+  tempo:"ลง 3s · <b>ดันขึ้นด้วยส้นขาหน้า</b> · เข่าหน้าไม่บิดเข้าใน",
+  adapt:"⭐ <b>ท่าใหม่ (แทน Glute Bridge)</b> — การวิ่งคือกีฬาขาเดียว 100% แต่ RDL/KB/Glute Bridge เป็นสองขาทั้งหมด · สองขาช่วยกันปกปิดความอ่อนแอข้างเดียวได้ ขาเดียวปกปิดไม่ได้<br>⚠️ ครั้งแรกจะ DOMS มากกว่าปกติ — เริ่มที่ 2 เซ็ต มือเปล่าหรือ 2.5kg ก่อน",adaptType:"ok"},
+ {id:"pl",star:false,icon:"",svg:svgPlank,name:"Plank / Dead Bug (Core)",sets:"2 × 30-45s",freq:"วันศุกร์",
+  how:"🏋️ <b>ไม่ใช้อุปกรณ์</b> (เพิ่มยาก: วางดัมเบล 2.5kg บนหลัง หรือ dead bug ถือ 2.5kg) · Plank: ลำตัวตรงเป็นเส้นเดียว เกร็ง core. Dead bug: นอนหงาย ยื่นแขน-ขาสลับข้างช้าๆ. เน้น anti-rotation (กันลำตัวบิด) ไม่ใช่ sit-up.",
   tempo:"ค้างนิ่ง เกร็ง core · หายใจปกติ",adapt:"✅ Core = ระบบเก็บ-ส่งแรง (Coiling) · กันพลังงานรั่วตอนล้า",adaptType:"ok"},
 ];
 const strStore={get(){try{return JSON.parse(localStorage.getItem("m315_str")||"{}")}catch(e){return{}}},
@@ -1627,11 +1749,11 @@ document.getElementById("hpBest").innerHTML=hpBest.map(b=>`<li>${b}</li>`).join(
 // ---------- Zone Guide ----------
 const zgColors={1:"#8598B5",2:"#5B8DEF",3:"#34E0A1",4:"#FFB84D",5:"#FF5A3C"};
 const zgData=[
- {z:1,name:"Zone 1",hr:"<130",feel:"สบายมาก · คุยได้ทั้งประโยค",use:"Recovery run (วันหลังหนัก) · warm-up/cool-down"},
- {z:2,name:"Zone 2",hr:"130-148",feel:"สบาย · คุยเป็นประโยคได้",use:"★ พระเอก! Easy + Long run ส่วนใหญ่ (สร้าง endurance)",star:true},
- {z:3,name:"Zone 3",hr:"149-160",feel:"เริ่มหนัก · พูดได้สั้นๆ",use:"MP effort จริง · steady-state"},
- {z:4,name:"Zone 4",hr:"161-172",feel:"หนัก · พูดได้คำเดียว",use:"Threshold (LT=172) · tempo หนัก"},
- {z:5,name:"Zone 5",hr:">172",feel:"หนักมาก · พูดไม่ได้",use:"Interval · VO2max work (น้อยสุด)"},
+ {z:1,name:"Zone 1",hr:"118-145",feel:"สบายมาก · คุยได้ทั้งประโยค",use:"Recovery run (วันหลังหนัก) · warm-up/cool-down"},
+ {z:2,name:"Zone 2",hr:"146-161",feel:"สบาย · คุยเป็นประโยคได้",use:"★ พระเอก! Easy + Long run ส่วนใหญ่ (สร้าง endurance)",star:true},
+ {z:3,name:"Zone 3",hr:"162-172",feel:"เริ่มหนัก · พูดได้สั้นๆ",use:"MP effort จริง · steady-state"},
+ {z:4,name:"Zone 4",hr:"173-181",feel:"หนัก · พูดได้คำเดียว",use:"Threshold (LTHR≈180) · tempo หนัก"},
+ {z:5,name:"Zone 5",hr:">181",feel:"หนักมาก · พูดไม่ได้",use:"Interval · VO2max work (น้อยสุด)"},
 ];
 const zgz=document.getElementById("zgZones");
 zgData.forEach(z=>{
