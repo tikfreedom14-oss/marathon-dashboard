@@ -1262,9 +1262,9 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
     <div class="sec-head"><span class="sec-num">17</span><h2 class="sec-title">Race Pacing · เป้า A/B/C</h2></div>
     <p class="sec-desc">ตารางเพซวันแข่ง Bangsaen42 · เป้า A/B/C ตามสภาพร่างกาย/อากาศ. กดเลือกเป้า หรือปรับเวลาเองก็ได้.</p>
     <div class="goal-tabs" id="goalTabs">
-      <button class="goal-tab" data-time="3:15:00" data-label="A · ปลอดภัย" data-desc="มั่นใจสูง — เป้าหลักที่ต้องได้">A · Sub 3:15<span>ปลอดภัย</span></button>
-      <button class="goal-tab active" data-time="3:10:00" data-label="B · Realistic" data-desc="ตาม VO2max/LT จริง — ถ้าซ้อมครบ">B · 3:10<span>Realistic</span></button>
-      <button class="goal-tab" data-time="3:05:00" data-label="C · Dream" data-desc="ถ้าทุกอย่างลงตัว วันฟอร์มดี+อากาศเย็น">C · 3:05<span>Dream</span></button>
+      <button class="goal-tab" data-time="3:15:00" data-label="A · Best case" data-desc="ต้องแปลงความเร็ว 95.6% ของ Half PB — ขอบบนสุดของช่วงปกติ · ต้องอากาศดี + W32 ผ่านสบาย">A · 3:15<span>Best case</span></button>
+      <button class="goal-tab active" data-time="3:21:00" data-label="B · Realistic" data-desc="แปลง 93% — อยู่ในช่วงปกติของนักวิ่งที่มี durability ดี · นี่คือเป้าที่ข้อมูลรองรับที่สุด">B · 3:21<span>Realistic</span></button>
+      <button class="goal-tab" data-time="3:30:00" data-label="C · วันร้อน/ไม่สด" data-desc="แปลง 88.7% — ใช้เมื่ออากาศร้อนจัด นอนไม่พอ หรือมีสัญญาณเตือน · ยังเร็วกว่า PB เดิม 27 นาที">C · 3:30<span>วันร้อน</span></button>
     </div>
     <div class="goal-desc" id="goalDesc"></div>
     <div class="pace-ctrl">
@@ -1286,6 +1286,35 @@ footer .fin{font-family:"Oswald",sans-serif;font-size:20px;color:var(--text);mar
         <tbody id="goalCompare"></tbody>
       </table>
     </div>
+    <div class="callout" style="margin-top:18px;border-color:rgba(255,214,90,.45);background:rgba(255,214,90,.08)">
+      <div class="ct" style="color:var(--gold)">🪜 บันไดแห่งความเร็ว — ทำไม A/B/C ถึงเปลี่ยนเป็นตัวเลขชุดนี้</div>
+      <ol>
+        <li><b>หลักการ:</b> Marathon Pace คิดเป็นกี่ % ของความเร็ว Half Marathon · ตัวเลขนี้วัด <b>Distance Conversion + Durability</b> ไม่ใช่ speed ceiling<br>
+          <b>ช่วงปกติ:</b> นักวิ่งที่มี durability ดีแปลงได้ 92-95% · มือสมัครเล่นทั่วไป 88-92%</li>
+      </ol>
+      <div class="ptable-wrap" style="margin:12px 0">
+        <table class="ptable">
+          <thead><tr><th>เป้า</th><th>MP</th><th>% ของ Half PB (4:25)</th><th>ประเมิน</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">3:15</td><td class="mono">4:37</td><td class="mono" style="color:var(--amber)"><b>95.6%</b></td><td>ขอบบนสุดของช่วงปกติ</td></tr>
+            <tr><td class="mono" style="color:var(--mint)"><b>3:21</b></td><td class="mono">4:46</td><td class="mono" style="color:var(--mint)"><b>93%</b></td><td>⭐ อยู่กลางช่วงที่ทำได้จริง</td></tr>
+            <tr><td class="mono">3:30</td><td class="mono">4:59</td><td class="mono">88.7%</td><td>ยังเร็วกว่า PB เดิม 27 นาที</td></tr>
+            <tr><td class="mono" style="color:var(--muted)">3:57 (จริง 2025)</td><td class="mono" style="color:var(--muted)">5:37</td><td class="mono" style="color:var(--coral)"><b>78.5%</b></td><td style="color:var(--muted)">ก่อนซ้อมมีโครงสร้าง</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <ol>
+        <li>⚠️ <b>ข้อที่ทำให้ 3:15 ยากกว่าตัวเลข:</b> Half PB 4:25 วัดที่ขอนแก่น <b>15°C</b> · Bangsaen จะ 26-29°C ซึ่งกิน 10-25 วิ/km · แปลว่าจริง ๆ แล้วต้องแปลงได้<b>ดีกว่า 95.6% อีก</b></li>
+        <li>✅ <b>แต่นี่ไม่ใช่การลดเป้า</b> — 78.5% นั้นมาจากปี 2025 <b>ก่อนซ้อมมีโครงสร้าง</b> ไม่ใช่ความสามารถปัจจุบัน · และบทเรียนสำคัญของกรอบนี้คือ <b>"บางคนไม่ได้ต้องเร็วขึ้น เขาเพียงต้องพาความเร็วที่มีไปให้ไกลกว่าเดิม"</b> ซึ่งตรงกับเราพอดี — Speed ceiling ไม่ใช่ปัญหา <b>Distance Conversion คือปัญหา</b></li>
+        <li>🎯 <b>เกณฑ์ตัดสินแทนการเดา — ใช้ 3 จุดวัด:</b><br>
+          · <b>W23 VCR</b> — LT pace กลับมา ≤4:20 = ไปได้<br>
+          · <b>W28 MP 16km</b> — ถือ 4:37 ได้ครบ 5km (30% ของ session)<br>
+          · <b>W32 Long 34km</b> — 2km ท้าย @4:37 หลังผ่านมา 32km โดย HR ไม่ทะลุ 178 = <b>ตัวตัดสินจริง</b><br>
+          ผ่าน → ยืนยัน A · ต้องฝืน → ย้ายไป B <b>โดยไม่เสียอะไรเลย</b> เพราะซ้อมมาทางเดียวกันทั้งหมด</li>
+        <li>📌 <b>ทำไมต้องตัดสินก่อนวันแข่ง:</b> เพื่อไม่ต้องตัดสินใจกลางทางที่ km 25 ด้วยอารมณ์ · ครึ่งฮาล์ฟ 28/02 พังเพราะออกตัวเร็วกว่าแผน 30 วิ/km ใน 5km แรก และ<b>ตอนนั้นยังรู้สึกสบาย</b></li>
+      </ol>
+    </div>
+
     <div class="callout" style="margin-top:18px;border-color:rgba(255,90,60,.4);background:rgba(255,90,60,.07)">
       <div class="ct">🌡️ บทเรียนจาก 2 การแข่งฮาล์ฟ — ความร้อนกับการออกตัว</div>
       <div class="ptable-wrap" style="margin:12px 0">
@@ -2010,9 +2039,9 @@ document.getElementById("goalTime").addEventListener("input", renderPace);
 
 // ---------- A/B/C goal tabs ----------
 const GOALS=[
- {time:"3:15:00",label:"A · ปลอดภัย",when:"เป้าหลัก · วันอากาศร้อน/ไม่สด"},
- {time:"3:10:00",label:"B · Realistic",when:"ซ้อมครบ · ตาม VO2max/LT จริง"},
- {time:"3:05:00",label:"C · Dream",when:"ฟอร์มดี+อากาศเย็น · ทุกอย่างลงตัว"},
+ {time:"3:15:00",label:"A · Best case",when:"อากาศดี + W32 ผ่านสบาย · แปลง 95.6%"},
+ {time:"3:21:00",label:"B · Realistic",when:"⭐ ข้อมูลรองรับที่สุด · แปลง 93%"},
+ {time:"3:30:00",label:"C · วันร้อน/ไม่สด",when:"ร้อนจัด/นอนไม่พอ · แปลง 88.7%"},
 ];
 function renderGoalCompare(){
   const body=document.getElementById("goalCompare");
